@@ -1,6 +1,8 @@
 import { BrowserModule } from '@angular/platform-browser';
 import { HttpModule } from '@angular/http';
 import { NgModule } from '@angular/core';
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+import { MdButtonModule, MdCheckboxModule } from '@angular/material';
 
 import { AppComponent } from './app.component';
 
@@ -12,13 +14,15 @@ import { DeedsService } from './deeds.service'
   ],
   imports: [
     BrowserModule,
-    HttpModule
+    HttpModule,
+    BrowserAnimationsModule,
+    MdButtonModule, MdCheckboxModule
   ],
   providers: [
     DeedsService
-    ],
+  ],
   bootstrap: [
     AppComponent
-    ]
+  ]
 })
 export class AppModule { }
