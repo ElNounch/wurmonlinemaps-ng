@@ -1,0 +1,14 @@
+.example-scrolling-content {
+    width: 240px;
+    padding: 4px;
+}
+
+
+.setting-slider.mat-slide-toggle-thumb {
+    top: 4px;
+}
+
+.slide-icon {
+    position: relative;
+    top: 6px;
+}

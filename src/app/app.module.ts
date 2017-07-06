@@ -2,7 +2,7 @@ import { BrowserModule } from '@angular/platform-browser';
 import { HttpModule } from '@angular/http';
 import { NgModule } from '@angular/core';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
-import { MdButtonModule, MdCheckboxModule } from '@angular/material';
+import { MdToolbarModule, MdSidenavModule, MdButtonModule, MdCheckboxModule, MdIconModule, MdSlideToggleModule } from '@angular/material';
 
 import { AppComponent } from './app.component';
 
@@ -16,7 +16,7 @@ import { DeedsService } from './deeds.service'
     BrowserModule,
     HttpModule,
     BrowserAnimationsModule,
-    MdButtonModule, MdCheckboxModule
+    MdToolbarModule, MdSidenavModule, MdButtonModule, MdCheckboxModule, MdIconModule, MdSlideToggleModule
   ],
   providers: [
     DeedsService

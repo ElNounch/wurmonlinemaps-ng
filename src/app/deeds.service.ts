@@ -5,11 +5,12 @@ import 'rxjs/add/operator/map';
 import 'rxjs/add/operator/catch';
 import 'rxjs/add/operator/do';
 
-import { IDeed } from './app.models'
+import { IDeed, IStartingDeed } from './app.models'
 
 @Injectable()
 export class DeedsService {
-    private _deedJsonUrl: string = './assets/deedsdump.json'
+    private _deedJsonUrl: string = './assets/deedsdump.json';
+    private _startingDeedsJsonUrl: string = './assets/startingdeeds.json';
 
     constructor(private _http: Http) { }
 
@@ -17,6 +18,13 @@ export class DeedsService {
         return this._http.get(this._deedJsonUrl)
             .map((response: Response) => <IDeed[]>response.json())
             .do(data => console.log('Deeds: ', data))
+            .catch(this.handleError)
+    }
+
+    getStartingDeeds(): Observable<IStartingDeed[]> {
+        return this._http.get(this._startingDeedsJsonUrl)
+            .map((response: Response) => <IStartingDeed[]>response.json())
+            .do(data => console.log('Starting Deeds: ', data))
             .catch(this.handleError)
     }
 

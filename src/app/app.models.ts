@@ -10,3 +10,9 @@ export interface IDeed {
 export interface ServerData {
     
 }
+
+export interface IStartingDeed {
+    Name: string;
+    X: number;
+    Y: number;
+}

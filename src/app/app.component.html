@@ -1,1 +1,28 @@
-<div #mapElement id="map" class="map"> </div>
+<md-toolbar color="primary">
+    <button md-mini-fab class="example-fab" (click)="sidenav.toggle()">
+      <md-icon>menu</md-icon>
+    </button>
+    <span>&nbsp;Xanadu 2.0</span>
+    <span class="example-spacer"></span>
+    <md-icon class="header-icon">map</md-icon>
+</md-toolbar>
+
+<md-sidenav-container class="example-sidenav-fab-container">
+    <md-sidenav #sidenav mode="slide" opened="false">
+        <div class="example-scrolling-content">
+            <p>
+                <md-slide-toggle class="setting-slider" [color]="primary" [checked]="true" (click)="showStarters($event)">
+                    <md-icon class="slide-icon">account_balance</md-icon>Startin' Towns
+                </md-slide-toggle>
+            </p>
+            <p>
+                <md-slide-toggle class="setting-slider" [color]="primary" [checked]="true" (click)="showDeeds($event)">
+                    <i class="material-icons slide-icon">local_play</i>Deeds
+                </md-slide-toggle>
+            </p>
+        </div>
+    </md-sidenav>
+
+    <div #mapElement id="map" class="map"> </div>
+
+</md-sidenav-container>

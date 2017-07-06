@@ -1,7 +1,9 @@
 import { AfterContentInit, AfterViewInit, Component, ElementRef, ViewChild, OnInit } from "@angular/core";
 
+import { MdToolbarModule, MdSidenavModule, MdSlideToggleModule, MdIconModule } from '@angular/material';
+
 import { DeedsService } from './deeds.service';
-import { IDeed } from './app.models';
+import { IDeed, IStartingDeed } from './app.models';
 
 //import * as ol from 'openlayers';
 
@@ -20,6 +22,8 @@ export class AppComponent implements OnInit, AfterViewInit {
 
   public map: any;
   deeds: IDeed[];
+  deedsLayer: any;
+  staringTownsLayer: any;
 
   constructor(private deedsService: DeedsService) {
   }
@@ -42,28 +46,28 @@ export class AppComponent implements OnInit, AfterViewInit {
 
     // guard tower feature
     var guardSources = new ol.source.Vector();
-    
-    var guardtowerStyleFunction = function (feature, resolution) {
-        // console.log("Feature", feature);
-        // console.log("Resolution", resolution);
 
-        return [
-          new ol.style.Style({
-            image: new ol.style.RegularShape({
-              points: 30,
-              radius: 20 / resolution,
-              angle: Math.PI / 4,
-              fill: new ol.style.Fill({
-                color: 'rgba(12, 89, 29, 0.6)'
-              }),
-              stroke: new ol.style.Stroke({
-                color: 'rgba(255,255,255,0.1)',
-                width: 50 / resolution
-              }),
-            })
+    var guardtowerStyleFunction = function (feature, resolution) {
+      // console.log("Feature", feature);
+      // console.log("Resolution", resolution);
+
+      return [
+        new ol.style.Style({
+          image: new ol.style.RegularShape({
+            points: 30,
+            radius: 20 / resolution,
+            angle: Math.PI / 4,
+            fill: new ol.style.Fill({
+              color: 'rgba(12, 89, 29, 0.6)'
+            }),
+            stroke: new ol.style.Stroke({
+              color: 'rgba(255,255,255,0.1)',
+              width: 50 / resolution
+            }),
           })
-        ]
-      };
+        })
+      ]
+    };
 
     // guard tower points [6323.375, -2046.59765625]
     var gts = [
@@ -87,17 +91,12 @@ export class AppComponent implements OnInit, AfterViewInit {
       style: guardtowerStyleFunction
     });
 
-    var vectorSrc = new ol.source.Vector();
-    var vectorLayer = new ol.layer.Vector({
-      source: vectorSrc
+    var gridSrc = new ol.source.Vector();
+    var gridLayer = new ol.layer.Vector({
+      source: gridSrc
     });
 
-    var deedsSrc = new ol.source.Vector();
-    var deedsLayer = new ol.layer.Vector({
-      source: deedsSrc
-    });
-
-    console.log("Deeds count", deeds.length);
+    
 
     // grid lines 
     var gridJSON = [];
@@ -109,19 +108,19 @@ export class AppComponent implements OnInit, AfterViewInit {
         "StartX": 0, "StartY": y, "EndX": 8192, "EndY": y
       });
 
-      var guardtowerFeature = new ol.Feature({
+      var horizLineFeature = new ol.Feature({
         geometry: new ol.geom.LineString([[0, y], [8192, y]]),
         name: "line"
       });
 
-      guardtowerFeature.setStyle(new ol.style.Style({
+      horizLineFeature.setStyle(new ol.style.Style({
         stroke: new ol.style.Stroke({
           color: 'blue',
           width: 2
         }),
       }));
 
-      vectorSrc.addFeature(guardtowerFeature);
+      gridSrc.addFeature(horizLineFeature);
     }
 
     // vertucal
@@ -131,19 +130,19 @@ export class AppComponent implements OnInit, AfterViewInit {
         "StartX": x, "StartY": 0, "EndX": x, "EndY": -8192
       });
 
-      var guardtowerFeature = new ol.Feature({
+      var vertLineFeature = new ol.Feature({
         geometry: new ol.geom.LineString([[x, 0], [x, -8192]]),
         name: "line"
       });
 
-      guardtowerFeature.setStyle(new ol.style.Style({
+      vertLineFeature.setStyle(new ol.style.Style({
         stroke: new ol.style.Stroke({
           color: 'blue',
           width: 2
         }),
       }));
 
-      vectorSrc.addFeature(guardtowerFeature);
+      gridSrc.addFeature(vertLineFeature);
     }
 
     // grid text
@@ -160,12 +159,12 @@ export class AppComponent implements OnInit, AfterViewInit {
         var gridID = gridX[x] + " " + yDisplay;
         gridPoints.push({ "cX": xC, "cY": yC, "GridID": gridID });
 
-        var guardtowerFeature = new ol.Feature({
+        var gridNameFeature = new ol.Feature({
           geometry: new ol.geom.Point([xC + 205, yC - 205]),
           name: "line"
         });
 
-        guardtowerFeature.setStyle(new ol.style.Style({
+        gridNameFeature.setStyle(new ol.style.Style({
           stroke: new ol.style.Stroke({
             color: 'blue',
             width: 2
@@ -185,45 +184,76 @@ export class AppComponent implements OnInit, AfterViewInit {
           })
         }));
 
-        vectorSrc.addFeature(guardtowerFeature);
+        gridSrc.addFeature(gridNameFeature);
       }
     }
 
     // starter towns
-    var guardtowerFeature = new ol.Feature({
-      geometry: new ol.geom.Polygon([[[6582, -2231], [6622, -2231], [6622, -2272], [6582, -2272]]]),
-      name: "Summerholt"
+    var startingTowns = [
+      {
+        "Name": "Summerholt",
+        "Coords": [[6582, -2231], [6622, -2231], [6622, -2272], [6582, -2272]],
+      },
+      {
+        "Name": "Greymead",
+        "Coords": [[4680, -3030], [4721, -3030], [4721, -3071], [4680, -3071]],
+      }
+    ]
+
+    var startingTownsSource = new ol.source.Vector();
+
+    for (let town of startingTowns) {
+
+      var startingTownFeature = new ol.Feature({
+        geometry: new ol.geom.Polygon([town.Coords]),
+        name: town.Name
+      });
+
+      startingTownsSource.addFeature(startingTownFeature);
+
+      startingTownFeature.setStyle(new ol.style.Style({
+        stroke: new ol.style.Stroke({
+          color: 'blue',
+          width: 3
+        }),
+        fill: new ol.style.Fill({
+          color: 'rgba(0, 0, 255, 0.1)'
+        }),
+        text: new ol.style.Text({
+          font: '14px Calibri,sans-serif',
+          text: town.Name,
+          textBaseline: 'middle',
+          textAlign: 'center',
+          fill: new ol.style.Fill({
+            color: '#FFF'
+          }),
+          stroke: new ol.style.Stroke({
+            color: '#000',
+            width: 1,
+            offsetY: 1,
+            offsetX: 2
+          })
+        })
+      }));
+
+      startingTownsSource.addFeature(startingTownFeature);
+    }
+
+    this.staringTownsLayer = new ol.layer.Vector({
+      source: startingTownsSource,
+      name: "Starter Deeds Layer"
     });
 
-    guardtowerFeature.setStyle(new ol.style.Style({
-      stroke: new ol.style.Stroke({
-        color: 'blue',
-        width: 3
-      }),
-      fill: new ol.style.Fill({
-        color: 'rgba(0, 0, 255, 0.1)'
-      }),
-      text: new ol.style.Text({
-        font: '14px Calibri,sans-serif',
-        text: "Summerholt",
-        textBaseline: 'middle',
-        textAlign: 'center',
-        fill: new ol.style.Fill({
-          color: '#FFF'
-        }),
-        stroke: new ol.style.Stroke({
-          color: '#000',
-          width: 1,
-          offsetY: 1,
-          offsetX: 2
-        })
-      })
-    }));
+    var deedsSrc = new ol.source.Vector();
+    this.deedsLayer = new ol.layer.Vector({
+      source: deedsSrc,
+      name: "Deeds Layer"
+    });
 
-    vectorSrc.addFeature(guardtowerFeature);
+    // console.log("Deeds count", deeds.length);
 
     for (let deed of deeds) {
-      if (deed.Name == "Summerholt") {
+      if (deed.Name == "Summerholt" || deed.Name == "Greymead") {
         continue;
       }
 
@@ -309,7 +339,7 @@ export class AppComponent implements OnInit, AfterViewInit {
     });
 
     this.map = new ol.Map({
-      layers: [terrainRaster, guardLayer, vectorLayer, deedsLayer],
+      layers: [terrainRaster, guardLayer, gridLayer, this.staringTownsLayer, this.deedsLayer],
       target: 'map',
       controls: ol.control.defaults({
         attributionOptions: ({
@@ -342,4 +372,56 @@ export class AppComponent implements OnInit, AfterViewInit {
   setMap() {
     this.map.setTarget(this.mapElement.nativeElement.id);
   }
-}
+
+  showStarters(event: any) {
+
+    let group = this.map.getLayerGroup();
+    let layers = group.getLayers();
+
+    let layerExists: boolean = false;
+
+    layers.forEach(layer => {
+      let name = layer.get('name');
+
+      if (name == "Starter Deeds Layer") {
+        layerExists = true;
+      }
+    });
+
+
+    if (layerExists) {
+      this.map.removeLayer(this.staringTownsLayer)
+    }
+    else {
+      this.map.addLayer(this.staringTownsLayer)
+    }
+  }
+
+
+  
+// Deeds Layer
+showDeeds(event: any) {
+
+    let group = this.map.getLayerGroup();
+    let layers = group.getLayers();
+
+    let layerExists: boolean = false;
+
+    layers.forEach(layer => {
+      let name = layer.get('name');
+
+      if (name == "Deeds Layer") {
+        layerExists = true;
+      }
+    });
+
+
+    if (layerExists) {
+      this.map.removeLayer(this.deedsLayer)
+    }
+    else {
+      this.map.addLayer(this.deedsLayer)
+    }
+  }
+
+} // end comp
