@@ -42,39 +42,50 @@ export class AppComponent implements OnInit, AfterViewInit {
 
     // guard tower feature
     var guardSources = new ol.source.Vector();
-    var guardLayer = new ol.layer.Vector({
-      source: guardSources
-    });
+    
+    var guardtowerStyleFunction = function (feature, resolution) {
+        // console.log("Feature", feature);
+        // console.log("Resolution", resolution);
+
+        return [
+          new ol.style.Style({
+            image: new ol.style.RegularShape({
+              points: 30,
+              radius: 20 / resolution,
+              angle: Math.PI / 4,
+              fill: new ol.style.Fill({
+                color: 'rgba(12, 89, 29, 0.6)'
+              }),
+              stroke: new ol.style.Stroke({
+                color: 'rgba(255,255,255,0.1)',
+                width: 50 / resolution
+              }),
+            })
+          })
+        ]
+      };
 
     // guard tower points [6323.375, -2046.59765625]
     var gts = [
       [6323, -2046],
-      [6533, -1986]
+      [6533, -1986],
+      [6472, -2015],
+      [6584, -1992]
     ];
 
     for (let g of gts) {
-      var vectorFeature = new ol.Feature({
+      var guardtowerFeature = new ol.Feature({
         geometry: new ol.geom.Point(g),
         name: "guard tower"
       });
 
-      vectorFeature.setStyle(new ol.style.Style({
-        image: new ol.style.RegularShape({
-          points: 8,
-          radius: 5,
-          angle: Math.PI / 4,
-          fill: new ol.style.Fill({
-            color: 'yellow'
-          }),
-          stroke: new ol.style.Stroke({
-            color: 'rgba(255,255,255,0.2)',
-            width: 20
-          }),
-        })
-      }));
-
-      guardSources.addFeature(vectorFeature);
+      guardSources.addFeature(guardtowerFeature);
     }
+
+    var guardLayer = new ol.layer.Vector({
+      source: guardSources,
+      style: guardtowerStyleFunction
+    });
 
     var vectorSrc = new ol.source.Vector();
     var vectorLayer = new ol.layer.Vector({
@@ -98,19 +109,19 @@ export class AppComponent implements OnInit, AfterViewInit {
         "StartX": 0, "StartY": y, "EndX": 8192, "EndY": y
       });
 
-      var vectorFeature = new ol.Feature({
+      var guardtowerFeature = new ol.Feature({
         geometry: new ol.geom.LineString([[0, y], [8192, y]]),
         name: "line"
       });
 
-      vectorFeature.setStyle(new ol.style.Style({
+      guardtowerFeature.setStyle(new ol.style.Style({
         stroke: new ol.style.Stroke({
           color: 'blue',
           width: 2
         }),
       }));
 
-      vectorSrc.addFeature(vectorFeature);
+      vectorSrc.addFeature(guardtowerFeature);
     }
 
     // vertucal
@@ -120,19 +131,19 @@ export class AppComponent implements OnInit, AfterViewInit {
         "StartX": x, "StartY": 0, "EndX": x, "EndY": -8192
       });
 
-      var vectorFeature = new ol.Feature({
+      var guardtowerFeature = new ol.Feature({
         geometry: new ol.geom.LineString([[x, 0], [x, -8192]]),
         name: "line"
       });
 
-      vectorFeature.setStyle(new ol.style.Style({
+      guardtowerFeature.setStyle(new ol.style.Style({
         stroke: new ol.style.Stroke({
           color: 'blue',
           width: 2
         }),
       }));
 
-      vectorSrc.addFeature(vectorFeature);
+      vectorSrc.addFeature(guardtowerFeature);
     }
 
     // grid text
@@ -149,12 +160,12 @@ export class AppComponent implements OnInit, AfterViewInit {
         var gridID = gridX[x] + " " + yDisplay;
         gridPoints.push({ "cX": xC, "cY": yC, "GridID": gridID });
 
-        var vectorFeature = new ol.Feature({
+        var guardtowerFeature = new ol.Feature({
           geometry: new ol.geom.Point([xC + 205, yC - 205]),
           name: "line"
         });
 
-        vectorFeature.setStyle(new ol.style.Style({
+        guardtowerFeature.setStyle(new ol.style.Style({
           stroke: new ol.style.Stroke({
             color: 'blue',
             width: 2
@@ -174,17 +185,17 @@ export class AppComponent implements OnInit, AfterViewInit {
           })
         }));
 
-        vectorSrc.addFeature(vectorFeature);
+        vectorSrc.addFeature(guardtowerFeature);
       }
     }
 
     // starter towns
-    var vectorFeature = new ol.Feature({
+    var guardtowerFeature = new ol.Feature({
       geometry: new ol.geom.Polygon([[[6582, -2231], [6622, -2231], [6622, -2272], [6582, -2272]]]),
       name: "Summerholt"
     });
 
-    vectorFeature.setStyle(new ol.style.Style({
+    guardtowerFeature.setStyle(new ol.style.Style({
       stroke: new ol.style.Stroke({
         color: 'blue',
         width: 3
@@ -209,18 +220,18 @@ export class AppComponent implements OnInit, AfterViewInit {
       })
     }));
 
-    vectorSrc.addFeature(vectorFeature);
+    vectorSrc.addFeature(guardtowerFeature);
 
     for (let deed of deeds) {
       if (deed.Name == "Summerholt") {
         continue;
       }
 
-      var vectorFeature = new ol.Feature({
+      var guardtowerFeature = new ol.Feature({
         geometry: new ol.geom.Point([deed.X, deed.Y]),
         name: deed.Name
       });
-      vectorFeature.setStyle(new ol.style.Style({
+      guardtowerFeature.setStyle(new ol.style.Style({
         image: new ol.style.RegularShape({
           points: 4,
           radius: 20,
@@ -251,7 +262,7 @@ export class AppComponent implements OnInit, AfterViewInit {
         })
       }));
 
-      deedsSrc.addFeature(vectorFeature);
+      deedsSrc.addFeature(guardtowerFeature);
     }
 
     var mapExtent = [0.00000000, -8192.00000000, 8192.00000000, 0.00000000];
