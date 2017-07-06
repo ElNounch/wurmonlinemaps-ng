@@ -157,13 +157,13 @@ export class AppComponent implements OnInit, AfterViewInit {
 
     // grid text
     var gridPoints = [];
-    var gridX = ["C", "D", "E", "F", "G", "H", "I", "J", "K", "L", "M", "N", "O", "P", "Q", "R", "S", "T", "U"];
+    var gridX = ["B", "C", "D", "E", "F", "G", "H", "I", "J", "K", "L", "M", "N", "O", "P", "Q", "R", "S", "T", "U"];
 
-    for (var x = 0; x < 19; x++) {
-      var yC = -((x * 410) + 362);
+    for (var x = 0; x < 20; x++) {
+      var yC = -(x * 410) + 50;
 
-      for (var y = 0; y < 19; y++) {
-        var xC = (y * 410) + 362;
+      for (var y = 0; y < 20; y++) {
+        var xC = (y * 410) - 40;
 
         var yDisplay = y + 8;
         var gridID = gridX[x] + " " + yDisplay;
