@@ -1,0 +1,4621 @@
+{
+    "success": true,
+    "data": [
+        {
+            "ID": 806,
+            "Server": 0,
+            "X": 3849,
+            "Y": -5144,
+            "Name": "A Million Memories",
+            "Notes": null
+        },
+        {
+            "ID": 506,
+            "Server": 0,
+            "X": 700,
+            "Y": -1560,
+            "Name": "Acropolis",
+            "Notes": null
+        },
+        {
+            "ID": 260,
+            "Server": 0,
+            "X": 3014,
+            "Y": -3210,
+            "Name": "Adalon",
+            "Notes": null
+        },
+        {
+            "ID": 645,
+            "Server": 0,
+            "X": 658,
+            "Y": -2795,
+            "Name": "Agartha",
+            "Notes": "As requested by Barricade"
+        },
+        {
+            "ID": 653,
+            "Server": 0,
+            "X": 5517,
+            "Y": -1412,
+            "Name": "Ageless Lake Seaside Entrance",
+            "Notes": null
+        },
+        {
+            "ID": 650,
+            "Server": 0,
+            "X": 5351,
+            "Y": -1482,
+            "Name": "Ageless Tunnel Lakeside Entrance",
+            "Notes": null
+        },
+        {
+            "ID": 734,
+            "Server": 0,
+            "X": 6745,
+            "Y": -7420,
+            "Name": "Aincrad",
+            "Notes": null
+        },
+        {
+            "ID": 593,
+            "Server": 0,
+            "X": 5048,
+            "Y": -1287,
+            "Name": "Alcatraz Island",
+            "Notes": null
+        },
+        {
+            "ID": 370,
+            "Server": 0,
+            "X": 4640,
+            "Y": -7392,
+            "Name": "Aldhaven",
+            "Notes": null
+        },
+        {
+            "ID": 454,
+            "Server": 0,
+            "X": 848,
+            "Y": -3025,
+            "Name": "Amber",
+            "Notes": null
+        },
+        {
+            "ID": 6,
+            "Server": 0,
+            "X": 6748,
+            "Y": -2351,
+            "Name": "Amish Creeks",
+            "Notes": null
+        },
+        {
+            "ID": 4,
+            "Server": 0,
+            "X": 6798,
+            "Y": -2287,
+            "Name": "Amish Estates",
+            "Notes": null
+        },
+        {
+            "ID": 7,
+            "Server": 0,
+            "X": 6935,
+            "Y": -2100,
+            "Name": "Amish Groves",
+            "Notes": null
+        },
+        {
+            "ID": 3,
+            "Server": 0,
+            "X": 6889,
+            "Y": -2303,
+            "Name": "Amish Paradise",
+            "Notes": null
+        },
+        {
+            "ID": 5,
+            "Server": 0,
+            "X": 6939,
+            "Y": -2273,
+            "Name": "Amish Paradise Market \u0026 Sanctuary",
+            "Notes": null
+        },
+        {
+            "ID": 427,
+            "Server": 0,
+            "X": 470,
+            "Y": -4260,
+            "Name": "Amphipoli",
+            "Notes": null
+        },
+        {
+            "ID": 428,
+            "Server": 0,
+            "X": 544,
+            "Y": -4224,
+            "Name": "Amphipoli Farm",
+            "Notes": null
+        },
+        {
+            "ID": 112,
+            "Server": 0,
+            "X": 6693,
+            "Y": -1356,
+            "Name": "Anesthesia",
+            "Notes": null
+        },
+        {
+            "ID": 444,
+            "Server": 0,
+            "X": 493,
+            "Y": -3919,
+            "Name": "Angels Westport",
+            "Notes": null
+        },
+        {
+            "ID": 250,
+            "Server": 0,
+            "X": 3480,
+            "Y": -2786,
+            "Name": "Angeshrael",
+            "Notes": null
+        },
+        {
+            "ID": 10,
+            "Server": 0,
+            "X": 6988,
+            "Y": -2288,
+            "Name": "Annex",
+            "Notes": null
+        },
+        {
+            "ID": 521,
+            "Server": 0,
+            "X": 1388,
+            "Y": -1027,
+            "Name": "Apple Tree Post",
+            "Notes": null
+        },
+        {
+            "ID": 791,
+            "Server": 0,
+            "X": 5433,
+            "Y": -4673,
+            "Name": "Applebrooke Ridge",
+            "Notes": null
+        },
+        {
+            "ID": 675,
+            "Server": 0,
+            "X": 6147,
+            "Y": -4114,
+            "Name": "Aranea",
+            "Notes": null
+        },
+        {
+            "ID": 724,
+            "Server": 0,
+            "X": 6313,
+            "Y": -6470,
+            "Name": "Archdale",
+            "Notes": null
+        },
+        {
+            "ID": 604,
+            "Server": 0,
+            "X": 6906,
+            "Y": -1899,
+            "Name": "Aria",
+            "Notes": null
+        },
+        {
+            "ID": 125,
+            "Server": 0,
+            "X": 6690,
+            "Y": -3510,
+            "Name": "Arstotzka",
+            "Notes": null
+        },
+        {
+            "ID": 672,
+            "Server": 0,
+            "X": 6244,
+            "Y": -1920,
+            "Name": "Arthur\u0027s Seat",
+            "Notes": null
+        },
+        {
+            "ID": 460,
+            "Server": 0,
+            "X": 683,
+            "Y": -2924,
+            "Name": "Artisian\u0027s Desires",
+            "Notes": null
+        },
+        {
+            "ID": 298,
+            "Server": 0,
+            "X": 3127,
+            "Y": -6185,
+            "Name": "Asakusa",
+            "Notes": null
+        },
+        {
+            "ID": 182,
+            "Server": 0,
+            "X": 5348,
+            "Y": -6442,
+            "Name": "Ashorn Cleft",
+            "Notes": null
+        },
+        {
+            "ID": 271,
+            "Server": 0,
+            "X": 3443,
+            "Y": -4367,
+            "Name": "Atrocitas",
+            "Notes": null
+        },
+        {
+            "ID": 660,
+            "Server": 0,
+            "X": 1755,
+            "Y": -4045,
+            "Name": "Autumn Twilight",
+            "Notes": null
+        },
+        {
+            "ID": 784,
+            "Server": 0,
+            "X": 7943,
+            "Y": -4415,
+            "Name": "Avalon ",
+            "Notes": null
+        },
+        {
+            "ID": 704,
+            "Server": 0,
+            "X": 1122,
+            "Y": -7226,
+            "Name": "Aven Linuath",
+            "Notes": null
+        },
+        {
+            "ID": 789,
+            "Server": 0,
+            "X": 4073,
+            "Y": -264,
+            "Name": "Awardisville",
+            "Notes": null
+        },
+        {
+            "ID": 246,
+            "Server": 0,
+            "X": 3398,
+            "Y": -2506,
+            "Name": "Aztarian",
+            "Notes": null
+        },
+        {
+            "ID": 580,
+            "Server": 0,
+            "X": 675,
+            "Y": -7465,
+            "Name": "Babuskaa\u0027s Village",
+            "Notes": null
+        },
+        {
+            "ID": 367,
+            "Server": 0,
+            "X": 4586,
+            "Y": -7700,
+            "Name": "Ballinamallard",
+            "Notes": null
+        },
+        {
+            "ID": 189,
+            "Server": 0,
+            "X": 5810,
+            "Y": -7010,
+            "Name": "Barnacle Bay",
+            "Notes": null
+        },
+        {
+            "ID": 23,
+            "Server": 0,
+            "X": 7776,
+            "Y": -1816,
+            "Name": "Bashkin\u0027s",
+            "Notes": null
+        },
+        {
+            "ID": 24,
+            "Server": 0,
+            "X": 7811,
+            "Y": -1821,
+            "Name": "Bashkin\u0027s Wharf",
+            "Notes": null
+        },
+        {
+            "ID": 446,
+            "Server": 0,
+            "X": 1189,
+            "Y": -3802,
+            "Name": "Basswood Hollow",
+            "Notes": null
+        },
+        {
+            "ID": 514,
+            "Server": 0,
+            "X": 934,
+            "Y": -1086,
+            "Name": "Bayside",
+            "Notes": null
+        },
+        {
+            "ID": 699,
+            "Server": 0,
+            "X": 3005,
+            "Y": -6221,
+            "Name": "Bearfoot Stonedown",
+            "Notes": null
+        },
+        {
+            "ID": 678,
+            "Server": 0,
+            "X": 3247,
+            "Y": -5951,
+            "Name": "Bearfoot Vinyard",
+            "Notes": null
+        },
+        {
+            "ID": 131,
+            "Server": 0,
+            "X": 5407,
+            "Y": -3213,
+            "Name": "Bella Vista",
+            "Notes": null
+        },
+        {
+            "ID": 722,
+            "Server": 0,
+            "X": 7095,
+            "Y": -2041,
+            "Name": "Belonga Mar",
+            "Notes": null
+        },
+        {
+            "ID": 382,
+            "Server": 0,
+            "X": 1858,
+            "Y": -7084,
+            "Name": "Bimini Bay",
+            "Notes": null
+        },
+        {
+            "ID": 516,
+            "Server": 0,
+            "X": 896,
+            "Y": -1010,
+            "Name": "Birka",
+            "Notes": null
+        },
+        {
+            "ID": 710,
+            "Server": 0,
+            "X": 4987,
+            "Y": -1593,
+            "Name": "Bjerkely ",
+            "Notes": null
+        },
+        {
+            "ID": 576,
+            "Server": 0,
+            "X": 468,
+            "Y": -7240,
+            "Name": "Black Bridgade Port",
+            "Notes": null
+        },
+        {
+            "ID": 712,
+            "Server": 0,
+            "X": 7882,
+            "Y": -2859,
+            "Name": "Black Castle",
+            "Notes": null
+        },
+        {
+            "ID": 245,
+            "Server": 0,
+            "X": 3510,
+            "Y": -2490,
+            "Name": "Black Flag Harbour",
+            "Notes": null
+        },
+        {
+            "ID": 300,
+            "Server": 0,
+            "X": 2520,
+            "Y": -6196,
+            "Name": "Black Forest Bazaar",
+            "Notes": null
+        },
+        {
+            "ID": 301,
+            "Server": 0,
+            "X": 2522,
+            "Y": -6125,
+            "Name": "Black Forest Nemeton",
+            "Notes": null
+        },
+        {
+            "ID": 430,
+            "Server": 0,
+            "X": 1586,
+            "Y": -3536,
+            "Name": "Black Hill",
+            "Notes": null
+        },
+        {
+            "ID": 307,
+            "Server": 0,
+            "X": 3039,
+            "Y": -5998,
+            "Name": "Blackthorn Port",
+            "Notes": null
+        },
+        {
+            "ID": 719,
+            "Server": 0,
+            "X": 3938,
+            "Y": -840,
+            "Name": "Blissful Folly",
+            "Notes": null
+        },
+        {
+            "ID": 102,
+            "Server": 0,
+            "X": 6381,
+            "Y": -603,
+            "Name": "Bloody Barony",
+            "Notes": null
+        },
+        {
+            "ID": 33,
+            "Server": 0,
+            "X": 6562,
+            "Y": -2310,
+            "Name": "Boglodotia",
+            "Notes": null
+        },
+        {
+            "ID": 372,
+            "Server": 0,
+            "X": 4691,
+            "Y": -7261,
+            "Name": "Boiianov",
+            "Notes": null
+        },
+        {
+            "ID": 84,
+            "Server": 0,
+            "X": 7674,
+            "Y": -6511,
+            "Name": "Borderlands",
+            "Notes": null
+        },
+        {
+            "ID": 177,
+            "Server": 0,
+            "X": 6384,
+            "Y": -5894,
+            "Name": "Bradda Cove",
+            "Notes": null
+        },
+        {
+            "ID": 769,
+            "Server": 0,
+            "X": 5088,
+            "Y": -889,
+            "Name": "Brightaze Necropolis",
+            "Notes": null
+        },
+        {
+            "ID": 208,
+            "Server": 0,
+            "X": 5150,
+            "Y": -7160,
+            "Name": "Brisvegas",
+            "Notes": null
+        },
+        {
+            "ID": 809,
+            "Server": 0,
+            "X": 3647,
+            "Y": 7229,
+            "Name": "Broken Woods",
+            "Notes": null
+        },
+        {
+            "ID": 104,
+            "Server": 0,
+            "X": 6662,
+            "Y": -672,
+            "Name": "Burtzena",
+            "Notes": null
+        },
+        {
+            "ID": 46,
+            "Server": 0,
+            "X": 7371,
+            "Y": -3702,
+            "Name": "Caer Blaidd",
+            "Notes": null
+        },
+        {
+            "ID": 14,
+            "Server": 0,
+            "X": 7639,
+            "Y": -1177,
+            "Name": "Caer Prydain",
+            "Notes": null
+        },
+        {
+            "ID": 368,
+            "Server": 0,
+            "X": 4646,
+            "Y": -7672,
+            "Name": "Cair Lorn",
+            "Notes": null
+        },
+        {
+            "ID": 708,
+            "Server": 0,
+            "X": 921,
+            "Y": -3378,
+            "Name": "Calaway Basin",
+            "Notes": null
+        },
+        {
+            "ID": 164,
+            "Server": 0,
+            "X": 5134,
+            "Y": -5760,
+            "Name": "Carter",
+            "Notes": null
+        },
+        {
+            "ID": 225,
+            "Server": 0,
+            "X": 4665,
+            "Y": -313,
+            "Name": "Castle Black",
+            "Notes": null
+        },
+        {
+            "ID": 755,
+            "Server": 0,
+            "X": 7841,
+            "Y": -4100,
+            "Name": "Castle Capelin",
+            "Notes": null
+        },
+        {
+            "ID": 359,
+            "Server": 0,
+            "X": 3551,
+            "Y": -7169,
+            "Name": "Castle Darkhold",
+            "Notes": null
+        },
+        {
+            "ID": 326,
+            "Server": 0,
+            "X": 3263,
+            "Y": -6295,
+            "Name": "Castleedge",
+            "Notes": null
+        },
+        {
+            "ID": 75,
+            "Server": 0,
+            "X": 7776,
+            "Y": -5972,
+            "Name": "Cedar Trade",
+            "Notes": null
+        },
+        {
+            "ID": 718,
+            "Server": 0,
+            "X": 4592,
+            "Y": -6870,
+            "Name": "Ceres",
+            "Notes": null
+        },
+        {
+            "ID": 478,
+            "Server": 0,
+            "X": 1646,
+            "Y": -2858,
+            "Name": "Clay View Castle",
+            "Notes": null
+        },
+        {
+            "ID": 656,
+            "Server": 0,
+            "X": 1722,
+            "Y": -4694,
+            "Name": "Claymore Banks",
+            "Notes": null
+        },
+        {
+            "ID": 792,
+            "Server": 0,
+            "X": 6085,
+            "Y": -6594,
+            "Name": "Clear Lake Manor",
+            "Notes": null
+        },
+        {
+            "ID": 793,
+            "Server": 0,
+            "X": 6104,
+            "Y": -6641,
+            "Name": "Clear Lake Nature and Culture Center",
+            "Notes": null
+        },
+        {
+            "ID": 805,
+            "Server": 0,
+            "X": 1555,
+            "Y": -7056,
+            "Name": "Clearwater Port",
+            "Notes": null
+        },
+        {
+            "ID": 348,
+            "Server": 0,
+            "X": 3645,
+            "Y": -6909,
+            "Name": "Clerics Hollow",
+            "Notes": null
+        },
+        {
+            "ID": 350,
+            "Server": 0,
+            "X": 3041,
+            "Y": -7137,
+            "Name": "Clerics Point",
+            "Notes": null
+        },
+        {
+            "ID": 403,
+            "Server": 0,
+            "X": 1124,
+            "Y": -6207,
+            "Name": "Cloud City",
+            "Notes": null
+        },
+        {
+            "ID": 211,
+            "Server": 0,
+            "X": 5676,
+            "Y": -1220,
+            "Name": "Cold Water Bay",
+            "Notes": null
+        },
+        {
+            "ID": 513,
+            "Server": 0,
+            "X": 1488,
+            "Y": -1660,
+            "Name": "Comfort Ville",
+            "Notes": null
+        },
+        {
+            "ID": 335,
+            "Server": 0,
+            "X": 3267,
+            "Y": -6791,
+            "Name": "Copper Hall",
+            "Notes": null
+        },
+        {
+            "ID": 455,
+            "Server": 0,
+            "X": 775,
+            "Y": -3153,
+            "Name": "Cove of Youth",
+            "Notes": null
+        },
+        {
+            "ID": 395,
+            "Server": 0,
+            "X": 2001,
+            "Y": -6109,
+            "Name": "Cowshark Cove",
+            "Notes": null
+        },
+        {
+            "ID": 663,
+            "Server": 0,
+            "X": 2028,
+            "Y": -4931,
+            "Name": "Crater of the Dawn Claymation",
+            "Notes": null
+        },
+        {
+            "ID": 662,
+            "Server": 0,
+            "X": 2230,
+            "Y": -5192,
+            "Name": "Crater of the Dawn Famrs",
+            "Notes": null
+        },
+        {
+            "ID": 661,
+            "Server": 0,
+            "X": 2268,
+            "Y": -5179,
+            "Name": "Crater of the Dawn Outpost",
+            "Notes": null
+        },
+        {
+            "ID": 664,
+            "Server": 0,
+            "X": 498,
+            "Y": -3875,
+            "Name": "Crater of the Dawn Shipping and Receiving",
+            "Notes": null
+        },
+        {
+            "ID": 745,
+            "Server": 0,
+            "X": 2048,
+            "Y": -6385,
+            "Name": "Crimson Faux Pointe",
+            "Notes": null
+        },
+        {
+            "ID": 641,
+            "Server": 0,
+            "X": 3002,
+            "Y": -2030,
+            "Name": "Crocodile Isle",
+            "Notes": null
+        },
+        {
+            "ID": 207,
+            "Server": 0,
+            "X": 5070,
+            "Y": -7349,
+            "Name": "Cuain Su ilce",
+            "Notes": null
+        },
+        {
+            "ID": 445,
+            "Server": 0,
+            "X": 555,
+            "Y": -3820,
+            "Name": "Damine\u0027s Port",
+            "Notes": null
+        },
+        {
+            "ID": 623,
+            "Server": 0,
+            "X": 6829,
+            "Y": -2568,
+            "Name": "Darigan",
+            "Notes": null
+        },
+        {
+            "ID": 256,
+            "Server": 0,
+            "X": 2932,
+            "Y": -3094,
+            "Name": "Darkfire Stronghold",
+            "Notes": null
+        },
+        {
+            "ID": 527,
+            "Server": 0,
+            "X": 1416,
+            "Y": -814,
+            "Name": "Darkfjord Crossing",
+            "Notes": null
+        },
+        {
+            "ID": 528,
+            "Server": 0,
+            "X": 1442,
+            "Y": -827,
+            "Name": "Darkfjord Landing",
+            "Notes": null
+        },
+        {
+            "ID": 812,
+            "Server": 0,
+            "X": 930,
+            "Y": -3200,
+            "Name": "Darkhold",
+            "Notes": null
+        },
+        {
+            "ID": 61,
+            "Server": 0,
+            "X": 7596,
+            "Y": -5442,
+            "Name": "Darknor Castle",
+            "Notes": null
+        },
+        {
+            "ID": 60,
+            "Server": 0,
+            "X": 7531,
+            "Y": -5190,
+            "Name": "Darkspyre",
+            "Notes": null
+        },
+        {
+            "ID": 259,
+            "Server": 0,
+            "X": 4322,
+            "Y": -3348,
+            "Name": "Darq Falls",
+            "Notes": null
+        },
+        {
+            "ID": 107,
+            "Server": 0,
+            "X": 6605,
+            "Y": -692,
+            "Name": "Darq Tower",
+            "Notes": null
+        },
+        {
+            "ID": 121,
+            "Server": 0,
+            "X": 6320,
+            "Y": -1751,
+            "Name": "Dawn",
+            "Notes": null
+        },
+        {
+            "ID": 188,
+            "Server": 0,
+            "X": 6122,
+            "Y": -6974,
+            "Name": "Dead End Cove",
+            "Notes": null
+        },
+        {
+            "ID": 584,
+            "Server": 0,
+            "X": 880,
+            "Y": -7356,
+            "Name": "Deeprock",
+            "Notes": null
+        },
+        {
+            "ID": 486,
+            "Server": 0,
+            "X": 1759,
+            "Y": -2132,
+            "Name": "Devil\u0027s Ascension",
+            "Notes": null
+        },
+        {
+            "ID": 694,
+            "Server": 0,
+            "X": 7178,
+            "Y": -1647,
+            "Name": "Diamos",
+            "Notes": null
+        },
+        {
+            "ID": 555,
+            "Server": 0,
+            "X": 6884,
+            "Y": -4529,
+            "Name": "Diviner\u0027s Keep",
+            "Notes": null
+        },
+        {
+            "ID": 190,
+            "Server": 0,
+            "X": 6288,
+            "Y": -7240,
+            "Name": "Docklands",
+            "Notes": null
+        },
+        {
+            "ID": 709,
+            "Server": 0,
+            "X": 7057,
+            "Y": -951,
+            "Name": "Dominion Market",
+            "Notes": null
+        },
+        {
+            "ID": 635,
+            "Server": 0,
+            "X": 6867,
+            "Y": -756,
+            "Name": "Drachenbucht",
+            "Notes": null
+        },
+        {
+            "ID": 419,
+            "Server": 0,
+            "X": 2176,
+            "Y": -4646,
+            "Name": "Dragon Perch",
+            "Notes": null
+        },
+        {
+            "ID": 401,
+            "Server": 0,
+            "X": 1191,
+            "Y": -6262,
+            "Name": "Dragon\u0027s Lair",
+            "Notes": null
+        },
+        {
+            "ID": 96,
+            "Server": 0,
+            "X": 7700,
+            "Y": -7376,
+            "Name": "Dragontooth Island",
+            "Notes": null
+        },
+        {
+            "ID": 20,
+            "Server": 0,
+            "X": 7184,
+            "Y": -1667,
+            "Name": "Dreadfort",
+            "Notes": null
+        },
+        {
+            "ID": 103,
+            "Server": 0,
+            "X": 6259,
+            "Y": -783,
+            "Name": "Dreadwood Landing",
+            "Notes": null
+        },
+        {
+            "ID": 56,
+            "Server": 0,
+            "X": 7886,
+            "Y": -4665,
+            "Name": "Dream Stake",
+            "Notes": null
+        },
+        {
+            "ID": 684,
+            "Server": 0,
+            "X": 1642,
+            "Y": -3345,
+            "Name": "Dreamland",
+            "Notes": null
+        },
+        {
+            "ID": 706,
+            "Server": 0,
+            "X": 1739,
+            "Y": -6813,
+            "Name": "Drunken Sailor Harbor",
+            "Notes": null
+        },
+        {
+            "ID": 322,
+            "Server": 0,
+            "X": 2430,
+            "Y": -6861,
+            "Name": "Du Sundavar Freohr",
+            "Notes": null
+        },
+        {
+            "ID": 736,
+            "Server": 0,
+            "X": 7200,
+            "Y": -1729,
+            "Name": "Duck Blind",
+            "Notes": null
+        },
+        {
+            "ID": 773,
+            "Server": 0,
+            "X": 5142,
+            "Y": -1184,
+            "Name": "Dunlap Hill",
+            "Notes": null
+        },
+        {
+            "ID": 609,
+            "Server": 0,
+            "X": 7150,
+            "Y": -2332,
+            "Name": "Dusky Bay",
+            "Notes": null
+        },
+        {
+            "ID": 109,
+            "Server": 0,
+            "X": 6627,
+            "Y": -1195,
+            "Name": "Dusty\u0027s Lakeside Retreat",
+            "Notes": null
+        },
+        {
+            "ID": 47,
+            "Server": 0,
+            "X": 7498,
+            "Y": -3793,
+            "Name": "Dzolo Gon",
+            "Notes": null
+        },
+        {
+            "ID": 49,
+            "Server": 0,
+            "X": 7789,
+            "Y": -4331,
+            "Name": "East Port",
+            "Notes": null
+        },
+        {
+            "ID": 217,
+            "Server": 0,
+            "X": 5141,
+            "Y": -300,
+            "Name": "Eastwatch-by-the-Sea",
+            "Notes": null
+        },
+        {
+            "ID": 779,
+            "Server": 0,
+            "X": 625,
+            "Y": -7210,
+            "Name": "Ebonheart Trading Company",
+            "Notes": null
+        },
+        {
+            "ID": 688,
+            "Server": 0,
+            "X": 3484,
+            "Y": -6204,
+            "Name": "Ebony Veil",
+            "Notes": null
+        },
+        {
+            "ID": 582,
+            "Server": 0,
+            "X": 746,
+            "Y": -7485,
+            "Name": "Eden",
+            "Notes": null
+        },
+        {
+            "ID": 313,
+            "Server": 0,
+            "X": 3102,
+            "Y": -5944,
+            "Name": "Edgewood",
+            "Notes": null
+        },
+        {
+            "ID": 232,
+            "Server": 0,
+            "X": 3123,
+            "Y": -285,
+            "Name": "Edhellond",
+            "Notes": "Edit req. Monsterix"
+        },
+        {
+            "ID": 249,
+            "Server": 0,
+            "X": 3032,
+            "Y": -2604,
+            "Name": "Eildon\u0027s Folly",
+            "Notes": null
+        },
+        {
+            "ID": 814,
+            "Server": 0,
+            "X": 7569,
+            "Y": -6116,
+            "Name": "Elderstock Castle",
+            "Notes": null
+        },
+        {
+            "ID": 685,
+            "Server": 0,
+            "X": 5709,
+            "Y": -6559,
+            "Name": "Eletha",
+            "Notes": null
+        },
+        {
+            "ID": 59,
+            "Server": 0,
+            "X": 7349,
+            "Y": -4682,
+            "Name": "Elysian Valley",
+            "Notes": null
+        },
+        {
+            "ID": 205,
+            "Server": 0,
+            "X": 5115,
+            "Y": -7538,
+            "Name": "Emberwynn",
+            "Notes": null
+        },
+        {
+            "ID": 191,
+            "Server": 0,
+            "X": 6318,
+            "Y": -7066,
+            "Name": "Enchantment",
+            "Notes": null
+        },
+        {
+            "ID": 686,
+            "Server": 0,
+            "X": 5743,
+            "Y": -6525,
+            "Name": "Epheus",
+            "Notes": null
+        },
+        {
+            "ID": 505,
+            "Server": 0,
+            "X": 686,
+            "Y": -1620,
+            "Name": "Equipforge Peak",
+            "Notes": null
+        },
+        {
+            "ID": 798,
+            "Server": 0,
+            "X": 3336,
+            "Y": -2890,
+            "Name": "Esgaroth Upon the Long Lake",
+            "Notes": null
+        },
+        {
+            "ID": 553,
+            "Server": 0,
+            "X": 7409,
+            "Y": -6421,
+            "Name": "Esteron",
+            "Notes": null
+        },
+        {
+            "ID": 727,
+            "Server": 0,
+            "X": 7409,
+            "Y": -6378,
+            "Name": "Esteron by Glasshollow Market",
+            "Notes": null
+        },
+        {
+            "ID": 80,
+            "Server": 0,
+            "X": 7466,
+            "Y": -6417,
+            "Name": "Esteron Market",
+            "Notes": null
+        },
+        {
+            "ID": 637,
+            "Server": 0,
+            "X": 7304,
+            "Y": -6798,
+            "Name": "Estonia",
+            "Notes": null
+        },
+        {
+            "ID": 309,
+            "Server": 0,
+            "X": 3097,
+            "Y": -6008,
+            "Name": "Evergreen Cove",
+            "Notes": null
+        },
+        {
+            "ID": 312,
+            "Server": 0,
+            "X": 3099,
+            "Y": -5986,
+            "Name": "Evergreen Glade",
+            "Notes": null
+        },
+        {
+            "ID": 659,
+            "Server": 0,
+            "X": 7102,
+            "Y": -3287,
+            "Name": "Everian Shores",
+            "Notes": null
+        },
+        {
+            "ID": 735,
+            "Server": 0,
+            "X": 1675,
+            "Y": -3415,
+            "Name": "Factional Fight Village",
+            "Notes": null
+        },
+        {
+            "ID": 57,
+            "Server": 0,
+            "X": 7812,
+            "Y": -5104,
+            "Name": "Fairview",
+            "Notes": null
+        },
+        {
+            "ID": 389,
+            "Server": 0,
+            "X": 1662,
+            "Y": -6740,
+            "Name": "Fallen Guard",
+            "Notes": null
+        },
+        {
+            "ID": 130,
+            "Server": 0,
+            "X": 5860,
+            "Y": -2790,
+            "Name": "False Hope Heights",
+            "Notes": null
+        },
+        {
+            "ID": 689,
+            "Server": 0,
+            "X": 558,
+            "Y": -2505,
+            "Name": "Fedria",
+            "Notes": null
+        },
+        {
+            "ID": 690,
+            "Server": 0,
+            "X": 487,
+            "Y": -2531,
+            "Name": "Fedria Harbor",
+            "Notes": null
+        },
+        {
+            "ID": 691,
+            "Server": 0,
+            "X": 500,
+            "Y": -2680,
+            "Name": "Fedria Mining Outpost",
+            "Notes": null
+        },
+        {
+            "ID": 525,
+            "Server": 0,
+            "X": 1487,
+            "Y": -989,
+            "Name": "Feels Like Home",
+            "Notes": null
+        },
+        {
+            "ID": 293,
+            "Server": 0,
+            "X": 2864,
+            "Y": -6457,
+            "Name": "Fern Tree",
+            "Notes": null
+        },
+        {
+            "ID": 794,
+            "Server": 0,
+            "X": 6152,
+            "Y": -6627,
+            "Name": "Ferndean Manor",
+            "Notes": null
+        },
+        {
+            "ID": 658,
+            "Server": 0,
+            "X": 1640,
+            "Y": -6930,
+            "Name": "Finality",
+            "Notes": null
+        },
+        {
+            "ID": 820,
+            "Server": 0,
+            "X": 2845,
+            "Y": -837,
+            "Name": "Fingerbum Cove",
+            "Notes": null
+        },
+        {
+            "ID": 581,
+            "Server": 0,
+            "X": 728,
+            "Y": -7446,
+            "Name": "Fir Market",
+            "Notes": null
+        },
+        {
+            "ID": 654,
+            "Server": 0,
+            "X": 726,
+            "Y": -7295,
+            "Name": "Fir Valley",
+            "Notes": null
+        },
+        {
+            "ID": 716,
+            "Server": 0,
+            "X": 1431,
+            "Y": -2969,
+            "Name": "Fire Horse Kingdom",
+            "Notes": null
+        },
+        {
+            "ID": 262,
+            "Server": 0,
+            "X": 2822,
+            "Y": -3227,
+            "Name": "Firelight City",
+            "Notes": null
+        },
+        {
+            "ID": 680,
+            "Server": 0,
+            "X": 7010,
+            "Y": -744,
+            "Name": "Firhaven Quay",
+            "Notes": null
+        },
+        {
+            "ID": 88,
+            "Server": 0,
+            "X": 7537,
+            "Y": -6803,
+            "Name": "Firwood Coast",
+            "Notes": null
+        },
+        {
+            "ID": 753,
+            "Server": 0,
+            "X": 4718,
+            "Y": -3465,
+            "Name": "Fisherman\u0027s Wharf",
+            "Notes": null
+        },
+        {
+            "ID": 263,
+            "Server": 0,
+            "X": 2692,
+            "Y": -3282,
+            "Name": "Fogshore",
+            "Notes": null
+        },
+        {
+            "ID": 468,
+            "Server": 0,
+            "X": 2156,
+            "Y": -3209,
+            "Name": "Fogshore Canal",
+            "Notes": null
+        },
+        {
+            "ID": 239,
+            "Server": 0,
+            "X": 4030,
+            "Y": -1904,
+            "Name": "For Tuna",
+            "Notes": null
+        },
+        {
+            "ID": 605,
+            "Server": 0,
+            "X": 7279,
+            "Y": -1944,
+            "Name": "Forest Abby",
+            "Notes": null
+        },
+        {
+            "ID": 204,
+            "Server": 0,
+            "X": 5408,
+            "Y": -7447,
+            "Name": "Forge of Fallen Skies",
+            "Notes": null
+        },
+        {
+            "ID": 515,
+            "Server": 0,
+            "X": 982,
+            "Y": -1042,
+            "Name": "Forochel",
+            "Notes": null
+        },
+        {
+            "ID": 520,
+            "Server": 0,
+            "X": 1326,
+            "Y": -1260,
+            "Name": "Forsythian Conclave",
+            "Notes": null
+        },
+        {
+            "ID": 490,
+            "Server": 0,
+            "X": 2290,
+            "Y": -2500,
+            "Name": "Fort Derringer",
+            "Notes": null
+        },
+        {
+            "ID": 448,
+            "Server": 0,
+            "X": 494,
+            "Y": -3615,
+            "Name": "Fox",
+            "Notes": null
+        },
+        {
+            "ID": 557,
+            "Server": 0,
+            "X": 835,
+            "Y": -6772,
+            "Name": "Foxhollow Rest",
+            "Notes": null
+        },
+        {
+            "ID": 274,
+            "Server": 0,
+            "X": 2830,
+            "Y": -4638,
+            "Name": "Frankenburg",
+            "Notes": null
+        },
+        {
+            "ID": 443,
+            "Server": 0,
+            "X": 1384,
+            "Y": -3980,
+            "Name": "Freedich",
+            "Notes": null
+        },
+        {
+            "ID": 741,
+            "Server": 0,
+            "X": 1575,
+            "Y": -651,
+            "Name": "Glasshold Bulk Market",
+            "Notes": null
+        },
+        {
+            "ID": 526,
+            "Server": 0,
+            "X": 1579,
+            "Y": -772,
+            "Name": "Glasshollow",
+            "Notes": "Starter"
+        },
+        {
+            "ID": 532,
+            "Server": 0,
+            "X": 1500,
+            "Y": -725,
+            "Name": "Glasshollow Lagoon Market",
+            "Notes": null
+        },
+        {
+            "ID": 733,
+            "Server": 0,
+            "X": 1634,
+            "Y": -649,
+            "Name": "Glasshollow Market",
+            "Notes": null
+        },
+        {
+            "ID": 530,
+            "Server": 0,
+            "X": 1580,
+            "Y": -691,
+            "Name": "Glasshollow Public Market \u0026 Harbors",
+            "Notes": null
+        },
+        {
+            "ID": 512,
+            "Server": 0,
+            "X": 1448,
+            "Y": -1782,
+            "Name": "Glenden Wood",
+            "Notes": null
+        },
+        {
+            "ID": 210,
+            "Server": 0,
+            "X": 5272,
+            "Y": -7213,
+            "Name": "Global Mountain",
+            "Notes": null
+        },
+        {
+            "ID": 209,
+            "Server": 0,
+            "X": 5186,
+            "Y": -7202,
+            "Name": "Global Mountain - North",
+            "Notes": null
+        },
+        {
+            "ID": 30,
+            "Server": 0,
+            "X": 6754,
+            "Y": -2127,
+            "Name": "Gold Point",
+            "Notes": null
+        },
+        {
+            "ID": 531,
+            "Server": 0,
+            "X": 1535,
+            "Y": -699,
+            "Name": "Golden Glass",
+            "Notes": null
+        },
+        {
+            "ID": 106,
+            "Server": 0,
+            "X": 6605,
+            "Y": -692,
+            "Name": "Golden Port",
+            "Notes": null
+        },
+        {
+            "ID": 795,
+            "Server": 0,
+            "X": 788,
+            "Y": -6782,
+            "Name": "Goldshire ",
+            "Notes": null
+        },
+        {
+            "ID": 113,
+            "Server": 0,
+            "X": 6124,
+            "Y": -1272,
+            "Name": "Gotheim",
+            "Notes": null
+        },
+        {
+            "ID": 333,
+            "Server": 0,
+            "X": 3247,
+            "Y": -6668,
+            "Name": "Greenlegs",
+            "Notes": null
+        },
+        {
+            "ID": 808,
+            "Server": 0,
+            "X": 7145,
+            "Y": -2774,
+            "Name": "Greensteel Forge",
+            "Notes": null
+        },
+        {
+            "ID": 45,
+            "Server": 0,
+            "X": 7549,
+            "Y": -3523,
+            "Name": "Grey Gums",
+            "Notes": null
+        },
+        {
+            "ID": 127,
+            "Server": 0,
+            "X": 4700,
+            "Y": -3049,
+            "Name": "Greymead",
+            "Notes": "Starter"
+        },
+        {
+            "ID": 729,
+            "Server": 0,
+            "X": 4701,
+            "Y": -2994,
+            "Name": "Greymead by Glasshollow Market",
+            "Notes": null
+        },
+        {
+            "ID": 365,
+            "Server": 0,
+            "X": 4370,
+            "Y": -7782,
+            "Name": "Gulf of Heaven",
+            "Notes": null
+        },
+        {
+            "ID": 275,
+            "Server": 0,
+            "X": 3706,
+            "Y": -5114,
+            "Name": "Halifax",
+            "Notes": null
+        },
+        {
+            "ID": 369,
+            "Server": 0,
+            "X": 4526,
+            "Y": -7378,
+            "Name": "Hall of the Mountain King",
+            "Notes": null
+        },
+        {
+            "ID": 439,
+            "Server": 0,
+            "X": 2200,
+            "Y": -4110,
+            "Name": "Hammer\u0027s Eye",
+            "Notes": null
+        },
+        {
+            "ID": 43,
+            "Server": 0,
+            "X": 7044,
+            "Y": -3339,
+            "Name": "Hanza",
+            "Notes": null
+        },
+        {
+            "ID": 82,
+            "Server": 0,
+            "X": 7642,
+            "Y": -6456,
+            "Name": "Harmondale",
+            "Notes": null
+        },
+        {
+            "ID": 193,
+            "Server": 0,
+            "X": 6762,
+            "Y": -6540,
+            "Name": "Haven",
+            "Notes": null
+        },
+        {
+            "ID": 192,
+            "Server": 0,
+            "X": 6742,
+            "Y": -6506,
+            "Name": "Haven Farm",
+            "Notes": null
+        },
+        {
+            "ID": 21,
+            "Server": 0,
+            "X": 7731,
+            "Y": -1669,
+            "Name": "Hazard Cove",
+            "Notes": null
+        },
+        {
+            "ID": 277,
+            "Server": 0,
+            "X": 4006,
+            "Y": -5300,
+            "Name": "Hazedome",
+            "Notes": null
+        },
+        {
+            "ID": 493,
+            "Server": 0,
+            "X": 794,
+            "Y": -2106,
+            "Name": "Heiro\u0027s Paradise Lake",
+            "Notes": null
+        },
+        {
+            "ID": 117,
+            "Server": 0,
+            "X": 6441,
+            "Y": -1714,
+            "Name": "Hermit\u0027s Haven",
+            "Notes": null
+        },
+        {
+            "ID": 63,
+            "Server": 0,
+            "X": 7720,
+            "Y": -5762,
+            "Name": "Hibernia",
+            "Notes": null
+        },
+        {
+            "ID": 783,
+            "Server": 0,
+            "X": 1900,
+            "Y": -4980,
+            "Name": "Hidden Acres",
+            "Notes": null
+        },
+        {
+            "ID": 440,
+            "Server": 0,
+            "X": 2136,
+            "Y": -4136,
+            "Name": "Hidden Valley",
+            "Notes": null
+        },
+        {
+            "ID": 44,
+            "Server": 0,
+            "X": 7177,
+            "Y": -3469,
+            "Name": "Hidden Valley Harbor \u0026 Market",
+            "Notes": null
+        },
+        {
+            "ID": 394,
+            "Server": 0,
+            "X": 1584,
+            "Y": -6483,
+            "Name": "Hideaway",
+            "Notes": null
+        },
+        {
+            "ID": 111,
+            "Server": 0,
+            "X": 6686,
+            "Y": -1297,
+            "Name": "High Dale",
+            "Notes": null
+        },
+        {
+            "ID": 441,
+            "Server": 0,
+            "X": 2112,
+            "Y": -4266,
+            "Name": "Highclere",
+            "Notes": null
+        },
+        {
+            "ID": 160,
+            "Server": 0,
+            "X": 6428,
+            "Y": -4715,
+            "Name": "Highland Meadows",
+            "Notes": null
+        },
+        {
+            "ID": 782,
+            "Server": 0,
+            "X": 643,
+            "Y": -7172,
+            "Name": "Hillside ",
+            "Notes": null
+        },
+        {
+            "ID": 431,
+            "Server": 0,
+            "X": 1724,
+            "Y": -3597,
+            "Name": "Hillside Preserve",
+            "Notes": null
+        },
+        {
+            "ID": 238,
+            "Server": 0,
+            "X": 4448,
+            "Y": -1636,
+            "Name": "Hillside Tarry",
+            "Notes": null
+        },
+        {
+            "ID": 11,
+            "Server": 0,
+            "X": 6905,
+            "Y": -2187,
+            "Name": "Hindleap",
+            "Notes": null
+        },
+        {
+            "ID": 139,
+            "Server": 0,
+            "X": 5028,
+            "Y": -3436,
+            "Name": "Hippie Villa",
+            "Notes": null
+        },
+        {
+            "ID": 503,
+            "Server": 0,
+            "X": 1822,
+            "Y": -1256,
+            "Name": "Hispania",
+            "Notes": null
+        },
+        {
+            "ID": 621,
+            "Server": 0,
+            "X": 6836,
+            "Y": -2116,
+            "Name": "Hobbit\u0027s Heaven",
+            "Notes": null
+        },
+        {
+            "ID": 48,
+            "Server": 0,
+            "X": 7905,
+            "Y": -4244,
+            "Name": "Hollow Island",
+            "Notes": null
+        },
+        {
+            "ID": 449,
+            "Server": 0,
+            "X": 370,
+            "Y": -3442,
+            "Name": "Hollowick",
+            "Notes": null
+        },
+        {
+            "ID": 184,
+            "Server": 0,
+            "X": 5907,
+            "Y": -6622,
+            "Name": "Honey Bay",
+            "Notes": null
+        },
+        {
+            "ID": 467,
+            "Server": 0,
+            "X": 2140,
+            "Y": -3227,
+            "Name": "House of Gunn",
+            "Notes": null
+        },
+        {
+            "ID": 522,
+            "Server": 0,
+            "X": 1381,
+            "Y": -1084,
+            "Name": "Hueco Mundo",
+            "Notes": null
+        },
+        {
+            "ID": 747,
+            "Server": 0,
+            "X": 7741,
+            "Y": -1940,
+            "Name": "Icarium\u0027s Getaway",
+            "Notes": null
+        },
+        {
+            "ID": 452,
+            "Server": 0,
+            "X": 433,
+            "Y": -3037,
+            "Name": "In Tha Cut",
+            "Notes": null
+        },
+        {
+            "ID": 179,
+            "Server": 0,
+            "X": 6852,
+            "Y": -5874,
+            "Name": "Iron Moors",
+            "Notes": null
+        },
+        {
+            "ID": 813,
+            "Server": 0,
+            "X": 3183,
+            "Y": -1611,
+            "Name": "Iron Pheonix",
+            "Notes": null
+        },
+        {
+            "ID": 87,
+            "Server": 0,
+            "X": 7594,
+            "Y": -6770,
+            "Name": "Irule Farms",
+            "Notes": null
+        },
+        {
+            "ID": 388,
+            "Server": 0,
+            "X": 1510,
+            "Y": -6726,
+            "Name": "Island of Misfit Wombats",
+            "Notes": null
+        },
+        {
+            "ID": 652,
+            "Server": 0,
+            "X": 4711,
+            "Y": -2357,
+            "Name": "Isle Of Wonders",
+            "Notes": null
+        },
+        {
+            "ID": 381,
+            "Server": 0,
+            "X": 1832,
+            "Y": -7034,
+            "Name": "Islet of Gondoa",
+            "Notes": null
+        },
+        {
+            "ID": 1,
+            "Server": 0,
+            "X": 6533,
+            "Y": -1972,
+            "Name": "Jacks\u0027s Canal Park",
+            "Notes": "Initial data by Jackjones"
+        },
+        {
+            "ID": 824,
+            "Server": 0,
+            "X": 798,
+            "Y": -2048,
+            "Name": "Jellyfish Lagoon",
+            "Notes": null
+        },
+        {
+            "ID": 491,
+            "Server": 0,
+            "X": 722,
+            "Y": -2114,
+            "Name": "Jellyfish Outpost",
+            "Notes": null
+        },
+        {
+            "ID": 825,
+            "Server": 0,
+            "X": 806,
+            "Y": -2039,
+            "Name": "Jellyfish Ridge",
+            "Notes": null
+        },
+        {
+            "ID": 648,
+            "Server": 0,
+            "X": 600,
+            "Y": -5336,
+            "Name": "Journey",
+            "Notes": null
+        },
+        {
+            "ID": 631,
+            "Server": 0,
+            "X": 6705,
+            "Y": -2318,
+            "Name": "Just Another Settlement",
+            "Notes": null
+        },
+        {
+            "ID": 342,
+            "Server": 0,
+            "X": 3289,
+            "Y": -7019,
+            "Name": "Kalambaka",
+            "Notes": null
+        },
+        {
+            "ID": 339,
+            "Server": 0,
+            "X": 3428,
+            "Y": -6842,
+            "Name": "Kalambaka Tunnel",
+            "Notes": null
+        },
+        {
+            "ID": 343,
+            "Server": 0,
+            "X": 3242,
+            "Y": -7030,
+            "Name": "Kalandoor",
+            "Notes": null
+        },
+        {
+            "ID": 347,
+            "Server": 0,
+            "X": 3181,
+            "Y": -7012,
+            "Name": "Kalawaka",
+            "Notes": null
+        },
+        {
+            "ID": 534,
+            "Server": 0,
+            "X": 1612,
+            "Y": -839,
+            "Name": "Kamelott",
+            "Notes": null
+        },
+        {
+            "ID": 634,
+            "Server": 0,
+            "X": 4091,
+            "Y": -5161,
+            "Name": "Karak",
+            "Notes": null
+        },
+        {
+            "ID": 771,
+            "Server": 0,
+            "X": 4734,
+            "Y": -1052,
+            "Name": "Karnakia",
+            "Notes": null
+        },
+        {
+            "ID": 423,
+            "Server": 0,
+            "X": 332,
+            "Y": -4713,
+            "Name": "Kernow Dockland",
+            "Notes": null
+        },
+        {
+            "ID": 738,
+            "Server": 0,
+            "X": 498,
+            "Y": -6976,
+            "Name": "Key West",
+            "Notes": null
+        },
+        {
+            "ID": 821,
+            "Server": 0,
+            "X": 747,
+            "Y": -6818,
+            "Name": "Khazad Dum",
+            "Notes": null
+        },
+        {
+            "ID": 214,
+            "Server": 0,
+            "X": 5288,
+            "Y": -552,
+            "Name": "Killing for Food Bay",
+            "Notes": null
+        },
+        {
+            "ID": 679,
+            "Server": 0,
+            "X": 3157,
+            "Y": -5972,
+            "Name": "Kingsport Docks",
+            "Notes": null
+        },
+        {
+            "ID": 770,
+            "Server": 0,
+            "X": 5650,
+            "Y": -3100,
+            "Name": "Kittenhold",
+            "Notes": null
+        },
+        {
+            "ID": 345,
+            "Server": 0,
+            "X": 3320,
+            "Y": -7035,
+            "Name": "Kove",
+            "Notes": null
+        },
+        {
+            "ID": 667,
+            "Server": 0,
+            "X": 4309,
+            "Y": -7317,
+            "Name": "Kraftsburg",
+            "Notes": null
+        },
+        {
+            "ID": 551,
+            "Server": 0,
+            "X": 4832,
+            "Y": -2676,
+            "Name": "Kristopia-The Applemead Acquisition",
+            "Notes": null
+        },
+        {
+            "ID": 687,
+            "Server": 0,
+            "X": 1951,
+            "Y": -4364,
+            "Name": "Kuznia",
+            "Notes": null
+        },
+        {
+            "ID": 31,
+            "Server": 0,
+            "X": 7682,
+            "Y": -2048,
+            "Name": "La Croix",
+            "Notes": null
+        },
+        {
+            "ID": 175,
+            "Server": 0,
+            "X": 6322,
+            "Y": -5952,
+            "Name": "La Verna",
+            "Notes": null
+        },
+        {
+            "ID": 714,
+            "Server": 0,
+            "X": 7220,
+            "Y": -2166,
+            "Name": "Lakeside ",
+            "Notes": null
+        },
+        {
+            "ID": 280,
+            "Server": 0,
+            "X": 3856,
+            "Y": -5668,
+            "Name": "Laketown Resort",
+            "Notes": null
+        },
+        {
+            "ID": 110,
+            "Server": 0,
+            "X": 6607,
+            "Y": -1225,
+            "Name": "Lakeview",
+            "Notes": null
+        },
+        {
+            "ID": 58,
+            "Server": 0,
+            "X": 7397,
+            "Y": -4765,
+            "Name": "Land of Shadows",
+            "Notes": null
+        },
+        {
+            "ID": 540,
+            "Server": 0,
+            "X": 2402,
+            "Y": -446,
+            "Name": "Land of Souls",
+            "Notes": null
+        },
+        {
+            "ID": 124,
+            "Server": 0,
+            "X": 6559,
+            "Y": -3239,
+            "Name": "Last Hope",
+            "Notes": null
+        },
+        {
+            "ID": 539,
+            "Server": 0,
+            "X": 2578,
+            "Y": -526,
+            "Name": "Last Temptation",
+            "Notes": null
+        },
+        {
+            "ID": 785,
+            "Server": 0,
+            "X": 5796,
+            "Y": -7540,
+            "Name": "Lavendar Flats",
+            "Notes": null
+        },
+        {
+            "ID": 698,
+            "Server": 0,
+            "X": 771,
+            "Y": -5562,
+            "Name": "Lavender Hill ",
+            "Notes": null
+        },
+        {
+            "ID": 475,
+            "Server": 0,
+            "X": 1342,
+            "Y": -2954,
+            "Name": "Lavender Hillside",
+            "Notes": null
+        },
+        {
+            "ID": 474,
+            "Server": 0,
+            "X": 1356,
+            "Y": -3000,
+            "Name": "Lavender Sunset",
+            "Notes": null
+        },
+        {
+            "ID": 450,
+            "Server": 0,
+            "X": 736,
+            "Y": -3459,
+            "Name": "Leather City",
+            "Notes": null
+        },
+        {
+            "ID": 801,
+            "Server": 0,
+            "X": 3570,
+            "Y": -7063,
+            "Name": "Lemon Grove",
+            "Notes": null
+        },
+        {
+            "ID": 802,
+            "Server": 0,
+            "X": 3570,
+            "Y": -7063,
+            "Name": "Lemon Grove",
+            "Notes": null
+        },
+        {
+            "ID": 762,
+            "Server": 0,
+            "X": 4905,
+            "Y": -1000,
+            "Name": "Lemosa Canal Market",
+            "Notes": null
+        },
+        {
+            "ID": 233,
+            "Server": 0,
+            "X": 3186,
+            "Y": -648,
+            "Name": "Linden Cove",
+            "Notes": null
+        },
+        {
+            "ID": 429,
+            "Server": 0,
+            "X": 1525,
+            "Y": -4411,
+            "Name": "Lindental Feste",
+            "Notes": null
+        },
+        {
+            "ID": 438,
+            "Server": 0,
+            "X": 1824,
+            "Y": -4121,
+            "Name": "Linton",
+            "Notes": null
+        },
+        {
+            "ID": 730,
+            "Server": 0,
+            "X": 1825,
+            "Y": -4198,
+            "Name": "Linton by Glasshollow Market",
+            "Notes": null
+        },
+        {
+            "ID": 417,
+            "Server": 0,
+            "X": 1256,
+            "Y": -4814,
+            "Name": "Liss",
+            "Notes": null
+        },
+        {
+            "ID": 549,
+            "Server": 0,
+            "X": 4742,
+            "Y": -2544,
+            "Name": "Lochlorian",
+            "Notes": null
+        },
+        {
+            "ID": 627,
+            "Server": 0,
+            "X": 6633,
+            "Y": -2543,
+            "Name": "Lohema",
+            "Notes": null
+        },
+        {
+            "ID": 325,
+            "Server": 0,
+            "X": 3481,
+            "Y": -6435,
+            "Name": "Lormere",
+            "Notes": "Starter"
+        },
+        {
+            "ID": 721,
+            "Server": 0,
+            "X": 3429,
+            "Y": -6435,
+            "Name": "Lormere by Glasshollow Market",
+            "Notes": null
+        },
+        {
+            "ID": 90,
+            "Server": 0,
+            "X": 7431,
+            "Y": -6858,
+            "Name": "Lotus Outpost",
+            "Notes": null
+        },
+        {
+            "ID": 311,
+            "Server": 0,
+            "X": 3078,
+            "Y": -5925,
+            "Name": "Lucus Semper Viridis - Dryad Lake",
+            "Notes": null
+        },
+        {
+            "ID": 255,
+            "Server": 0,
+            "X": 2828,
+            "Y": -2926,
+            "Name": "Lynx Den",
+            "Notes": null
+        },
+        {
+            "ID": 754,
+            "Server": 0,
+            "X": 6931,
+            "Y": -7096,
+            "Name": "Maeander",
+            "Notes": null
+        },
+        {
+            "ID": 254,
+            "Server": 0,
+            "X": 4082,
+            "Y": -2534,
+            "Name": "Maes Knoll",
+            "Notes": null
+        },
+        {
+            "ID": 702,
+            "Server": 0,
+            "X": 850,
+            "Y": -5555,
+            "Name": "Mag Mell",
+            "Notes": null
+        },
+        {
+            "ID": 703,
+            "Server": 0,
+            "X": 844,
+            "Y": -5690,
+            "Name": "Mag Mell Docks",
+            "Notes": null
+        },
+        {
+            "ID": 705,
+            "Server": 0,
+            "X": 1381,
+            "Y": -6347,
+            "Name": "Maple Valley Retreat",
+            "Notes": null
+        },
+        {
+            "ID": 819,
+            "Server": 0,
+            "X": 3428,
+            "Y": -7326,
+            "Name": "Maradha",
+            "Notes": null
+        },
+        {
+            "ID": 649,
+            "Server": 0,
+            "X": 4835,
+            "Y": -2277,
+            "Name": "Metallic Wonders",
+            "Notes": null
+        },
+        {
+            "ID": 72,
+            "Server": 0,
+            "X": 7634,
+            "Y": -6000,
+            "Name": "Metis",
+            "Notes": null
+        },
+        {
+            "ID": 202,
+            "Server": 0,
+            "X": 6000,
+            "Y": -7343,
+            "Name": "Mibu\u0027s Domain",
+            "Notes": null
+        },
+        {
+            "ID": 695,
+            "Server": 0,
+            "X": 3281,
+            "Y": -3289,
+            "Name": "Midgard",
+            "Notes": null
+        },
+        {
+            "ID": 2,
+            "Server": 0,
+            "X": 4096,
+            "Y": -4096,
+            "Name": "Midpoint (mappers mark no deed)",
+            "Notes": "Just a temp entry"
+        },
+        {
+            "ID": 418,
+            "Server": 0,
+            "X": 1303,
+            "Y": -4577,
+            "Name": "Mill Hollow",
+            "Notes": null
+        },
+        {
+            "ID": 543,
+            "Server": 0,
+            "X": 2292,
+            "Y": -467,
+            "Name": "Milliways",
+            "Notes": null
+        },
+        {
+            "ID": 535,
+            "Server": 0,
+            "X": 1930,
+            "Y": -622,
+            "Name": "Miracle Mine",
+            "Notes": null
+        },
+        {
+            "ID": 458,
+            "Server": 0,
+            "X": 1108,
+            "Y": -3198,
+            "Name": "Misareaux Coast",
+            "Notes": null
+        },
+        {
+            "ID": 502,
+            "Server": 0,
+            "X": 1964,
+            "Y": -1618,
+            "Name": "Mistcastle Docks",
+            "Notes": null
+        },
+        {
+            "ID": 564,
+            "Server": 0,
+            "X": 1170,
+            "Y": -7024,
+            "Name": "Misty Cove Stables",
+            "Notes": null
+        },
+        {
+            "ID": 373,
+            "Server": 0,
+            "X": 2156,
+            "Y": -7284,
+            "Name": "Misty Rock Mountain",
+            "Notes": null
+        },
+        {
+            "ID": 78,
+            "Server": 0,
+            "X": 7614,
+            "Y": -6249,
+            "Name": "Modreth",
+            "Notes": null
+        },
+        {
+            "ID": 517,
+            "Server": 0,
+            "X": 904,
+            "Y": -896,
+            "Name": "Mointain Empire",
+            "Notes": null
+        },
+        {
+            "ID": 291,
+            "Server": 0,
+            "X": 2933,
+            "Y": -5790,
+            "Name": "Montreal",
+            "Notes": null
+        },
+        {
+            "ID": 624,
+            "Server": 0,
+            "X": 6785,
+            "Y": -2625,
+            "Name": "Moonlight Bay",
+            "Notes": null
+        },
+        {
+            "ID": 823,
+            "Server": 0,
+            "X": 628,
+            "Y": -5575,
+            "Name": "Moonlight Haven",
+            "Notes": null
+        },
+        {
+            "ID": 693,
+            "Server": 0,
+            "X": 673,
+            "Y": -5561,
+            "Name": "Moonlight\u0027s Castle",
+            "Notes": null
+        },
+        {
+            "ID": 155,
+            "Server": 0,
+            "X": 6338,
+            "Y": -5160,
+            "Name": "Moria-Two",
+            "Notes": null
+        },
+        {
+            "ID": 68,
+            "Server": 0,
+            "X": 7222,
+            "Y": -6198,
+            "Name": "Morrowind",
+            "Notes": null
+        },
+        {
+            "ID": 266,
+            "Server": 0,
+            "X": 2692,
+            "Y": -3745,
+            "Name": "Mottistone Trading Post",
+            "Notes": null
+        },
+        {
+            "ID": 26,
+            "Server": 0,
+            "X": 7677,
+            "Y": -2162,
+            "Name": "Mount Awesome",
+            "Notes": null
+        },
+        {
+            "ID": 132,
+            "Server": 0,
+            "X": 5102,
+            "Y": -3224,
+            "Name": "Mount Fuji\u0027s Pass",
+            "Notes": null
+        },
+        {
+            "ID": 120,
+            "Server": 0,
+            "X": 5838,
+            "Y": -1633,
+            "Name": "Mount Jericho",
+            "Notes": null
+        },
+        {
+            "ID": 317,
+            "Server": 0,
+            "X": 3198,
+            "Y": -5929,
+            "Name": "Mountain View",
+            "Notes": null
+        },
+        {
+            "ID": 606,
+            "Server": 0,
+            "X": 7538,
+            "Y": -1100,
+            "Name": "MrZodiac\u0027s",
+            "Notes": null
+        },
+        {
+            "ID": 318,
+            "Server": 0,
+            "X": 2570,
+            "Y": -6542,
+            "Name": "Mt Nyriandiol",
+            "Notes": null
+        },
+        {
+            "ID": 187,
+            "Server": 0,
+            "X": 5947,
+            "Y": -6810,
+            "Name": "Mubelsjedenn\u0027s Homestead",
+            "Notes": null
+        },
+        {
+            "ID": 356,
+            "Server": 0,
+            "X": 3346,
+            "Y": -7482,
+            "Name": "Mugiwara Pirates",
+            "Notes": null
+        },
+        {
+            "ID": 227,
+            "Server": 0,
+            "X": 4151,
+            "Y": -236,
+            "Name": "My Pants Harbour",
+            "Notes": null
+        },
+        {
+            "ID": 12,
+            "Server": 0,
+            "X": 6879,
+            "Y": -1956,
+            "Name": "Myst Port",
+            "Notes": null
+        },
+        {
+            "ID": 171,
+            "Server": 0,
+            "X": 6121,
+            "Y": -6079,
+            "Name": "Nacrautis Legion",
+            "Notes": null
+        },
+        {
+            "ID": 119,
+            "Server": 0,
+            "X": 5774,
+            "Y": -1622,
+            "Name": "Neocron",
+            "Notes": null
+        },
+        {
+            "ID": 715,
+            "Server": 0,
+            "X": 4802,
+            "Y": -1015,
+            "Name": "Nest Haven",
+            "Notes": null
+        },
+        {
+            "ID": 803,
+            "Server": 0,
+            "X": 6961,
+            "Y": -2015,
+            "Name": "Nest Haven Shipyard",
+            "Notes": null
+        },
+        {
+            "ID": 677,
+            "Server": 0,
+            "X": 4995,
+            "Y": -4815,
+            "Name": "Nettleschyr",
+            "Notes": null
+        },
+        {
+            "ID": 135,
+            "Server": 0,
+            "X": 6636,
+            "Y": -3798,
+            "Name": "Neverwinter Knights",
+            "Notes": null
+        },
+        {
+            "ID": 247,
+            "Server": 0,
+            "X": 3360,
+            "Y": -2550,
+            "Name": "New Ankh",
+            "Notes": null
+        },
+        {
+            "ID": 456,
+            "Server": 0,
+            "X": 1012,
+            "Y": -3220,
+            "Name": "New Azure Bay",
+            "Notes": null
+        },
+        {
+            "ID": 38,
+            "Server": 0,
+            "X": 7000,
+            "Y": -2903,
+            "Name": "New Eden",
+            "Notes": null
+        },
+        {
+            "ID": 37,
+            "Server": 0,
+            "X": 6709,
+            "Y": -2669,
+            "Name": "New Eden Harbour",
+            "Notes": null
+        },
+        {
+            "ID": 422,
+            "Server": 0,
+            "X": 163,
+            "Y": -4834,
+            "Name": "New Gullaris",
+            "Notes": null
+        },
+        {
+            "ID": 303,
+            "Server": 0,
+            "X": 2709,
+            "Y": -6005,
+            "Name": "New Sparta",
+            "Notes": null
+        },
+        {
+            "ID": 682,
+            "Server": 0,
+            "X": 1440,
+            "Y": -2775,
+            "Name": "New Targonor",
+            "Notes": null
+        },
+        {
+            "ID": 477,
+            "Server": 0,
+            "X": 1376,
+            "Y": -2882,
+            "Name": "Newcastle",
+            "Notes": null
+        },
+        {
+            "ID": 577,
+            "Server": 0,
+            "X": 883,
+            "Y": -7228,
+            "Name": "Newspring",
+            "Notes": null
+        },
+        {
+            "ID": 720,
+            "Server": 0,
+            "X": 949,
+            "Y": -7228,
+            "Name": "Newspring by Glasshollow",
+            "Notes": null
+        },
+        {
+            "ID": 476,
+            "Server": 0,
+            "X": 1418,
+            "Y": -2904,
+            "Name": "New-Valalen",
+            "Notes": null
+        },
+        {
+            "ID": 459,
+            "Server": 0,
+            "X": 1146,
+            "Y": -3167,
+            "Name": "Nexia",
+            "Notes": null
+        },
+        {
+            "ID": 176,
+            "Server": 0,
+            "X": 6351,
+            "Y": -5883,
+            "Name": "Nexus Landing",
+            "Notes": null
+        },
+        {
+            "ID": 485,
+            "Server": 0,
+            "X": 1052,
+            "Y": -2468,
+            "Name": "Nexus Ridge",
+            "Notes": null
+        },
+        {
+            "ID": 760,
+            "Server": 0,
+            "X": 6339,
+            "Y": -1599,
+            "Name": "Nightdawn",
+            "Notes": null
+        },
+        {
+            "ID": 212,
+            "Server": 0,
+            "X": 5658,
+            "Y": -1268,
+            "Name": "North Port",
+            "Notes": null
+        },
+        {
+            "ID": 670,
+            "Server": 0,
+            "X": 7425,
+            "Y": -6301,
+            "Name": "North Wood",
+            "Notes": null
+        },
+        {
+            "ID": 231,
+            "Server": 0,
+            "X": 2956,
+            "Y": -474,
+            "Name": "Nowe Wszczniesz",
+            "Notes": null
+        },
+        {
+            "ID": 788,
+            "Server": 0,
+            "X": 568,
+            "Y": -5476,
+            "Name": "Nuvos One",
+            "Notes": null
+        },
+        {
+            "ID": 596,
+            "Server": 0,
+            "X": 7073,
+            "Y": -1859,
+            "Name": "Oakenvale Harbour",
+            "Notes": null
+        },
+        {
+            "ID": 750,
+            "Server": 0,
+            "X": 2675,
+            "Y": -472,
+            "Name": "Oakmoor",
+            "Notes": null
+        },
+        {
+            "ID": 99,
+            "Server": 0,
+            "X": 7068,
+            "Y": -1066,
+            "Name": "Oceanview Estates",
+            "Notes": null
+        },
+        {
+            "ID": 701,
+            "Server": 0,
+            "X": 7057,
+            "Y": -1262,
+            "Name": "Oceanview Southern Outpost",
+            "Notes": null
+        },
+        {
+            "ID": 148,
+            "Server": 0,
+            "X": 5424,
+            "Y": -4714,
+            "Name": "Oopanax Harbour",
+            "Notes": null
+        },
+        {
+            "ID": 138,
+            "Server": 0,
+            "X": 5236,
+            "Y": -3604,
+            "Name": "Otaku View",
+            "Notes": null
+        },
+        {
+            "ID": 668,
+            "Server": 0,
+            "X": 6569,
+            "Y": -2694,
+            "Name": "Ozarks Peak",
+            "Notes": null
+        },
+        {
+            "ID": 162,
+            "Server": 0,
+            "X": 6130,
+            "Y": -5482,
+            "Name": "Palatine Hill",
+            "Notes": null
+        },
+        {
+            "ID": 742,
+            "Server": 0,
+            "X": 508,
+            "Y": -7300,
+            "Name": "Paradise Harbour",
+            "Notes": null
+        },
+        {
+            "ID": 776,
+            "Server": 0,
+            "X": 1750,
+            "Y": -4928,
+            "Name": "Paradiso",
+            "Notes": null
+        },
+        {
+            "ID": 366,
+            "Server": 0,
+            "X": 4610,
+            "Y": -7842,
+            "Name": "Peaks Tail",
+            "Notes": null
+        },
+        {
+            "ID": 725,
+            "Server": 0,
+            "X": 6838,
+            "Y": -1962,
+            "Name": "Pearlnorth",
+            "Notes": null
+        },
+        {
+            "ID": 290,
+            "Server": 0,
+            "X": 3010,
+            "Y": -5762,
+            "Name": "Perls",
+            "Notes": null
+        },
+        {
+            "ID": 815,
+            "Server": 0,
+            "X": 2654,
+            "Y": -4210,
+            "Name": "Perpetual Harmony",
+            "Notes": null
+        },
+        {
+            "ID": 676,
+            "Server": 0,
+            "X": 4632,
+            "Y": -7139,
+            "Name": "Pit Stop Slowmo",
+            "Notes": null
+        },
+        {
+            "ID": 425,
+            "Server": 0,
+            "X": 475,
+            "Y": -4533,
+            "Name": "Please One Second I\u0027ll Be Right There",
+            "Notes": null
+        },
+        {
+            "ID": 355,
+            "Server": 0,
+            "X": 2499,
+            "Y": -7438,
+            "Name": "Port Agulhus",
+            "Notes": null
+        },
+        {
+            "ID": 360,
+            "Server": 0,
+            "X": 3430,
+            "Y": -7688,
+            "Name": "Port Apotti",
+            "Notes": null
+        },
+        {
+            "ID": 405,
+            "Server": 0,
+            "X": 825,
+            "Y": -5956,
+            "Name": "Port Bax",
+            "Notes": null
+        },
+        {
+            "ID": 408,
+            "Server": 0,
+            "X": 733,
+            "Y": -5709,
+            "Name": "Port Caldorus",
+            "Notes": null
+        },
+        {
+            "ID": 489,
+            "Server": 0,
+            "X": 2220,
+            "Y": -2440,
+            "Name": "Port Derringer",
+            "Notes": null
+        },
+        {
+            "ID": 27,
+            "Server": 0,
+            "X": 7043,
+            "Y": -1985,
+            "Name": "Port Heidiho",
+            "Notes": null
+        },
+        {
+            "ID": 319,
+            "Server": 0,
+            "X": 2710,
+            "Y": -6681,
+            "Name": "Port Linden",
+            "Notes": null
+        },
+        {
+            "ID": 588,
+            "Server": 0,
+            "X": 7058,
+            "Y": -3070,
+            "Name": "Port Panache",
+            "Notes": null
+        },
+        {
+            "ID": 100,
+            "Server": 0,
+            "X": 7056,
+            "Y": -967,
+            "Name": "Port Rock Hudson",
+            "Notes": null
+        },
+        {
+            "ID": 302,
+            "Server": 0,
+            "X": 2641,
+            "Y": -6028,
+            "Name": "Poseidons Anchorage",
+            "Notes": null
+        },
+        {
+            "ID": 334,
+            "Server": 0,
+            "X": 3262,
+            "Y": -6744,
+            "Name": "Poseidon\u0027s Reserve",
+            "Notes": null
+        },
+        {
+            "ID": 594,
+            "Server": 0,
+            "X": 6772,
+            "Y": -2175,
+            "Name": "Poziomka Castle",
+            "Notes": null
+        },
+        {
+            "ID": 437,
+            "Server": 0,
+            "X": 1924,
+            "Y": -3204,
+            "Name": "Prosperity",
+            "Notes": null
+        },
+        {
+            "ID": 797,
+            "Server": 0,
+            "X": 4369,
+            "Y": -3751,
+            "Name": "Pumpkin Fields",
+            "Notes": null
+        },
+        {
+            "ID": 764,
+            "Server": 0,
+            "X": 4984,
+            "Y": -865,
+            "Name": "Quarry\u0027s Lemosa Canal",
+            "Notes": null
+        },
+        {
+            "ID": 287,
+            "Server": 0,
+            "X": 4322,
+            "Y": -6650,
+            "Name": "Racuchowo",
+            "Notes": null
+        },
+        {
+            "ID": 174,
+            "Server": 0,
+            "X": 6263,
+            "Y": -5951,
+            "Name": "Rag and Bone Market",
+            "Notes": null
+        },
+        {
+            "ID": 351,
+            "Server": 0,
+            "X": 3105,
+            "Y": -7147,
+            "Name": "Rama",
+            "Notes": null
+        },
+        {
+            "ID": 52,
+            "Server": 0,
+            "X": 7868,
+            "Y": 4062,
+            "Name": "Rancho Relaxo",
+            "Notes": null
+        },
+        {
+            "ID": 613,
+            "Server": 0,
+            "X": 7064,
+            "Y": -2344,
+            "Name": "Raven\u0027s Bay",
+            "Notes": null
+        },
+        {
+            "ID": 816,
+            "Server": 0,
+            "X": 1630,
+            "Y": -888,
+            "Name": "Raven\u0027s Nest",
+            "Notes": null
+        },
+        {
+            "ID": 508,
+            "Server": 0,
+            "X": 828,
+            "Y": -1354,
+            "Name": "Reagopolis",
+            "Notes": null
+        },
+        {
+            "ID": 226,
+            "Server": 0,
+            "X": 3934,
+            "Y": -426,
+            "Name": "Red Moon Lagoon",
+            "Notes": null
+        },
+        {
+            "ID": 739,
+            "Server": 0,
+            "X": 4003,
+            "Y": -2762,
+            "Name": "Redcliffe",
+            "Notes": null
+        },
+        {
+            "ID": 758,
+            "Server": 0,
+            "X": 955,
+            "Y": -7048,
+            "Name": "Reo\u0027s Estate",
+            "Notes": null
+        },
+        {
+            "ID": 156,
+            "Server": 0,
+            "X": 6544,
+            "Y": -5090,
+            "Name": "Rising Peak Fort",
+            "Notes": null
+        },
+        {
+            "ID": 267,
+            "Server": 0,
+            "X": 4241,
+            "Y": -4008,
+            "Name": "Rome",
+            "Notes": null
+        },
+        {
+            "ID": 625,
+            "Server": 0,
+            "X": 6733,
+            "Y": -2654,
+            "Name": "Rough \u0026 Ready",
+            "Notes": null
+        },
+        {
+            "ID": 626,
+            "Server": 0,
+            "X": 6734,
+            "Y": -2626,
+            "Name": "Rough \u0026 Ready Annex",
+            "Notes": null
+        },
+        {
+            "ID": 523,
+            "Server": 0,
+            "X": 1387,
+            "Y": -925,
+            "Name": "Rusty Gull",
+            "Notes": null
+        },
+        {
+            "ID": 181,
+            "Server": 0,
+            "X": 6998,
+            "Y": -6460,
+            "Name": "Rusty Harbor",
+            "Notes": null
+        },
+        {
+            "ID": 759,
+            "Server": 0,
+            "X": 696,
+            "Y": -7038,
+            "Name": "Rusty Ranch",
+            "Notes": null
+        },
+        {
+            "ID": 483,
+            "Server": 0,
+            "X": 1358,
+            "Y": -2784,
+            "Name": "Sandland",
+            "Notes": null
+        },
+        {
+            "ID": 200,
+            "Server": 0,
+            "X": 4982,
+            "Y": -7082,
+            "Name": "Sarmatian Island",
+            "Notes": null
+        },
+        {
+            "ID": 242,
+            "Server": 0,
+            "X": 3076,
+            "Y": -1988,
+            "Name": "Scorpion Point",
+            "Notes": null
+        },
+        {
+            "ID": 337,
+            "Server": 0,
+            "X": 3300,
+            "Y": -6674,
+            "Name": "Sea Serpent Oasis",
+            "Notes": null
+        },
+        {
+            "ID": 628,
+            "Server": 0,
+            "X": 6818,
+            "Y": -2189,
+            "Name": "Seabreeze Village",
+            "Notes": null
+        },
+        {
+            "ID": 692,
+            "Server": 0,
+            "X": 976,
+            "Y": -6006,
+            "Name": "Seahorse Livery",
+            "Notes": null
+        },
+        {
+            "ID": 507,
+            "Server": 0,
+            "X": 770,
+            "Y": -1476,
+            "Name": "Seaside Shanty",
+            "Notes": null
+        },
+        {
+            "ID": 639,
+            "Server": 0,
+            "X": 5937,
+            "Y": -1484,
+            "Name": "Seere",
+            "Notes": null
+        },
+        {
+            "ID": 442,
+            "Server": 0,
+            "X": 2046,
+            "Y": -4256,
+            "Name": "Selfridge",
+            "Notes": null
+        },
+        {
+            "ID": 700,
+            "Server": 0,
+            "X": 7316,
+            "Y": -3816,
+            "Name": "Serenity Cove",
+            "Notes": null
+        },
+        {
+            "ID": 185,
+            "Server": 0,
+            "X": 5990,
+            "Y": -6597,
+            "Name": "Serenity Point",
+            "Notes": null
+        },
+        {
+            "ID": 796,
+            "Server": 0,
+            "X": 5531,
+            "Y": -3126,
+            "Name": "Settlement of Nowhere",
+            "Notes": null
+        },
+        {
+            "ID": 786,
+            "Server": 0,
+            "X": 1643,
+            "Y": -2771,
+            "Name": "Shadow Cove",
+            "Notes": null
+        },
+        {
+            "ID": 748,
+            "Server": 0,
+            "X": 1250,
+            "Y": -2750,
+            "Name": "Shadow Peak Ridge",
+            "Notes": null
+        },
+        {
+            "ID": 737,
+            "Server": 0,
+            "X": 1726,
+            "Y": -2735,
+            "Name": "Shadowfly Shore",
+            "Notes": null
+        },
+        {
+            "ID": 145,
+            "Server": 0,
+            "X": 6958,
+            "Y": -4408,
+            "Name": "Shadows Keep",
+            "Notes": null
+        },
+        {
+            "ID": 644,
+            "Server": 0,
+            "X": 897,
+            "Y": -1853,
+            "Name": "Shady Shore",
+            "Notes": null
+        },
+        {
+            "ID": 472,
+            "Server": 0,
+            "X": 1896,
+            "Y": -3032,
+            "Name": "Sharp Land",
+            "Notes": null
+        },
+        {
+            "ID": 469,
+            "Server": 0,
+            "X": 2096,
+            "Y": -3181,
+            "Name": "Shiraishi",
+            "Notes": null
+        },
+        {
+            "ID": 172,
+            "Server": 0,
+            "X": 6101,
+            "Y": -6149,
+            "Name": "Shores of Avalon",
+            "Notes": null
+        },
+        {
+            "ID": 434,
+            "Server": 0,
+            "X": 2476,
+            "Y": -3457,
+            "Name": "Siberian Forest",
+            "Notes": null
+        },
+        {
+            "ID": 479,
+            "Server": 0,
+            "X": 1765,
+            "Y": -2741,
+            "Name": "Silent Waves",
+            "Notes": null
+        },
+        {
+            "ID": 533,
+            "Server": 0,
+            "X": 1576,
+            "Y": -848,
+            "Name": "Silver Glass",
+            "Notes": null
+        },
+        {
+            "ID": 822,
+            "Server": 0,
+            "X": 7216,
+            "Y": -6681,
+            "Name": "Simplicity",
+            "Notes": null
+        },
+        {
+            "ID": 744,
+            "Server": 0,
+            "X": 7623,
+            "Y": -3009,
+            "Name": "Simulated Anarchy",
+            "Notes": null
+        },
+        {
+            "ID": 630,
+            "Server": 0,
+            "X": 7116,
+            "Y": -1956,
+            "Name": "Skavenblight",
+            "Notes": null
+        },
+        {
+            "ID": 74,
+            "Server": 0,
+            "X": 7705,
+            "Y": -5965,
+            "Name": "Sleepy Hollow",
+            "Notes": null
+        },
+        {
+            "ID": 800,
+            "Server": 0,
+            "X": 7608,
+            "Y": -1205,
+            "Name": "Sleepys Island",
+            "Notes": null
+        },
+        {
+            "ID": 799,
+            "Server": 0,
+            "X": 7639,
+            "Y": -1251,
+            "Name": "Sleepys Place of Pax",
+            "Notes": null
+        },
+        {
+            "ID": 144,
+            "Server": 0,
+            "X": 7058,
+            "Y": -4318,
+            "Name": "Smith Craft Hall",
+            "Notes": null
+        },
+        {
+            "ID": 666,
+            "Server": 0,
+            "X": 627,
+            "Y": -2536,
+            "Name": "Smokers Last Paradise",
+            "Notes": null
+        },
+        {
+            "ID": 54,
+            "Server": 0,
+            "X": 7869,
+            "Y": -4144,
+            "Name": "Smokes Landing",
+            "Notes": null
+        },
+        {
+            "ID": 273,
+            "Server": 0,
+            "X": 3612,
+            "Y": -5004,
+            "Name": "Snoo Village",
+            "Notes": null
+        },
+        {
+            "ID": 62,
+            "Server": 0,
+            "X": 7560,
+            "Y": -5750,
+            "Name": "Snooty Fox",
+            "Notes": null
+        },
+        {
+            "ID": 248,
+            "Server": 0,
+            "X": 3012,
+            "Y": -2558,
+            "Name": "Sojourn",
+            "Notes": null
+        },
+        {
+            "ID": 363,
+            "Server": 0,
+            "X": 4006,
+            "Y": -7862,
+            "Name": "South Central Market",
+            "Notes": null
+        },
+        {
+            "ID": 94,
+            "Server": 0,
+            "X": 7231,
+            "Y": -7050,
+            "Name": "Southern Comfort",
+            "Notes": null
+        },
+        {
+            "ID": 681,
+            "Server": 0,
+            "X": 2395,
+            "Y": -2189,
+            "Name": "Spider Valley",
+            "Notes": null
+        },
+        {
+            "ID": 197,
+            "Server": 0,
+            "X": 5126,
+            "Y": -6640,
+            "Name": "Stag Hills",
+            "Notes": null
+        },
+        {
+            "ID": 424,
+            "Server": 0,
+            "X": 336,
+            "Y": -4678,
+            "Name": "Starbreeze",
+            "Notes": null
+        },
+        {
+            "ID": 480,
+            "Server": 0,
+            "X": 1480,
+            "Y": -2658,
+            "Name": "Storm\u0027s End",
+            "Notes": null
+        },
+        {
+            "ID": 501,
+            "Server": 0,
+            "X": 883,
+            "Y": -1757,
+            "Name": "Strandvattan",
+            "Notes": null
+        },
+        {
+            "ID": 157,
+            "Server": 0,
+            "X": 6808,
+            "Y": -4930,
+            "Name": "Sulphur Alms",
+            "Notes": null
+        },
+        {
+            "ID": 361,
+            "Server": 0,
+            "X": 3556,
+            "Y": -7606,
+            "Name": "Summer Valley",
+            "Notes": null
+        },
+        {
+            "ID": 601,
+            "Server": 0,
+            "X": 6603,
+            "Y": -2250,
+            "Name": "Summerholt",
+            "Notes": "Starter"
+        },
+        {
+            "ID": 32,
+            "Server": 0,
+            "X": 6602,
+            "Y": -2201,
+            "Name": "Summerholt by Glasshomo Market",
+            "Notes": null
+        },
+        {
+            "ID": 473,
+            "Server": 0,
+            "X": 1538,
+            "Y": -2932,
+            "Name": "Sunrise Bay Market",
+            "Notes": null
+        },
+        {
+            "ID": 299,
+            "Server": 0,
+            "X": 3102,
+            "Y": -6217,
+            "Name": "Surefall by the Sea",
+            "Notes": null
+        },
+        {
+            "ID": 328,
+            "Server": 0,
+            "X": 3368,
+            "Y": -6263,
+            "Name": "Surefall Glade",
+            "Notes": null
+        },
+        {
+            "ID": 327,
+            "Server": 0,
+            "X": 3291,
+            "Y": -6264,
+            "Name": "Surefall Lake",
+            "Notes": null
+        },
+        {
+            "ID": 586,
+            "Server": 0,
+            "X": 2936,
+            "Y": -2457,
+            "Name": "Susanca",
+            "Notes": null
+        },
+        {
+            "ID": 622,
+            "Server": 0,
+            "X": 6780,
+            "Y": -2437,
+            "Name": "Suth-Goras",
+            "Notes": null
+        },
+        {
+            "ID": 674,
+            "Server": 0,
+            "X": 7442,
+            "Y": -1570,
+            "Name": "Svartskard",
+            "Notes": null
+        },
+        {
+            "ID": 353,
+            "Server": 0,
+            "X": 3207,
+            "Y": -7296,
+            "Name": "Sweet Island",
+            "Notes": null
+        },
+        {
+            "ID": 781,
+            "Server": 0,
+            "X": 3460,
+            "Y": -6367,
+            "Name": "Sweetbriar",
+            "Notes": null
+        },
+        {
+            "ID": 77,
+            "Server": 0,
+            "X": 7349,
+            "Y": -6239,
+            "Name": "Tal Ausblick",
+            "Notes": null
+        },
+        {
+            "ID": 161,
+            "Server": 0,
+            "X": 6228,
+            "Y": -5521,
+            "Name": "Tarsis",
+            "Notes": null
+        },
+        {
+            "ID": 230,
+            "Server": 0,
+            "X": 3814,
+            "Y": -296,
+            "Name": "Tenakill\u0027s Landing",
+            "Notes": null
+        },
+        {
+            "ID": 611,
+            "Server": 0,
+            "X": 7118,
+            "Y": -2199,
+            "Name": "Tenshi\u0027s Hill",
+            "Notes": null
+        },
+        {
+            "ID": 341,
+            "Server": 0,
+            "X": 3251,
+            "Y": -6952,
+            "Name": "Teralon",
+            "Notes": null
+        },
+        {
+            "ID": 574,
+            "Server": 0,
+            "X": 453,
+            "Y": -7203,
+            "Name": "Tetton",
+            "Notes": null
+        },
+        {
+            "ID": 647,
+            "Server": 0,
+            "X": 6519,
+            "Y": -1905,
+            "Name": "The Adventures of Hellhorse and Pheasant",
+            "Notes": "by Ath"
+        },
+        {
+            "ID": 711,
+            "Server": 0,
+            "X": 4949,
+            "Y": -1646,
+            "Name": "The Beehive Mining Co-op",
+            "Notes": null
+        },
+        {
+            "ID": 338,
+            "Server": 0,
+            "X": 3353,
+            "Y": -6790,
+            "Name": "The Beer Garden",
+            "Notes": null
+        },
+        {
+            "ID": 198,
+            "Server": 0,
+            "X": 4950,
+            "Y": -6820,
+            "Name": "The Burning Fields",
+            "Notes": null
+        },
+        {
+            "ID": 620,
+            "Server": 0,
+            "X": 7027,
+            "Y": -2201,
+            "Name": "The Catacombs",
+            "Notes": null
+        },
+        {
+            "ID": 774,
+            "Server": 0,
+            "X": 2780,
+            "Y": -822,
+            "Name": "The Cove",
+            "Notes": null
+        },
+        {
+            "ID": 462,
+            "Server": 0,
+            "X": 688,
+            "Y": -2848,
+            "Name": "The Cut",
+            "Notes": null
+        },
+        {
+            "ID": 64,
+            "Server": 0,
+            "X": 7860,
+            "Y": -5898,
+            "Name": "The Dead Parrot Shoppe \u0026 Market",
+            "Notes": null
+        },
+        {
+            "ID": 354,
+            "Server": 0,
+            "X": 2578,
+            "Y": -7221,
+            "Name": "The Flying Jerks",
+            "Notes": null
+        },
+        {
+            "ID": 364,
+            "Server": 0,
+            "X": 4092,
+            "Y": -7824,
+            "Name": "The Gumbo Variations",
+            "Notes": null
+        },
+        {
+            "ID": 122,
+            "Server": 0,
+            "X": 6316,
+            "Y": -1788,
+            "Name": "The Holy Wemp\u0027s Lakeside Retreat",
+            "Notes": null
+        },
+        {
+            "ID": 471,
+            "Server": 0,
+            "X": 1986,
+            "Y": -3007,
+            "Name": "The Isle Labyrinth",
+            "Notes": null
+        },
+        {
+            "ID": 376,
+            "Server": 0,
+            "X": 1566,
+            "Y": -7392,
+            "Name": "The Last Haven",
+            "Notes": null
+        },
+        {
+            "ID": 13,
+            "Server": 0,
+            "X": 7617,
+            "Y": -1110,
+            "Name": "The Lonely Mountain",
+            "Notes": null
+        },
+        {
+            "ID": 453,
+            "Server": 0,
+            "X": 610,
+            "Y": -2983,
+            "Name": "The Mahasattva Bodhisattva Sangha",
+            "Notes": null
+        },
+        {
+            "ID": 607,
+            "Server": 0,
+            "X": 6963,
+            "Y": -705,
+            "Name": "The Respite",
+            "Notes": null
+        },
+        {
+            "ID": 105,
+            "Server": 0,
+            "X": 6689,
+            "Y": -688,
+            "Name": "The Rose Garden",
+            "Notes": null
+        },
+        {
+            "ID": 235,
+            "Server": 0,
+            "X": 3122,
+            "Y": -862,
+            "Name": "The White Mountain",
+            "Notes": null
+        },
+        {
+            "ID": 756,
+            "Server": 0,
+            "X": 1502,
+            "Y": -2787,
+            "Name": "Thistle",
+            "Notes": null
+        },
+        {
+            "ID": 41,
+            "Server": 0,
+            "X": 7070,
+            "Y": -3167,
+            "Name": "ThorKhan\u0027s Rest",
+            "Notes": null
+        },
+        {
+            "ID": 216,
+            "Server": 0,
+            "X": 5401,
+            "Y": -459,
+            "Name": "Thorne Cliff",
+            "Notes": null
+        },
+        {
+            "ID": 696,
+            "Server": 0,
+            "X": 1716,
+            "Y": -6270,
+            "Name": "Thunderstorm Harbor",
+            "Notes": null
+        },
+        {
+            "ID": 396,
+            "Server": 0,
+            "X": 1711,
+            "Y": -6216,
+            "Name": "Thunderstorm Keep",
+            "Notes": null
+        },
+        {
+            "ID": 657,
+            "Server": 0,
+            "X": 2211,
+            "Y": -2041,
+            "Name": "Timbit Peak",
+            "Notes": null
+        },
+        {
+            "ID": 767,
+            "Server": 0,
+            "X": 5600,
+            "Y": -3146,
+            "Name": "Tindrem",
+            "Notes": null
+        },
+        {
+            "ID": 768,
+            "Server": 0,
+            "X": 5544,
+            "Y": -3209,
+            "Name": "Tindremic Order",
+            "Notes": null
+        },
+        {
+            "ID": 201,
+            "Server": 0,
+            "X": 6126,
+            "Y": -7386,
+            "Name": "Tirion",
+            "Notes": null
+        },
+        {
+            "ID": 89,
+            "Server": 0,
+            "X": 7528,
+            "Y": -6864,
+            "Name": "Tirol",
+            "Notes": null
+        },
+        {
+            "ID": 25,
+            "Server": 0,
+            "X": 7755,
+            "Y": -1976,
+            "Name": "Tommeke",
+            "Notes": null
+        },
+        {
+            "ID": 436,
+            "Server": 0,
+            "X": 1732,
+            "Y": -3468,
+            "Name": "Top of the World",
+            "Notes": null
+        },
+        {
+            "ID": 391,
+            "Server": 0,
+            "X": 1542,
+            "Y": -6696,
+            "Name": "Trader\u0027s Inc",
+            "Notes": null
+        },
+        {
+            "ID": 398,
+            "Server": 0,
+            "X": 1594,
+            "Y": -6310,
+            "Name": "Tranquil Coast",
+            "Notes": null
+        },
+        {
+            "ID": 612,
+            "Server": 0,
+            "X": 7057,
+            "Y": -2168,
+            "Name": "Tranquil Gardens",
+            "Notes": null
+        },
+        {
+            "ID": 451,
+            "Server": 0,
+            "X": 949,
+            "Y": -3305,
+            "Name": "Traveler\u0027s Rest",
+            "Notes": null
+        },
+        {
+            "ID": 518,
+            "Server": 0,
+            "X": 1000,
+            "Y": -976,
+            "Name": "Trudvang",
+            "Notes": null
+        },
+        {
+            "ID": 671,
+            "Server": 0,
+            "X": 3965,
+            "Y": -5873,
+            "Name": "Tulum",
+            "Notes": null
+        },
+        {
+            "ID": 617,
+            "Server": 0,
+            "X": 7485,
+            "Y": -2105,
+            "Name": "Tuon\u0027s Retreat",
+            "Notes": null
+        },
+        {
+            "ID": 766,
+            "Server": 0,
+            "X": 4901,
+            "Y": -945,
+            "Name": "Tylenthus\u0027s Hunting Retreat",
+            "Notes": null
+        },
+        {
+            "ID": 643,
+            "Server": 0,
+            "X": 2890,
+            "Y": -2354,
+            "Name": "Undermountain",
+            "Notes": null
+        },
+        {
+            "ID": 377,
+            "Server": 0,
+            "X": 1482,
+            "Y": -7104,
+            "Name": "Valendriel",
+            "Notes": null
+        },
+        {
+            "ID": 42,
+            "Server": 0,
+            "X": 7001,
+            "Y": -3306,
+            "Name": "Valkyrie Landing",
+            "Notes": null
+        },
+        {
+            "ID": 406,
+            "Server": 0,
+            "X": 931,
+            "Y": -5931,
+            "Name": "Valley Hold",
+            "Notes": null
+        },
+        {
+            "ID": 17,
+            "Server": 0,
+            "X": 7296,
+            "Y": -1453,
+            "Name": "Valley of Broken Dreams",
+            "Notes": null
+        },
+        {
+            "ID": 765,
+            "Server": 0,
+            "X": 4845,
+            "Y": -975,
+            "Name": "Valley of Megiddo",
+            "Notes": null
+        },
+        {
+            "ID": 261,
+            "Server": 0,
+            "X": 2880,
+            "Y": -3318,
+            "Name": "Valley of the Four Elements",
+            "Notes": null
+        },
+        {
+            "ID": 818,
+            "Server": 0,
+            "X": 685,
+            "Y": -6900,
+            "Name": "Valmar",
+            "Notes": null
+        },
+        {
+            "ID": 149,
+            "Server": 0,
+            "X": 6096,
+            "Y": -4840,
+            "Name": "Valrei\u0027s Tears",
+            "Notes": null
+        },
+        {
+            "ID": 494,
+            "Server": 0,
+            "X": 2610,
+            "Y": -1912,
+            "Name": "Van Diemen\u0027s Cove",
+            "Notes": null
+        },
+        {
+            "ID": 519,
+            "Server": 0,
+            "X": 1030,
+            "Y": -1020,
+            "Name": "Vanaheim",
+            "Notes": null
+        },
+        {
+            "ID": 67,
+            "Server": 0,
+            "X": 7418,
+            "Y": -6080,
+            "Name": "Vanilla Harbour",
+            "Notes": null
+        },
+        {
+            "ID": 178,
+            "Server": 0,
+            "X": 6491,
+            "Y": -6010,
+            "Name": "Vannin\u0027s Folly",
+            "Notes": null
+        },
+        {
+            "ID": 587,
+            "Server": 0,
+            "X": 2075,
+            "Y": -3250,
+            "Name": "Veritas",
+            "Notes": null
+        },
+        {
+            "ID": 432,
+            "Server": 0,
+            "X": 1566,
+            "Y": -3576,
+            "Name": "Villa Begina",
+            "Notes": null
+        },
+        {
+            "ID": 749,
+            "Server": 0,
+            "X": 590,
+            "Y": -6857,
+            "Name": "Vinyamar",
+            "Notes": null
+        },
+        {
+            "ID": 723,
+            "Server": 0,
+            "X": 1623,
+            "Y": -6988,
+            "Name": "Vizcaya",
+            "Notes": null
+        },
+        {
+            "ID": 243,
+            "Server": 0,
+            "X": 2721,
+            "Y": -2239,
+            "Name": "Vrock Landing",
+            "Notes": "Starter"
+        },
+        {
+            "ID": 731,
+            "Server": 0,
+            "X": 2721,
+            "Y": -2171,
+            "Name": "Vrock Landing by Glasshollow Market",
+            "Notes": null
+        },
+        {
+            "ID": 640,
+            "Server": 0,
+            "X": 2748,
+            "Y": -2154,
+            "Name": "Vrock\u0027s Market and Inn",
+            "Notes": null
+        },
+        {
+            "ID": 757,
+            "Server": 0,
+            "X": 3861,
+            "Y": -266,
+            "Name": "Vynora\u0027s Cove",
+            "Notes": null
+        },
+        {
+            "ID": 22,
+            "Server": 0,
+            "X": 7758,
+            "Y": -1723,
+            "Name": "Vynora\u0027s Harborage",
+            "Notes": null
+        },
+        {
+            "ID": 804,
+            "Server": 0,
+            "X": 1815,
+            "Y": -2530,
+            "Name": "Wacky Woodys Workshop",
+            "Notes": null
+        },
+        {
+            "ID": 761,
+            "Server": 0,
+            "X": 5026,
+            "Y": -949,
+            "Name": "Waterdeep",
+            "Notes": null
+        },
+        {
+            "ID": 817,
+            "Server": 0,
+            "X": 6660,
+            "Y": -2016,
+            "Name": "Waterside Ridge",
+            "Notes": null
+        },
+        {
+            "ID": 651,
+            "Server": 0,
+            "X": 4875,
+            "Y": -2335,
+            "Name": "Weird Wonders",
+            "Notes": null
+        },
+        {
+            "ID": 484,
+            "Server": 0,
+            "X": 995,
+            "Y": -2492,
+            "Name": "Wengen",
+            "Notes": null
+        },
+        {
+            "ID": 180,
+            "Server": 0,
+            "X": 5802,
+            "Y": -6240,
+            "Name": "We\u0027re So High Right Meow",
+            "Notes": null
+        },
+        {
+            "ID": 324,
+            "Server": 0,
+            "X": 2275,
+            "Y": -6374,
+            "Name": "West Chester",
+            "Notes": null
+        },
+        {
+            "ID": 697,
+            "Server": 0,
+            "X": 2215,
+            "Y": -1863,
+            "Name": "Westwood",
+            "Notes": null
+        },
+        {
+            "ID": 810,
+            "Server": 0,
+            "X": 6864,
+            "Y": -2392,
+            "Name": "Whisperfell",
+            "Notes": null
+        },
+        {
+            "ID": 159,
+            "Server": 0,
+            "X": 6612,
+            "Y": -4722,
+            "Name": "Whispering Cove",
+            "Notes": null
+        },
+        {
+            "ID": 158,
+            "Server": 0,
+            "X": 6672,
+            "Y": -4782,
+            "Name": "Whispering Island",
+            "Notes": null
+        },
+        {
+            "ID": 566,
+            "Server": 0,
+            "X": 1074,
+            "Y": -7185,
+            "Name": "Whispering Mountain",
+            "Notes": null
+        },
+        {
+            "ID": 567,
+            "Server": 0,
+            "X": 1142,
+            "Y": -7174,
+            "Name": "Whispering Mountain Port",
+            "Notes": null
+        },
+        {
+            "ID": 537,
+            "Server": 0,
+            "X": 2612,
+            "Y": -381,
+            "Name": "Whispering Souls",
+            "Notes": null
+        },
+        {
+            "ID": 713,
+            "Server": 0,
+            "X": 7880,
+            "Y": -2926,
+            "Name": "White Castle",
+            "Notes": null
+        },
+        {
+            "ID": 186,
+            "Server": 0,
+            "X": 6086,
+            "Y": -6782,
+            "Name": "White Harbor",
+            "Notes": null
+        },
+        {
+            "ID": 461,
+            "Server": 0,
+            "X": 610,
+            "Y": -2859,
+            "Name": "Whitefall",
+            "Notes": null
+        },
+        {
+            "ID": 128,
+            "Server": 0,
+            "X": 5650,
+            "Y": -3050,
+            "Name": "Whitefay",
+            "Notes": "Starter"
+        },
+        {
+            "ID": 728,
+            "Server": 0,
+            "X": 5651,
+            "Y": -3004,
+            "Name": "Whitefay by Glasshollow Market",
+            "Notes": null
+        },
+        {
+            "ID": 565,
+            "Server": 0,
+            "X": 1086,
+            "Y": -7062,
+            "Name": "Wild Goose Farms",
+            "Notes": null
+        },
+        {
+            "ID": 673,
+            "Server": 0,
+            "X": 1131,
+            "Y": -7063,
+            "Name": "Wild Goose Landing",
+            "Notes": null
+        },
+        {
+            "ID": 487,
+            "Server": 0,
+            "X": 2332,
+            "Y": -2398,
+            "Name": "Wildacre",
+            "Notes": null
+        },
+        {
+            "ID": 69,
+            "Server": 0,
+            "X": 7322,
+            "Y": -6158,
+            "Name": "Wildelyn",
+            "Notes": null
+        },
+        {
+            "ID": 591,
+            "Server": 0,
+            "X": 5109,
+            "Y": -249,
+            "Name": "Willowbrooke",
+            "Notes": null
+        },
+        {
+            "ID": 488,
+            "Server": 0,
+            "X": 2206,
+            "Y": -2372,
+            "Name": "Winchester",
+            "Notes": null
+        },
+        {
+            "ID": 592,
+            "Server": 0,
+            "X": 743,
+            "Y": -2367,
+            "Name": "Windfall Peninsula",
+            "Notes": null
+        },
+        {
+            "ID": 811,
+            "Server": 0,
+            "X": 6938,
+            "Y": -1111,
+            "Name": "Windrip Estate",
+            "Notes": null
+        },
+        {
+            "ID": 390,
+            "Server": 0,
+            "X": 1600,
+            "Y": -6706,
+            "Name": "Windrip Smuggler\u0027s Cove",
+            "Notes": null
+        },
+        {
+            "ID": 669,
+            "Server": 0,
+            "X": 4757,
+            "Y": -2014,
+            "Name": "Windspears",
+            "Notes": null
+        },
+        {
+            "ID": 375,
+            "Server": 0,
+            "X": 1814,
+            "Y": -7432,
+            "Name": "Windy Peaks Harbor",
+            "Notes": null
+        },
+        {
+            "ID": 374,
+            "Server": 0,
+            "X": 1926,
+            "Y": -7282,
+            "Name": "Windy Peaks Mountain",
+            "Notes": null
+        },
+        {
+            "ID": 629,
+            "Server": 0,
+            "X": 6602,
+            "Y": -2627,
+            "Name": "Winntown",
+            "Notes": null
+        },
+        {
+            "ID": 598,
+            "Server": 0,
+            "X": 2745,
+            "Y": -690,
+            "Name": "Wintermoor",
+            "Notes": null
+        },
+        {
+            "ID": 780,
+            "Server": 0,
+            "X": 3559,
+            "Y": -6435,
+            "Name": "Wisdom\u0027s Forge",
+            "Notes": null
+        },
+        {
+            "ID": 610,
+            "Server": 0,
+            "X": 7072,
+            "Y": -2111,
+            "Name": "Wismar",
+            "Notes": null
+        },
+        {
+            "ID": 655,
+            "Server": 0,
+            "X": 1415,
+            "Y": -877,
+            "Name": "Wolfpack D",
+            "Notes": null
+        },
+        {
+            "ID": 646,
+            "Server": 0,
+            "X": 4757,
+            "Y": -2210,
+            "Name": "Wonderland Terrace",
+            "Notes": "As requested by Alikin"
+        },
+        {
+            "ID": 118,
+            "Server": 0,
+            "X": 5789,
+            "Y": -1444,
+            "Name": "Woods",
+            "Notes": null
+        },
+        {
+            "ID": 642,
+            "Server": 0,
+            "X": 2966,
+            "Y": -2035,
+            "Name": "Woodsend",
+            "Notes": null
+        },
+        {
+            "ID": 807,
+            "Server": 0,
+            "X": 2178,
+            "Y": -2477,
+            "Name": "Wysteria",
+            "Notes": null
+        },
+        {
+            "ID": 251,
+            "Server": 0,
+            "X": 3090,
+            "Y": -2832,
+            "Name": "Wyvern Castle Mountains",
+            "Notes": null
+        },
+        {
+            "ID": 638,
+            "Server": 0,
+            "X": 2195,
+            "Y": -2652,
+            "Name": "Xanthipi",
+            "Notes": null
+        },
+        {
+            "ID": 76,
+            "Server": 0,
+            "X": 7477,
+            "Y": -6233,
+            "Name": "Yatesport",
+            "Notes": null
+        },
+        {
+            "ID": 707,
+            "Server": 0,
+            "X": 3668,
+            "Y": -7671,
+            "Name": "Yatiskulla",
+            "Notes": null
+        },
+        {
+            "ID": 775,
+            "Server": 0,
+            "X": 2143,
+            "Y": -2508,
+            "Name": "Yoitsu",
+            "Notes": null
+        },
+        {
+            "ID": 618,
+            "Server": 0,
+            "X": 7281,
+            "Y": -2193,
+            "Name": "York",
+            "Notes": null
+        },
+        {
+            "ID": 199,
+            "Server": 0,
+            "X": 4940,
+            "Y": -6896,
+            "Name": "Yorthopia",
+            "Notes": null
+        },
+        {
+            "ID": 763,
+            "Server": 0,
+            "X": 4850,
+            "Y": -1034,
+            "Name": "Zenithia",
+            "Notes": null
+        },
+        {
+            "ID": 457,
+            "Server": 0,
+            "X": 769,
+            "Y": -2964,
+            "Name": "Zentil Keep",
+            "Notes": null
+        },
+        {
+            "ID": 136,
+            "Server": 0,
+            "X": 6674,
+            "Y": -3898,
+            "Name": "Zero Summit",
+            "Notes": null
+        }
+    ]
+}
