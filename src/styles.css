@@ -8,3 +8,11 @@
 .example-spacer {
   flex: 1 1 auto;
 }
+
+.ol-mouse-position {
+    top: 15px;
+    right: 58px;
+    position: absolute;
+    color: white;
+    /* z-index: 100000; */
+}

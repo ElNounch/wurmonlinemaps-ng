@@ -3,7 +3,7 @@ import { AfterContentInit, AfterViewInit, Component, ElementRef, ViewChild, OnIn
 import { MdToolbarModule, MdSidenavModule, MdSlideToggleModule, MdIconModule } from '@angular/material';
 
 import { DeedsService } from './deeds.service';
-import { IDeed, IStartingDeed } from './app.models';
+import { IDeed, IStartingDeed, ICanal } from './app.models';
 
 //import * as ol from 'openlayers';
 
@@ -22,9 +22,11 @@ export class AppComponent implements OnInit, AfterViewInit {
 
   public map: any;
   deeds: IDeed[];
+  canals: ICanal[];
   deedsLayer: any;
   staringTownsLayer: any;
   gridLayer: any;
+  canalLayer: any;
 
   constructor(private deedsService: DeedsService) {
   }
@@ -33,12 +35,75 @@ export class AppComponent implements OnInit, AfterViewInit {
     this.deedsService.getDeeds()
       .subscribe(deeds => {
         this.deeds = deeds["data"];
+        this.canals = deeds["canals"];
         // console.log("Calling Render Layer with deeds: ", this.deeds);
+        console.log("Canals", this.canals);
         this.renderOpenLayers(this.deeds);
       });
   }
 
   renderOpenLayers(deeds: IDeed[]): void {
+    var controls = [
+      new ol.control.Attribution(),
+      new ol.control.MousePosition({
+        undefinedHTML: 'outside',
+        coordinateFormat: function (coordinate) {
+          return ol.coordinate.format(coordinate, '{x}, {y}', 0);
+        }
+      }),
+      new ol.control.Zoom(),
+      new ol.control.FullScreen()
+    ];
+
+    // canal passages
+    var canalSources = new ol.source.Vector();
+
+    var canalStyleFunction = function (feature, resolution)
+    {
+      var isCanal = feature.get('isCanal');
+
+      return [
+        new ol.style.Style({
+            stroke: new ol.style.Stroke({
+                width: 4, 
+                color: 'rgba(125, 125, 255, 1)',
+                lineDash: [1, 15, 10],
+            }),
+            text: new ol.style.Text({
+            font: '12px Calibri,sans-serif',
+            text: feature.get('name') != null ? feature.get('name'): '',
+            textBaseline: 'middle',
+            textAlign: 'center',
+            fill: new ol.style.Fill({
+              color: 'rgba(255, 255, 255, 0.6)',
+            }),
+            stroke: new ol.style.Stroke({
+              color: 'rgba(103, 207, 230, 0.6)',
+              width: 1,
+            })
+          })
+        }),
+        
+      ]
+    }
+
+    for (let canal of this.canals) {
+      var canalFeature = new ol.Feature({
+        // [[78.65, -32,65], [-98.65, 12.65]];
+        geometry: new ol.geom.LineString([[canal.X1, canal.Y1], [canal.X2, canal.Y2]]),
+        name: canal.Name,
+        isCanal: canal.IsCanal,
+        allBoats: canal.AllBoats,
+      });
+
+      canalSources.addFeature(canalFeature);
+    }
+
+    this.canalLayer = new ol.layer.Vector({
+      source: canalSources,
+      name: "Canal Layer",
+      style: canalStyleFunction
+    });
 
     // guard tower feature
     var guardSources = new ol.source.Vector();
@@ -189,12 +254,41 @@ export class AppComponent implements OnInit, AfterViewInit {
     var startingTowns = [
       {
         "Name": "Summerholt",
-        "Coords": [[6582, -2231], [6622, -2231], [6622, -2272], [6582, -2272]],
+        "Coords": [[6582, -2231], [6622, -2231], [6622, -2272], [6582, -2272]]
       },
       {
         "Name": "Greymead",
-        "Coords": [[4680, -3030], [4721, -3030], [4721, -3071], [4680, -3071]],
+        "Coords": [[4680, -3030], [4721, -3030], [4721, -3071], [4680, -3071]]
+      },
+      {
+        "Name": "Whitefay",
+        "Coords": [[5639, -3041], [5662, -3041], [5662, -3060], [5639, -3060]]
+      },
+      {
+        "Name": "Glasshollow",
+        "Coords": [[1559, -766], [1600, -766], [1600, -808], [1559, -808]]
+      },
+      {
+        "Name": "Newspring",
+        "Coords": [[862, -7208], [903, -7208], [903, -7250], [862, -7250]]
+      },
+      {
+        "Name": "Esteron",
+        "Coords": [[7391, -6416], [7428, -6416], [7428, -6453], [7391, -6452]]
+      },
+      {
+        "Name": "Linton",
+        "Coords": [[1805, -4146], [1845, -4146], [1845, -4186], [1805, -4186]]
+      },
+      {
+        "Name": "Lormere",
+        "Coords": [[3460, -6416], [3501, -6416], [3501, -6457], [3460, -6457]]
+      },
+      {
+        "Name": "Vrock Landing",
+        "Coords": [[2702, -2221], [2742, -2221], [2742, -2261], [2702, -2261]]
       }
+
     ]
 
     var startingTownsSource = new ol.source.Vector();
@@ -278,7 +372,15 @@ export class AppComponent implements OnInit, AfterViewInit {
     }
 
     for (let deed of deeds) {
-      if (deed.Name == "Summerholt" || deed.Name == "Greymead") {
+      if (deed.Name == "Summerholt" ||
+        deed.Name == "Greymead" ||
+        deed.Name == "Whitefay" ||
+        deed.Name == "Glasshollow" ||
+        deed.Name == "Newspring" ||
+        deed.Name == "Esteron" ||
+        deed.Name == "Linton" ||
+        deed.Name == "Lormere" ||
+        deed.Name == "Vrock Landing") {
         continue;
       }
 
@@ -342,13 +444,9 @@ export class AppComponent implements OnInit, AfterViewInit {
     });
 
     this.map = new ol.Map({
-      layers: [terrainRaster, guardLayer, this.staringTownsLayer, this.deedsLayer],
+      layers: [terrainRaster, guardLayer, this.staringTownsLayer, this.canalLayer, this.deedsLayer],
       target: 'map',
-      controls: ol.control.defaults({
-        attributionOptions: ({
-          collapsible: false
-        })
-      }),
+      controls: controls,
       view: new ol.View({
         zoom: 2,
         center: [4096, -4096],
