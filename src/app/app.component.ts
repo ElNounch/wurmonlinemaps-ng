@@ -24,6 +24,7 @@ export class AppComponent implements OnInit, AfterViewInit {
   deeds: IDeed[];
   deedsLayer: any;
   staringTownsLayer: any;
+  gridLayer: any;
 
   constructor(private deedsService: DeedsService) {
   }
@@ -165,7 +166,7 @@ export class AppComponent implements OnInit, AfterViewInit {
       for (var y = 0; y < 20; y++) {
         var xC = (y * 410) - 40;
 
-        var yDisplay = y + 8;
+        var yDisplay = y + 7;
         var gridID = gridX[x] + " " + yDisplay;
         gridPoints.push({ "cX": xC, "cY": yC, "GridID": gridID });
 
@@ -178,7 +179,7 @@ export class AppComponent implements OnInit, AfterViewInit {
       }
     }
 
-    var gridLayer = new ol.layer.Vector({
+    this.gridLayer = new ol.layer.Vector({
       source: gridSrc,
       name: "Grid Layer",
       style: gridLineStyleFunction
@@ -341,7 +342,7 @@ export class AppComponent implements OnInit, AfterViewInit {
     });
 
     this.map = new ol.Map({
-      layers: [terrainRaster, guardLayer, gridLayer, this.staringTownsLayer, this.deedsLayer],
+      layers: [terrainRaster, guardLayer, this.staringTownsLayer, this.deedsLayer],
       target: 'map',
       controls: ol.control.defaults({
         attributionOptions: ({
@@ -375,7 +376,7 @@ export class AppComponent implements OnInit, AfterViewInit {
     this.map.setTarget(this.mapElement.nativeElement.id);
   }
 
-  showStarters(event: any) {
+  toggleLayer(event: any, layerName: string) {
 
     let group = this.map.getLayerGroup();
     let layers = group.getLayers();
@@ -385,45 +386,54 @@ export class AppComponent implements OnInit, AfterViewInit {
     layers.forEach(layer => {
       let name = layer.get('name');
 
-      if (name == "Starter Deeds Layer") {
+      if (name == layerName) {
         layerExists = true;
       }
     });
 
-
     if (layerExists) {
-      this.map.removeLayer(this.staringTownsLayer)
-    }
-    else {
-      this.map.addLayer(this.staringTownsLayer)
-    }
-  }
-
-
-
-  // Deeds Layer
-  showDeeds(event: any) {
-
-    let group = this.map.getLayerGroup();
-    let layers = group.getLayers();
-
-    let layerExists: boolean = false;
-
-    layers.forEach(layer => {
-      let name = layer.get('name');
-
-      if (name == "Deeds Layer") {
-        layerExists = true;
+      switch (layerName) {
+        case "Deeds Layer":
+          {
+            this.map.removeLayer(this.deedsLayer);
+            break;
+          }
+        case "Starter Deeds Layer":
+          {
+            this.map.removeLayer(this.staringTownsLayer);
+            break;
+          }
+        case "Grid Layer":
+          {
+            this.map.removeLayer(this.gridLayer);
+            break;
+          }
+        default: {
+          console.log("Layer name not found for removal process");
+        }
       }
-    });
-
-
-    if (layerExists) {
-      this.map.removeLayer(this.deedsLayer)
     }
     else {
-      this.map.addLayer(this.deedsLayer)
+      switch (layerName) {
+        case "Deeds Layer":
+          {
+            this.map.addLayer(this.deedsLayer);
+            break;
+          }
+        case "Starter Deeds Layer":
+          {
+            this.map.addLayer(this.staringTownsLayer);
+            break;
+          }
+        case "Grid Layer":
+          {
+            this.map.addLayer(this.gridLayer);
+            break;
+          }
+        default: {
+          console.log("Layer name not found for add process");
+        }
+      }
     }
   }
-
 } // end comp
