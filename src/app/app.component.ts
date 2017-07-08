@@ -58,32 +58,43 @@ export class AppComponent implements OnInit, AfterViewInit {
     // canal passages
     var canalSources = new ol.source.Vector();
 
-    var canalStyleFunction = function (feature, resolution)
-    {
+    var canalStyleFunction = function (feature, resolution) {
       var isCanal = feature.get('isCanal');
+      var isTunnel = feature.get('isTunnel');
+      var allBoats = feature.get('allBoats')
+
+      let fontSize: number = resolution <= 0.125 ? 16 : 12;
+
+      var canalName = feature.get('name') != null ? feature.get('name') : '';
+
+      let canalText: string = `${canalName} (${isCanal = true ? 'Canal /' : ''} ${isTunnel = true ? 'Tunnel /' : ''} ${allBoats = true ? 'All Boats' : 'Knarrs only'})`;
+
 
       return [
         new ol.style.Style({
-            stroke: new ol.style.Stroke({
-                width: 4, 
-                color: 'rgba(125, 125, 255, 1)',
-                lineDash: [1, 15, 10],
-            }),
-            text: new ol.style.Text({
-            font: '12px Calibri,sans-serif',
-            text: feature.get('name') != null ? feature.get('name'): '',
+          stroke: new ol.style.Stroke({
+            width: 11 / resolution,
+            color: 'rgba(125, 125, 255, 0.8)',
+            lineDash: [.5, 1],
+          }),
+          text: new ol.style.Text({
+            font: '' + fontSize + 'px Calibri,sans-serif',
+            text: resolution < 8 ? canalText : '',
             textBaseline: 'middle',
             textAlign: 'center',
+            // offsetY: 12,
             fill: new ol.style.Fill({
-              color: 'rgba(255, 255, 255, 0.6)',
+              color: '#FFF'
             }),
             stroke: new ol.style.Stroke({
-              color: 'rgba(103, 207, 230, 0.6)',
-              width: 1,
+              color: '#000',
+              width: 2,
+              offsetY: 2,
+              offsetX: 2
             })
           })
         }),
-        
+
       ]
     }
 
@@ -93,6 +104,7 @@ export class AppComponent implements OnInit, AfterViewInit {
         geometry: new ol.geom.LineString([[canal.X1, canal.Y1], [canal.X2, canal.Y2]]),
         name: canal.Name,
         isCanal: canal.IsCanal,
+        isTunnel: canal.IsTunnel,
         allBoats: canal.AllBoats,
       });
 
