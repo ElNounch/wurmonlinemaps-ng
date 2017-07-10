@@ -25,6 +25,16 @@
                     <i class="material-icons slide-icon">grid_on</i>Grid
                 </md-slide-toggle>
             </p>
+            <p>
+                <md-slide-toggle class="setting-slider" [color]="primary" [checked]="true" (click)="toggleLayer($event, 'Canal Layer')">
+                    <i class="material-icons slide-icon">compare_arrows</i>Canals
+                </md-slide-toggle>
+            </p>
+            <p>
+                <md-slide-toggle class="setting-slider" [color]="primary" [checked]="true" (click)="toggleLayer($event, 'Guard Tower Layer')">
+                    <i class="material-icons slide-icon">track_changes</i>Guard Towers
+                </md-slide-toggle>
+            </p>
         </div>
     </md-sidenav>
 

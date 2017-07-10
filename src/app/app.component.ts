@@ -3,7 +3,7 @@ import { AfterContentInit, AfterViewInit, Component, ElementRef, ViewChild, OnIn
 import { MdToolbarModule, MdSidenavModule, MdSlideToggleModule, MdIconModule } from '@angular/material';
 
 import { DeedsService } from './deeds.service';
-import { IDeed, IStartingDeed, ICanal } from './app.models';
+import { IDeed, IStartingDeed, ICanal, Constants } from './app.models';
 
 //import * as ol from 'openlayers';
 
@@ -20,13 +20,17 @@ export class AppComponent implements OnInit, AfterViewInit {
   // This is necessary to access the html element to set the map target (after view init)!
   @ViewChild("mapElement") mapElement: ElementRef;
 
-  public map: any;
+  constants: Constants = new Constants();
+  
+  map: any;
   deeds: IDeed[];
   canals: ICanal[];
+
   deedsLayer: any;
   staringTownsLayer: any;
   gridLayer: any;
   canalLayer: any;
+  guardTowerLayer: any;
 
   constructor(private deedsService: DeedsService) {
   }
@@ -113,7 +117,7 @@ export class AppComponent implements OnInit, AfterViewInit {
 
     this.canalLayer = new ol.layer.Vector({
       source: canalSources,
-      name: "Canal Layer",
+      name: this.constants.CanalLayerName,
       style: canalStyleFunction
     });
 
@@ -159,9 +163,9 @@ export class AppComponent implements OnInit, AfterViewInit {
       guardSources.addFeature(guardtowerFeature);
     }
 
-    var guardLayer = new ol.layer.Vector({
+    this.guardTowerLayer = new ol.layer.Vector({
       source: guardSources,
-      name: "Guard Tower Layer",
+      name: this.constants.GuardTowerLayerName,
       style: guardtowerStyleFunction
     });
 
@@ -258,7 +262,7 @@ export class AppComponent implements OnInit, AfterViewInit {
 
     this.gridLayer = new ol.layer.Vector({
       source: gridSrc,
-      name: "Grid Layer",
+      name: this.constants.GridLayerName,
       style: gridLineStyleFunction
     });
 
@@ -344,7 +348,7 @@ export class AppComponent implements OnInit, AfterViewInit {
 
     this.staringTownsLayer = new ol.layer.Vector({
       source: startingTownsSource,
-      name: "Starter Deeds Layer"
+      name: this.constants.StarterDeedsLayerName
     });
 
 
@@ -406,7 +410,7 @@ export class AppComponent implements OnInit, AfterViewInit {
 
     this.deedsLayer = new ol.layer.Vector({
       source: deedsSrc,
-      name: "Deeds Layer",
+      name: this.constants.DeedLayerName,
       style: deedStyleFunction
     });
 
@@ -456,7 +460,12 @@ export class AppComponent implements OnInit, AfterViewInit {
     });
 
     this.map = new ol.Map({
-      layers: [terrainRaster, guardLayer, this.staringTownsLayer, this.canalLayer, this.deedsLayer],
+      layers: [
+        terrainRaster, 
+        this.guardTowerLayer, 
+        this.staringTownsLayer, 
+        this.canalLayer, 
+        this.deedsLayer],
       target: 'map',
       controls: controls,
       view: new ol.View({
@@ -503,19 +512,29 @@ export class AppComponent implements OnInit, AfterViewInit {
 
     if (layerExists) {
       switch (layerName) {
-        case "Deeds Layer":
+        case this.constants.DeedLayerName:
           {
             this.map.removeLayer(this.deedsLayer);
             break;
           }
-        case "Starter Deeds Layer":
+        case this.constants.StarterDeedsLayerName:
           {
             this.map.removeLayer(this.staringTownsLayer);
             break;
           }
-        case "Grid Layer":
+        case this.constants.GridLayerName:
           {
             this.map.removeLayer(this.gridLayer);
+            break;
+          }
+        case this.constants.CanalLayerName:
+          {
+            this.map.removeLayer(this.canalLayer);
+            break;
+          }
+          case this.constants.GuardTowerLayerName:
+          {
+            this.map.removeLayer(this.guardTowerLayer);
             break;
           }
         default: {
@@ -525,19 +544,29 @@ export class AppComponent implements OnInit, AfterViewInit {
     }
     else {
       switch (layerName) {
-        case "Deeds Layer":
+        case this.constants.DeedLayerName:
           {
             this.map.addLayer(this.deedsLayer);
             break;
           }
-        case "Starter Deeds Layer":
+        case this.constants.StarterDeedsLayerName:
           {
             this.map.addLayer(this.staringTownsLayer);
             break;
           }
-        case "Grid Layer":
+        case this.constants.GridLayerName:
           {
             this.map.addLayer(this.gridLayer);
+            break;
+          }
+        case this.constants.CanalLayerName:
+          {
+            this.map.addLayer(this.canalLayer);
+            break;
+          }
+          case this.constants.GuardTowerLayerName:
+          {
+            this.map.addLayer(this.guardTowerLayer);
             break;
           }
         default: {
