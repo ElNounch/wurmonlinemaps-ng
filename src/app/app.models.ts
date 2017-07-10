@@ -49,4 +49,5 @@ export class Constants {
     GridLayerName: string = "Grid Layer";
     GuardTowerLayerName: string = "Guard Tower Layer";
     CanalLayerName: string = "Canal Layer";
+    BridgeLayerName: string = "Bridge Layer";
 }

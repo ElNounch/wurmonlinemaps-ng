@@ -3,7 +3,7 @@ import { AfterContentInit, AfterViewInit, Component, ElementRef, ViewChild, OnIn
 import { MdToolbarModule, MdSidenavModule, MdSlideToggleModule, MdIconModule } from '@angular/material';
 
 import { DeedsService } from './deeds.service';
-import { IDeed, IStartingDeed, ICanal, Constants } from './app.models';
+import { IDeed, IStartingDeed, ICanal, Constants, IBridge } from './app.models';
 
 //import * as ol from 'openlayers';
 
@@ -21,7 +21,7 @@ export class AppComponent implements OnInit, AfterViewInit {
   @ViewChild("mapElement") mapElement: ElementRef;
 
   constants: Constants = new Constants();
-  
+
   map: any;
   deeds: IDeed[];
   canals: ICanal[];
@@ -30,7 +30,9 @@ export class AppComponent implements OnInit, AfterViewInit {
   staringTownsLayer: any;
   gridLayer: any;
   canalLayer: any;
+  bridgeLayer: any;
   guardTowerLayer: any;
+
 
   constructor(private deedsService: DeedsService) {
   }
@@ -59,6 +61,74 @@ export class AppComponent implements OnInit, AfterViewInit {
       new ol.control.FullScreen()
     ];
 
+    // les bridge
+    let bridges: IBridge[] = [
+      {
+        ID: 0,
+        Server: 0,
+        X1: 6549,
+        Y1: -2112,
+        X2: 6590,
+        Y2: -2112,
+        Width: 1,
+        Name: "Rotgut's Bridge to Nowhere",
+        Notes: "Stupid bridge"
+
+      },
+    ]
+
+    var bridgeStyleFuction = function (feature, resolution) {
+      let fontSize: number = resolution <= 0.125 ? 16 : 12;
+
+      var bridgeName = feature.get('name') != null ? feature.get('name') : '';
+      var bWidth = feature.get('width') != null ? feature.get('width') : 2
+
+      return [
+        new ol.style.Style({
+          stroke: new ol.style.Stroke({
+            width: 8 / resolution,
+            color: 'rgba(179, 170, 0, 0.8)',
+          }),
+          text: new ol.style.Text({
+            font: '' + fontSize + 'px Calibri,sans-serif',
+            text: resolution < 8 ? bridgeName : '',
+            textBaseline: 'middle',
+            textAlign: 'center',
+            // offsetY: 12,
+            fill: new ol.style.Fill({
+              color: '#FFF'
+            }),
+            stroke: new ol.style.Stroke({
+              color: '#000',
+              width: 2,
+              offsetY: 2,
+              offsetX: 2
+            })
+          })
+        }),
+
+      ]
+    }
+
+    var bridgeSources = new ol.source.Vector();
+
+    for (let bridge of bridges) {
+      var bridgeFeature = new ol.Feature({
+        // [[78.65, -32,65], [-98.65, 12.65]];
+        geometry: new ol.geom.LineString([[bridge.X1, bridge.Y1], [bridge.X2, bridge.Y2]]),
+        name: bridge.Name,
+        width: bridge.Width
+      });
+    }
+
+    bridgeSources.addFeature(bridgeFeature);
+
+    this.bridgeLayer = new ol.layer.Vector({
+      source: bridgeSources,
+      name: this.constants.BridgeLayerName,
+      style: bridgeStyleFuction
+    });
+
     // canal passages
     var canalSources = new ol.source.Vector();
 
@@ -79,7 +149,6 @@ export class AppComponent implements OnInit, AfterViewInit {
           stroke: new ol.style.Stroke({
             width: 11 / resolution,
             color: 'rgba(125, 125, 255, 0.8)',
-            lineDash: [.5, 1],
           }),
           text: new ol.style.Text({
             font: '' + fontSize + 'px Calibri,sans-serif',
@@ -461,10 +530,11 @@ export class AppComponent implements OnInit, AfterViewInit {
 
     this.map = new ol.Map({
       layers: [
-        terrainRaster, 
-        this.guardTowerLayer, 
-        this.staringTownsLayer, 
-        this.canalLayer, 
+        terrainRaster,
+        this.guardTowerLayer,
+        this.staringTownsLayer,
+        this.bridgeLayer,
+        this.canalLayer,
         this.deedsLayer],
       target: 'map',
       controls: controls,
@@ -532,7 +602,7 @@ export class AppComponent implements OnInit, AfterViewInit {
             this.map.removeLayer(this.canalLayer);
             break;
           }
-          case this.constants.GuardTowerLayerName:
+        case this.constants.GuardTowerLayerName:
           {
             this.map.removeLayer(this.guardTowerLayer);
             break;
@@ -564,7 +634,7 @@ export class AppComponent implements OnInit, AfterViewInit {
             this.map.addLayer(this.canalLayer);
             break;
           }
-          case this.constants.GuardTowerLayerName:
+        case this.constants.GuardTowerLayerName:
           {
             this.map.addLayer(this.guardTowerLayer);
             break;
