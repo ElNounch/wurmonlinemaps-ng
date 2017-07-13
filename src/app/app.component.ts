@@ -3,9 +3,9 @@ import { AfterContentInit, AfterViewInit, Component, ElementRef, ViewChild, OnIn
 import { MdToolbarModule, MdSidenavModule, MdSlideToggleModule, MdIconModule } from '@angular/material';
 
 import { DeedsService } from './deeds.service';
-import { IDeed, IStartingDeed, ICanal, Constants, IBridge } from './app.models';
+import { IDeed, IStartingDeed, ICanal, Constants, IBridge, IGuardTower } from './app.models';
 
-//import * as ol from 'openlayers';
+import { GTLayer } from './layers/gt.module'
 
 // This is necessary to access ol3!
 declare var ol: any;
@@ -223,23 +223,17 @@ export class AppComponent implements OnInit, AfterViewInit {
       [6584, -1992]
     ];
 
-    for (let g of gts) {
-      var guardtowerFeature = new ol.Feature({
-        geometry: new ol.geom.Point(g),
-        name: "guard tower"
-      });
-
-      guardSources.addFeature(guardtowerFeature);
-    }
+    var gtm = new GTLayer();
+    var gtmSource = gtm.generateSource(gts);
 
     this.guardTowerLayer = new ol.layer.Vector({
-      source: guardSources,
+      source: gtmSource,
       name: this.constants.GuardTowerLayerName,
-      style: guardtowerStyleFunction
-    });
+      style: gtm.styleFunction
+    })
 
+    // grid layer stuff
     var gridSrc = new ol.source.Vector();
-
 
     var gridLineStyleFunction = function (feature, resolution) {
       // console.log("Resolution", resolution);

@@ -43,6 +43,15 @@ export interface IBridge {
     Notes: string;
 }
 
+export interface IGuardTower {
+    ID: number;
+    Server: number;
+    X1: number;
+    Y1: number;
+    Name: string;
+    Notes: string;
+}
+
 export class Constants {
     StarterDeedsLayerName: string = "Starter Deeds Layer";
     DeedLayerName: string = "Deeds Layer";
