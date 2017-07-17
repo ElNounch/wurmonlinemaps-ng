@@ -11,6 +11,10 @@ export interface ServerData {
     
 }
 
+export enum LandmarkType {
+    GuardTower,
+}
+
 export interface IStartingDeed {
     Name: string;
     X: number;
@@ -43,8 +47,9 @@ export interface IBridge {
     Notes: string;
 }
 
-export interface IGuardTower {
+export interface ILandmark {
     ID: number;
+    LandmarkType: LandmarkType;
     Server: number;
     X1: number;
     Y1: number;

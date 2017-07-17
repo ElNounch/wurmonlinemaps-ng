@@ -1,20 +1,20 @@
-import { IGuardTower } from '../app.models';
+import { ILandmark, LandmarkType } from '../app.models';
 
 declare var ol: any;
 
-export interface GTModuleLayer {
+export interface LandmarkModuleLayer {
     generateSource(gtData: any[]): any;
     styleFunction(feature, resolution): any[];
 }
 
-export class GTLayer implements GTModuleLayer {
+export class LandmarkLayer implements LandmarkModuleLayer {
     generateSource(gtData: any[]) {
         var guardSources = new ol.source.Vector();
 
         for (let g of gtData) {
             var guardtowerFeature = new ol.Feature({
                 geometry: new ol.geom.Point(g),
-                name: "guard tower"
+                type: "guard tower"
             });
 
             guardSources.addFeature(guardtowerFeature);

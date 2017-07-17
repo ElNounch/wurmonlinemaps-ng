@@ -3,9 +3,10 @@ import { AfterContentInit, AfterViewInit, Component, ElementRef, ViewChild, OnIn
 import { MdToolbarModule, MdSidenavModule, MdSlideToggleModule, MdIconModule } from '@angular/material';
 
 import { DeedsService } from './deeds.service';
-import { IDeed, IStartingDeed, ICanal, Constants, IBridge, IGuardTower } from './app.models';
+import { IDeed, IStartingDeed, ICanal, Constants, IBridge, ILandmark } from './app.models';
 
-import { GTLayer } from './layers/gt.module'
+import { LandmarkLayer } from './layers/landmark.module'
+import { StartingDeedLayer } from './layers/starting-towns.module'
 
 // This is necessary to access ol3!
 declare var ol: any;
@@ -31,8 +32,7 @@ export class AppComponent implements OnInit, AfterViewInit {
   gridLayer: any;
   canalLayer: any;
   bridgeLayer: any;
-  guardTowerLayer: any;
-
+  landmarkLayer: any;
 
   constructor(private deedsService: DeedsService) {
   }
@@ -191,31 +191,6 @@ export class AppComponent implements OnInit, AfterViewInit {
     });
 
     // guard tower feature
-    var guardSources = new ol.source.Vector();
-
-    var guardtowerStyleFunction = function (feature, resolution) {
-      // console.log("Feature", feature);
-      // console.log("Resolution", resolution);
-
-      return [
-        new ol.style.Style({
-          image: new ol.style.RegularShape({
-            points: 30,
-            radius: 20 / resolution,
-            angle: Math.PI / 4,
-            fill: new ol.style.Fill({
-              color: 'rgba(12, 89, 29, 0.6)'
-            }),
-            stroke: new ol.style.Stroke({
-              color: 'rgba(255, 255, 255, 0.1)',
-              width: 50 / resolution
-            }),
-          })
-        })
-      ]
-    };
-
-    // guard tower points [6323.375, -2046.59765625]
     var gts = [
       [6323, -2046],
       [6533, -1986],
@@ -223,11 +198,10 @@ export class AppComponent implements OnInit, AfterViewInit {
       [6584, -1992]
     ];
 
-    var gtm = new GTLayer();
-    var gtmSource = gtm.generateSource(gts);
+    var gtm = new LandmarkLayer();
 
-    this.guardTowerLayer = new ol.layer.Vector({
-      source: gtmSource,
+    this.landmarkLayer = new ol.layer.Vector({
+      source: gtm.generateSource(gts),
       name: this.constants.GuardTowerLayerName,
       style: gtm.styleFunction
     })
@@ -330,90 +304,13 @@ export class AppComponent implements OnInit, AfterViewInit {
     });
 
     // starter towns
-    var startingTowns = [
-      {
-        "Name": "Summerholt",
-        "Coords": [[6582, -2231], [6622, -2231], [6622, -2272], [6582, -2272]]
-      },
-      {
-        "Name": "Greymead",
-        "Coords": [[4680, -3030], [4721, -3030], [4721, -3071], [4680, -3071]]
-      },
-      {
-        "Name": "Whitefay",
-        "Coords": [[5639, -3041], [5662, -3041], [5662, -3060], [5639, -3060]]
-      },
-      {
-        "Name": "Glasshollow",
-        "Coords": [[1559, -766], [1600, -766], [1600, -808], [1559, -808]]
-      },
-      {
-        "Name": "Newspring",
-        "Coords": [[862, -7208], [903, -7208], [903, -7250], [862, -7250]]
-      },
-      {
-        "Name": "Esteron",
-        "Coords": [[7391, -6416], [7428, -6416], [7428, -6453], [7391, -6452]]
-      },
-      {
-        "Name": "Linton",
-        "Coords": [[1805, -4146], [1845, -4146], [1845, -4186], [1805, -4186]]
-      },
-      {
-        "Name": "Lormere",
-        "Coords": [[3460, -6416], [3501, -6416], [3501, -6457], [3460, -6457]]
-      },
-      {
-        "Name": "Vrock Landing",
-        "Coords": [[2702, -2221], [2742, -2221], [2742, -2261], [2702, -2261]]
-      }
-
-    ]
-
-    var startingTownsSource = new ol.source.Vector();
-
-    for (let town of startingTowns) {
-
-      var startingTownFeature = new ol.Feature({
-        geometry: new ol.geom.Polygon([town.Coords]),
-        name: town.Name
-      });
-
-      startingTownsSource.addFeature(startingTownFeature);
-
-      startingTownFeature.setStyle(new ol.style.Style({
-        stroke: new ol.style.Stroke({
-          color: 'blue',
-          width: 3
-        }),
-        fill: new ol.style.Fill({
-          color: 'rgba(0, 0, 255, 0.1)'
-        }),
-        text: new ol.style.Text({
-          font: '14px Calibri,sans-serif',
-          text: town.Name,
-          textBaseline: 'middle',
-          textAlign: 'center',
-          fill: new ol.style.Fill({
-            color: '#FFF'
-          }),
-          stroke: new ol.style.Stroke({
-            color: '#000',
-            width: 1,
-            offsetY: 1,
-            offsetX: 2
-          })
-        })
-      }));
-
-      startingTownsSource.addFeature(startingTownFeature);
-    }
+    var sdm = new StartingDeedLayer();
 
     this.staringTownsLayer = new ol.layer.Vector({
-      source: startingTownsSource,
-      name: this.constants.StarterDeedsLayerName
+      source: sdm.generateSource(),
+      name: this.constants.StarterDeedsLayerName,
+      style: sdm.styleFunction
     });
-
 
     var deedsSrc = new ol.source.Vector();
 
@@ -477,6 +374,53 @@ export class AppComponent implements OnInit, AfterViewInit {
       style: deedStyleFunction
     });
 
+    // khaaaaaan
+    var khaanSource = new ol.source.Vector();
+
+    var khaanFeature = new ol.Feature({
+      geometry: new ol.geom.Point([6330,-1825]),
+      type: "Khaaaan"
+    })
+
+    khaanSource.addFeature(khaanFeature);
+
+    var khaanStyleFunction = function (feature, resolution) {
+      let fontSize: number = resolution <= 0.125 ? 16 : 12;
+
+      return [
+        new ol.style.Style({
+          image: new ol.style.Icon({
+            size: [96, 96],
+            opacity: 0.7,
+            src: resolution < 0.125 ? './assets/khaaan.jpg' : ''
+          }),
+          text: new ol.style.Text({
+            font: '' + fontSize + 'px Calibri,sans-serif',
+            text: resolution < 0.125 ? 'Khaaaaan!' : '',
+            textBaseline: 'middle',
+            textAlign: 'center',
+            // offsetY: 12,
+            fill: new ol.style.Fill({
+              color: '#FFF'
+            }),
+            stroke: new ol.style.Stroke({
+              color: '#000',
+              width: 2,
+              offsetY: 2,
+              offsetX: 2
+            })
+          })
+        })
+      ]
+    }
+
+    var khanLayer = new ol.layer.Vector({
+      source: khaanSource,
+      style: khaanStyleFunction
+    })
+
+
+
     // oh shit the real map code kinda starts here!
 
     var mapExtent = [0.00000000, -8192.00000000, 8192.00000000, 0.00000000];
@@ -525,11 +469,14 @@ export class AppComponent implements OnInit, AfterViewInit {
     this.map = new ol.Map({
       layers: [
         terrainRaster,
-        this.guardTowerLayer,
+        this.landmarkLayer,
         this.staringTownsLayer,
         this.bridgeLayer,
         this.canalLayer,
-        this.deedsLayer],
+        this.deedsLayer,
+        khanLayer
+        //this.gridsLayer
+      ],
       target: 'map',
       controls: controls,
       view: new ol.View({
@@ -598,7 +545,7 @@ export class AppComponent implements OnInit, AfterViewInit {
           }
         case this.constants.GuardTowerLayerName:
           {
-            this.map.removeLayer(this.guardTowerLayer);
+            this.map.removeLayer(this.landmarkLayer);
             break;
           }
         default: {
@@ -630,7 +577,7 @@ export class AppComponent implements OnInit, AfterViewInit {
           }
         case this.constants.GuardTowerLayerName:
           {
-            this.map.addLayer(this.guardTowerLayer);
+            this.map.addLayer(this.landmarkLayer);
             break;
           }
         default: {
