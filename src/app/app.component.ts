@@ -375,47 +375,100 @@ export class AppComponent implements OnInit, AfterViewInit {
     });
 
     // khaaaaaan
-    var khaanSource = new ol.source.Vector();
+    var easterEggSource = new ol.source.Vector();
 
     var khaanFeature = new ol.Feature({
-      geometry: new ol.geom.Point([6330,-1825]),
+      geometry: new ol.geom.Point([6330, -1825]),
       type: "Khaaaan"
     })
 
-    khaanSource.addFeature(khaanFeature);
+    easterEggSource.addFeature(khaanFeature);
+
+    var midpointFeature = new ol.Feature({
+      geometry: new ol.geom.Point([4096, -4096]),
+      type: "Midpoint"
+    })
+
+    easterEggSource.addFeature(midpointFeature);
 
     var khaanStyleFunction = function (feature, resolution) {
-      let fontSize: number = resolution <= 0.125 ? 16 : 12;
+      let fontSize: number = 12;
+      let khaanText = 'Khaaaan!';
 
-      return [
-        new ol.style.Style({
-          image: new ol.style.Icon({
-            size: [96, 96],
-            opacity: 0.7,
-            src: resolution < 0.125 ? './assets/khaaan.jpg' : ''
-          }),
-          text: new ol.style.Text({
-            font: '' + fontSize + 'px Calibri,sans-serif',
-            text: resolution < 0.125 ? 'Khaaaaan!' : '',
-            textBaseline: 'middle',
-            textAlign: 'center',
-            // offsetY: 12,
-            fill: new ol.style.Fill({
-              color: '#FFF'
+      if (resolution < 0.25) {
+        khaanText = 'Khaaaaaaaaaan!';
+      }
+
+      if (resolution < 0.125) {
+        khaanText = 'Khaaaaaaaaaaaaaaan!';
+      }
+
+      if (resolution < 0.07) {
+        khaanText = 'Khaaaaaaaaaaaaaaaaaaaaaaaaan!';
+      }
+
+      if (resolution < 0.04) {
+        khaanText = 'Khaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaan!';
+      }
+
+      if (feature.get('type') === "Khaaaan") {
+        return [
+          new ol.style.Style({
+            image: new ol.style.Icon({
+              size: [96, 96],
+              opacity: 0.7,
+              src: resolution < 0.50 ? './assets/khaaan.jpg' : ''
             }),
-            stroke: new ol.style.Stroke({
-              color: '#000',
-              width: 2,
-              offsetY: 2,
-              offsetX: 2
+            text: new ol.style.Text({
+              font: '' + fontSize + 'px Calibri,sans-serif',
+              text: khaanText,
+              textBaseline: 'middle',
+              offsetY: 20,
+              fill: new ol.style.Fill({
+                color: '#FFF'
+              }),
+              stroke: new ol.style.Stroke({
+                color: '#000',
+                width: 2,
+                offsetY: 2,
+                offsetX: 2
+              })
             })
           })
-        })
-      ]
+        ]
+      }
+
+      if (feature.get('type') === "Midpoint") {
+        return [
+          new ol.style.Style({
+            image: new ol.style.Icon({
+              size: [128, 128],
+              opacity: 0.8,
+              src: resolution < 1 ? './assets/xhair-128.png' : ''
+            }),
+            text: new ol.style.Text({
+              font: '' + fontSize + 'px Calibri,sans-serif',
+              text: "Midpoint! (Justa Map Maker's Mark)",
+              textAlign: 'center',
+              offsetY: 24,
+              fill: new ol.style.Fill({
+                color: '#FFF'
+              }),
+              stroke: new ol.style.Stroke({
+                color: '#000',
+                width: 2,
+                offsetY: -2,
+                offsetX: 2
+              })
+            })
+          })
+        ]
+      }
+
     }
 
     var khanLayer = new ol.layer.Vector({
-      source: khaanSource,
+      source: easterEggSource,
       style: khaanStyleFunction
     })
 
@@ -494,7 +547,9 @@ export class AppComponent implements OnInit, AfterViewInit {
 
       let zoom = evt.map.getView().getZoom();
       console.log("Zoom", zoom);
-    })
+    
+      console.log("Alt Click Features", evt.target.item(0));
+    });
   }
 
   // After view init the map target can be set!

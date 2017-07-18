@@ -2450,14 +2450,6 @@
             "Notes": null
         },
         {
-            "ID": 2,
-            "Server": 0,
-            "X": 4096,
-            "Y": -4096,
-            "Name": "Midpoint (mappers mark no deed)",
-            "Notes": "Just a temp entry"
-        },
-        {
             "ID": 418,
             "Server": 0,
             "X": 1303,
