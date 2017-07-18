@@ -5,14 +5,22 @@ import 'rxjs/add/operator/map';
 import 'rxjs/add/operator/catch';
 import 'rxjs/add/operator/do';
 
-import { IDeed, IStartingDeed } from './app.models'
+import { IDeed, IStartingDeed, ServerData } from './app.models'
 
 @Injectable()
 export class DeedsService {
+    private _apiDataUrl: string = 'http://wurmonlinemaps.com/api/data/Xanadu';
     private _deedJsonUrl: string = './assets/deedsdump.json';
     private _startingDeedsJsonUrl: string = './assets/startingdeeds.json';
 
     constructor(private _http: Http) { }
+
+    getData(): Observable<ServerData> {
+        return this._http.get(this._apiDataUrl)
+            .map((response: Response) => <ServerData>response.json())
+            .do(data => console.log('Data dump: ', data))
+            .catch(this.handleError);
+    }
 
     getDeeds(): Observable<IDeed[]> {
         return this._http.get(this._deedJsonUrl)

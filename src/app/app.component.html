@@ -21,7 +21,7 @@
                 </md-slide-toggle>
             </p>
             <p>
-                <md-slide-toggle class="setting-slider" [color]="primary" [checked]="false" (click)="toggleLayer($event, 'Bridge Layer')">
+                <md-slide-toggle class="setting-slider" [color]="primary" [checked]="true" (click)="toggleLayer($event, 'Bridge Layer')">
                     <i class="material-icons slide-icon">panorama_horizontal</i>Bridges
                 </md-slide-toggle>
             </p>
@@ -39,6 +39,12 @@
                 <md-slide-toggle class="setting-slider" [color]="primary" [checked]="false" (click)="toggleLayer($event, 'Grid Layer')">
                     <i class="material-icons slide-icon">grid_on</i>Grid
                 </md-slide-toggle>
+            </p>
+
+            <p>
+                <md-select placeholder="Find a Deed" *ngIf="deeds != null">
+                    <md-option *ngFor="let deed of deeds; let i = index;" [value]="deed.ID" (click)="gotoDeed($event, i)">{{ deed.Name }}</md-option>
+                </md-select>
             </p>
         </div>
     </md-sidenav>

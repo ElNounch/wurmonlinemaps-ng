@@ -1,9 +1,9 @@
 import { AfterContentInit, AfterViewInit, Component, ElementRef, ViewChild, OnInit } from "@angular/core";
 
-import { MdToolbarModule, MdSidenavModule, MdSlideToggleModule, MdIconModule } from '@angular/material';
+import { MdToolbarModule, MdSidenavModule, MdSlideToggleModule, MdIconModule, MdSelect, MdOption } from '@angular/material';
 
 import { DeedsService } from './deeds.service';
-import { IDeed, IStartingDeed, ICanal, Constants, IBridge, ILandmark } from './app.models';
+import { IDeed, IStartingDeed, ICanal, Constants, IBridge, ILandmark, ServerData } from './app.models';
 
 import { LandmarkLayer } from './layers/landmark.module'
 import { StartingDeedLayer } from './layers/starting-towns.module'
@@ -26,6 +26,8 @@ export class AppComponent implements OnInit, AfterViewInit {
   map: any;
   deeds: IDeed[];
   canals: ICanal[];
+  bridges: IBridge[];
+  landmarks: ILandmark[];
 
   deedsLayer: any;
   staringTownsLayer: any;
@@ -38,17 +40,29 @@ export class AppComponent implements OnInit, AfterViewInit {
   }
 
   ngOnInit(): void {
-    this.deedsService.getDeeds()
-      .subscribe(deeds => {
-        this.deeds = deeds["data"];
-        this.canals = deeds["canals"];
-        // console.log("Calling Render Layer with deeds: ", this.deeds);
-        console.log("Canals", this.canals);
-        this.renderOpenLayers(this.deeds);
-      });
+    // this.deedsService.getDeeds()
+    //   .subscribe(deeds => {
+    //     this.deeds = deeds["data"];
+    //     this.canals = deeds["canals"];
+    //     // console.log("Calling Render Layer with deeds: ", this.deeds);
+    //     console.log("Canals", this.canals);
+    //     this.renderOpenLayers(this.deeds);
+    //   });
+
+    this.deedsService.getData()
+      .subscribe(data => {
+        this.renderOpenLayers(data);
+      })
+
   }
 
-  renderOpenLayers(deeds: IDeed[]): void {
+  renderOpenLayers(data: ServerData): void {
+    this.deeds = data.Deeds;
+    this.canals = data.Canals;
+    this.bridges = data.Bridges;
+    this.landmarks = data.Landmarks;
+
+
     var controls = [
       new ol.control.Attribution(),
       new ol.control.MousePosition({
@@ -62,21 +76,6 @@ export class AppComponent implements OnInit, AfterViewInit {
     ];
 
     // les bridge
-    let bridges: IBridge[] = [
-      {
-        ID: 0,
-        Server: 0,
-        X1: 6549,
-        Y1: -2112,
-        X2: 6590,
-        Y2: -2112,
-        Width: 1,
-        Name: "Rotgut's Bridge to Nowhere",
-        Notes: "Stupid bridge"
-
-      },
-    ]
-
     var bridgeStyleFuction = function (feature, resolution) {
       let fontSize: number = resolution <= 0.125 ? 16 : 12;
 
@@ -112,7 +111,9 @@ export class AppComponent implements OnInit, AfterViewInit {
 
     var bridgeSources = new ol.source.Vector();
 
-    for (let bridge of bridges) {
+    for (let bridge of this.bridges) {
+      console.log("Rendering bridge:", bridge)
+
       var bridgeFeature = new ol.Feature({
         // [[78.65, -32,65], [-98.65, 12.65]];
         geometry: new ol.geom.LineString([[bridge.X1, bridge.Y1], [bridge.X2, bridge.Y2]]),
@@ -347,7 +348,7 @@ export class AppComponent implements OnInit, AfterViewInit {
       ]
     }
 
-    for (let deed of deeds) {
+    for (let deed of this.deeds) {
       if (deed.Name == "Summerholt" ||
         deed.Name == "Greymead" ||
         deed.Name == "Whitefay" ||
@@ -547,8 +548,13 @@ export class AppComponent implements OnInit, AfterViewInit {
 
       let zoom = evt.map.getView().getZoom();
       console.log("Zoom", zoom);
-    
-      console.log("Alt Click Features", evt.target.item(0));
+
+      console.log("Event target", evt.target);
+
+      evt.map.forEachFeatureAtPixel(evt.pixel, function (feature, layer) {
+        //do something
+        console.log("Feature at pixel", feature);
+      });
     });
   }
 
@@ -603,8 +609,13 @@ export class AppComponent implements OnInit, AfterViewInit {
             this.map.removeLayer(this.landmarkLayer);
             break;
           }
+          case this.constants.BridgeLayerName:
+          {
+            this.map.removeLayer(this.bridgeLayer);
+            break;
+          }
         default: {
-          console.log("Layer name not found for removal process");
+          console.log("Layer name not found for removal process.", layerName);
         }
       }
     }
@@ -635,10 +646,31 @@ export class AppComponent implements OnInit, AfterViewInit {
             this.map.addLayer(this.landmarkLayer);
             break;
           }
+        case this.constants.BridgeLayerName:
+          {
+            this.map.addLayer(this.bridgeLayer);
+            break;
+          }
         default: {
-          console.log("Layer name not found for add process");
+          console.log("Layer name not found for add process,", layerName);
         }
       }
     }
+  }
+
+  gotoDeed(event: any, id: number) {
+
+    let deed = this.deeds[id];
+
+    console.log("Find a deed, deed found:", deed);
+
+    var extent = [deed.X - 100, deed.Y - 100, deed.X + 100, deed.Y + 100];
+    console.log("Find a deed Extent:", extent);
+    var view = this.map.getView();
+    console.log("Find a deed View:", view);
+    var size = this.map.getSize();
+    console.log("Find a deed Size:", size);
+    
+    view.fit(extent, size);
   }
 } // end comp

@@ -8,7 +8,10 @@ export interface IDeed {
 }
 
 export interface ServerData {
-    
+    Deeds: IDeed[];
+    Canals: ICanal[];
+    Bridges: IBridge[];
+    Landmarks: ILandmark[];
 }
 
 export enum LandmarkType {
