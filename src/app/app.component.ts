@@ -36,24 +36,20 @@ export class AppComponent implements OnInit, AfterViewInit {
   bridgeLayer: any;
   landmarkLayer: any;
 
+  terrainRaster: any;
+  topoRaster: any;
+  isoRaster: any;
+
+  currentRaster: string = this.constants.TerrainLayerName;
+
   constructor(private deedsService: DeedsService) {
   }
 
   ngOnInit(): void {
-    // this.deedsService.getDeeds()
-    //   .subscribe(deeds => {
-    //     this.deeds = deeds["data"];
-    //     this.canals = deeds["canals"];
-    //     // console.log("Calling Render Layer with deeds: ", this.deeds);
-    //     console.log("Canals", this.canals);
-    //     this.renderOpenLayers(this.deeds);
-    //   });
-
     this.deedsService.getData()
       .subscribe(data => {
         this.renderOpenLayers(data);
       })
-
   }
 
   renderOpenLayers(data: ServerData): void {
@@ -61,7 +57,6 @@ export class AppComponent implements OnInit, AfterViewInit {
     this.canals = data.Canals;
     this.bridges = data.Bridges;
     this.landmarks = data.Landmarks;
-
 
     var controls = [
       new ol.control.Attribution(),
@@ -473,10 +468,7 @@ export class AppComponent implements OnInit, AfterViewInit {
       style: khaanStyleFunction
     })
 
-
-
     // oh shit the real map code kinda starts here!
-
     var mapExtent = [0.00000000, -8192.00000000, 8192.00000000, 0.00000000];
     var mapMinZoom = 0;
     var mapMaxZoom = 5;
@@ -495,34 +487,38 @@ export class AppComponent implements OnInit, AfterViewInit {
       resolutions: mapResolutions
     });
 
-    var terrainRaster = new ol.layer.Tile({
+    this.terrainRaster = new ol.layer.Tile({
       source: new ol.source.XYZ({
-        projection: 'EPSG:3857',
-        url: "./assets/tiles/Xanadu-terrain_161101/{z}/{x}/{y}.png",
+        url: "http://wurmonlinemaps.com/Content/Tiles/Xanadu-terrain_161101/{z}/{x}/{y}.png",
         tileGrid: mapTileGrid,
       }),
       name: "Xanadu Terrain Raster",
     });
 
-    var isoRaster = new ol.layer.Tile({
+    this.isoRaster = new ol.layer.Tile({
       source: new ol.source.XYZ({
-        url: "../../Content/Tiles/Xanadu-iso_161101/{z}/{x}/{y}.png",
+        url: "http://wurmonlinemaps.com/Content/Tiles/Xanadu-iso_161101/{z}/{x}/{y}.png",
         tileGrid: mapTileGrid,
       }),
       name: "Xanadu Isometric Raster",
     });
 
-    var topoRaster = new ol.layer.Tile({
+    this.topoRaster = new ol.layer.Tile({
       source: new ol.source.XYZ({
-        url: "../../Content/Tiles/Xanadu-topo_161101/{z}/{x}/{y}.png",
+        url: "http://wurmonlinemaps.com/Content/Tiles/Xanadu-topo_161101/{z}/{x}/{y}.png",
         tileGrid: mapTileGrid,
       }),
       name: "Xanadu Toplogical Raster",
     });
 
+    this.isoRaster.setVisible(false);
+    this.topoRaster.setVisible(false);
+
     this.map = new ol.Map({
       layers: [
-        terrainRaster,
+        this.terrainRaster,
+        this.isoRaster,
+        this.topoRaster,
         this.landmarkLayer,
         this.staringTownsLayer,
         this.bridgeLayer,
@@ -609,7 +605,7 @@ export class AppComponent implements OnInit, AfterViewInit {
             this.map.removeLayer(this.landmarkLayer);
             break;
           }
-          case this.constants.BridgeLayerName:
+        case this.constants.BridgeLayerName:
           {
             this.map.removeLayer(this.bridgeLayer);
             break;
@@ -670,7 +666,26 @@ export class AppComponent implements OnInit, AfterViewInit {
     console.log("Find a deed View:", view);
     var size = this.map.getSize();
     console.log("Find a deed Size:", size);
-    
+
     view.fit(extent, size);
+  }
+
+  mainLayer(id: number) {
+    if (id === 0) {
+      this.terrainRaster.setVisible(true);
+      this.isoRaster.setVisible(false);
+      this.topoRaster.setVisible(false);
+      this.currentRaster = this.constants.TerrainLayerName;
+    } else if (id === 1) {
+      this.terrainRaster.setVisible(false);
+      this.isoRaster.setVisible(true);
+      this.topoRaster.setVisible(false);
+      this.currentRaster = this.constants.IsoLayerName;
+    } else {
+      this.terrainRaster.setVisible(false);
+      this.isoRaster.setVisible(false);
+      this.topoRaster.setVisible(true);
+      this.currentRaster = this.constants.TopoLayerName;
+    }
   }
 } // end comp

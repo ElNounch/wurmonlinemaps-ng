@@ -67,4 +67,7 @@ export class Constants {
     GuardTowerLayerName: string = "Guard Tower Layer";
     CanalLayerName: string = "Canal Layer";
     BridgeLayerName: string = "Bridge Layer";
+    TerrainLayerName: string = "Terrain (2016 Nov)";
+    IsoLayerName: string = "Isometric (2016 Nov)";
+    TopoLayerName: string = "Topological (2016 Nov)";
 }

@@ -4,6 +4,7 @@
     </button>
     <span>&nbsp;Xanadu 2.0</span>
     <span class="example-spacer"></span>
+    <span>{{currentRaster}}</span>
     <md-icon class="header-icon">map</md-icon>
 </md-toolbar>
 
@@ -11,36 +12,47 @@
     <md-sidenav #sidenav mode="slide" opened="false">
         <div class="example-scrolling-content">
             <p>
-                <md-slide-toggle class="setting-slider" [color]="primary" [checked]="true" (click)="toggleLayer($event, 'Starter Deeds Layer')">
+                <md-slide-toggle class="setting-slider" [checked]="true" (click)="toggleLayer($event, 'Starter Deeds Layer')">
                     <md-icon class="slide-icon">account_balance</md-icon>Startin' Towns
                 </md-slide-toggle>
             </p>
             <p>
-                <md-slide-toggle class="setting-slider" [color]="primary" [checked]="true" (click)="toggleLayer($event, 'Deeds Layer')">
+                <md-slide-toggle class="setting-slider" [checked]="true" (click)="toggleLayer($event, 'Deeds Layer')">
                     <i class="material-icons slide-icon">local_play</i>Deeds
                 </md-slide-toggle>
             </p>
             <p>
-                <md-slide-toggle class="setting-slider" [color]="primary" [checked]="true" (click)="toggleLayer($event, 'Bridge Layer')">
+                <md-slide-toggle class="setting-slider" [checked]="true" (click)="toggleLayer($event, 'Bridge Layer')">
                     <i class="material-icons slide-icon">panorama_horizontal</i>Bridges
                 </md-slide-toggle>
             </p>
             <p>
-                <md-slide-toggle class="setting-slider" [color]="primary" [checked]="true" (click)="toggleLayer($event, 'Canal Layer')">
+                <md-slide-toggle class="setting-slider" [checked]="true" (click)="toggleLayer($event, 'Canal Layer')">
                     <i class="material-icons slide-icon">compare_arrows</i>Canals
                 </md-slide-toggle>
             </p>
             <p>
-                <md-slide-toggle class="setting-slider" [color]="primary" [checked]="true" (click)="toggleLayer($event, 'Guard Tower Layer')">
-                    <i class="material-icons slide-icon">adjust</i>Guard Towers
+                <md-slide-toggle class="setting-slider" [checked]="true" (click)="toggleLayer($event, 'Guard Tower Layer')">
+                    <i class="material-icons slide-icon">adjust</i>Landmarks
                 </md-slide-toggle>
             </p>
             <p>
-                <md-slide-toggle class="setting-slider" [color]="primary" [checked]="false" (click)="toggleLayer($event, 'Grid Layer')">
+                <md-slide-toggle class="setting-slider" [checked]="false" (click)="toggleLayer($event, 'Grid Layer')">
                     <i class="material-icons slide-icon">grid_on</i>Grid
                 </md-slide-toggle>
             </p>
-
+            <md-button-toggle-group #group="mdButtonToggleGroup">
+                <md-button-toggle value="Terrain" (click)="mainLayer(0)" title="View terrain layer">
+                    <md-icon>explore</md-icon>
+                </md-button-toggle>
+                <md-button-toggle value="Isometric" (click)="mainLayer(1)" title="View isometric layer">
+                    <md-icon>pregnant_woman</md-icon>
+                </md-button-toggle>
+                <md-button-toggle value="Topological" (click)="mainLayer(2)" title="View topological layer">
+                    <md-icon>rounded_corner</md-icon>
+                </md-button-toggle>
+            </md-button-toggle-group>
+            <p>{{group.value}}</p>
             <p>
                 <md-select placeholder="Find a Deed" *ngIf="deeds != null">
                     <md-option *ngFor="let deed of deeds; let i = index;" [value]="deed.ID" (click)="gotoDeed($event, i)">{{ deed.Name }}</md-option>
@@ -48,6 +60,7 @@
             </p>
         </div>
     </md-sidenav>
+
 
     <div #mapElement id="map" class="map"> </div>
 
