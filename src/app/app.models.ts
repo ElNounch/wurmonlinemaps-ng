@@ -71,3 +71,19 @@ export class Constants {
     IsoLayerName: string = "Isometric (2016 Nov)";
     TopoLayerName: string = "Topological (2016 Nov)";
 }
+
+export var DeedColors =  [
+    {
+        code: "rgba(255,0,0,0.4)",
+        name: "Red (Default)"
+    },
+    {
+        code: "rgba(0,255,0,0.4)",
+        name: "Green"
+    },
+    {
+        code: "rgba(0,0,255,0.4)",
+        name: "Blue"
+    }
+]
+

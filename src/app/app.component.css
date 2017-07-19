@@ -1,6 +1,11 @@
-.example-scrolling-content {
+.leftpanel-scrolling-content {
     width: 164px;
     padding: 4px;
+}
+
+.rightpanel-scrolling-content {
+    width: 264px;
+    padding: 2px 4px 2px 16px;
 }
 
 
@@ -11,4 +16,8 @@
 .slide-icon {
     position: relative;
     top: 6px;
+}
+
+.header-icon {
+    cursor: pointer;
 }

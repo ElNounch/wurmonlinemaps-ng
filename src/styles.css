@@ -5,6 +5,10 @@ html {
   font-family: sans-serif;
 }
 
+body {
+  margin: 0;
+}
+
 .header-icon {
   padding: 0 14px;
 }

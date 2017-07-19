@@ -1,8 +1,11 @@
 import { BrowserModule } from '@angular/platform-browser';
 import { HttpModule } from '@angular/http';
 import { NgModule } from '@angular/core';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms'
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
-import { MdToolbarModule, MdSidenavModule, MdButtonModule, MdCheckboxModule, MdIconModule, MdSlideToggleModule, MaterialModule } from '@angular/material';
+import { MdToolbarModule, MdSidenavModule, MdButtonModule, MdCheckboxModule, MdIconModule, MdSlideToggleModule, MaterialModule, MdAutocompleteModule } from '@angular/material';
+
+import { LocalStorageModule } from 'angular-2-local-storage';
 
 import { AppComponent } from './app.component';
 
@@ -15,8 +18,13 @@ import { DeedsService } from './deeds.service'
   imports: [
     BrowserModule,
     HttpModule,
+    FormsModule, ReactiveFormsModule,
     BrowserAnimationsModule,
-    MdToolbarModule, MdSidenavModule, MdButtonModule, MdCheckboxModule, MdIconModule, MdSlideToggleModule, MaterialModule
+    MdToolbarModule, MdSidenavModule, MdButtonModule, MdCheckboxModule, MdIconModule, MdSlideToggleModule, MaterialModule, MdAutocompleteModule,
+    LocalStorageModule.withConfig({
+      prefix: 'wurm-maps',
+      storageType: 'localStorage'
+    })
   ],
   providers: [
     DeedsService

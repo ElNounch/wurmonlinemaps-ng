@@ -1,9 +1,10 @@
 import { AfterContentInit, AfterViewInit, Component, ElementRef, ViewChild, OnInit } from "@angular/core";
+import { MdToolbarModule, MdSidenavModule, MdSlideToggleModule, MdIconModule, MdSelect, MdOption, MdAutocompleteModule } from '@angular/material';
 
-import { MdToolbarModule, MdSidenavModule, MdSlideToggleModule, MdIconModule, MdSelect, MdOption } from '@angular/material';
+import { LocalStorageService } from 'angular-2-local-storage';
 
 import { DeedsService } from './deeds.service';
-import { IDeed, IStartingDeed, ICanal, Constants, IBridge, ILandmark, ServerData } from './app.models';
+import { IDeed, IStartingDeed, ICanal, Constants, IBridge, ILandmark, ServerData, DeedColors } from './app.models';
 
 import { LandmarkLayer } from './layers/landmark.module'
 import { StartingDeedLayer } from './layers/starting-towns.module'
@@ -42,10 +43,16 @@ export class AppComponent implements OnInit, AfterViewInit {
 
   currentRaster: string = this.constants.TerrainLayerName;
 
-  constructor(private deedsService: DeedsService) {
+  deedColors: any[] = DeedColors;
+  deedColor: string;
+
+  constructor(private deedsService: DeedsService, public cacheMonster: LocalStorageService) {
   }
 
   ngOnInit(): void {
+    let deedColorCache = this.cacheMonster.get<string>("deedColor");
+    this.deedColor = deedColorCache !== null ? deedColorCache : "rgba(255,0,0,0.4)";
+
     this.deedsService.getData()
       .subscribe(data => {
         this.renderOpenLayers(data);
@@ -311,21 +318,23 @@ export class AppComponent implements OnInit, AfterViewInit {
     var deedsSrc = new ol.source.Vector();
 
     var deedStyleFunction = function (feature, resolution) {
+      // console.log("Resolution", resolution);      
+
       let fontSize: number = resolution <= 0.125 ? 16 : 12;
 
       return [
         new ol.style.Style({
           image: new ol.style.RegularShape({
             points: 4,
-            radius: 11 / resolution,
+            radius: (11 / resolution) + 4,
             angle: Math.PI / 4,
             fill: new ol.style.Fill({
-              color: 'rgba(255,0,0,0.4)'
+              color: this.deedColor
             }),
           }),
           text: new ol.style.Text({
             font: '' + fontSize + 'px Calibri,sans-serif',
-            text: resolution < 8 ? feature.get('name') : '',
+            text: resolution < 4 ? feature.get('name') : '',
             textBaseline: 'middle',
             textAlign: 'center',
             // offsetY: 12,
@@ -334,14 +343,14 @@ export class AppComponent implements OnInit, AfterViewInit {
             }),
             stroke: new ol.style.Stroke({
               color: '#000',
-              width: 2,
-              offsetY: 2,
-              offsetX: 2
+              width: 1,
+              offsetY: -1,
+              offsetX: 1
             })
           })
         })
       ]
-    }
+    }.bind(this);
 
     for (let deed of this.deeds) {
       if (deed.Name == "Summerholt" ||
@@ -374,11 +383,11 @@ export class AppComponent implements OnInit, AfterViewInit {
     var easterEggSource = new ol.source.Vector();
 
     var khaanFeature = new ol.Feature({
-      geometry: new ol.geom.Point([6330, -1825]),
+      geometry: new ol.geom.Point([6332, -1825]),
       type: "Khaaaan"
     })
 
-    easterEggSource.addFeature(khaanFeature);
+    easterEggSource.addFeature(khaanFeature); 9
 
     var midpointFeature = new ol.Feature({
       geometry: new ol.geom.Point([4096, -4096]),
@@ -413,7 +422,7 @@ export class AppComponent implements OnInit, AfterViewInit {
             image: new ol.style.Icon({
               size: [96, 96],
               opacity: 0.7,
-              src: resolution < 0.50 ? './assets/khaaan.jpg' : ''
+              src: resolution < 0.50 ? 'http://wurmonlinemaps.com/Content/dist/assets/khaaan.jpg' : ''
             }),
             text: new ol.style.Text({
               font: '' + fontSize + 'px Calibri,sans-serif',
@@ -440,7 +449,7 @@ export class AppComponent implements OnInit, AfterViewInit {
             image: new ol.style.Icon({
               size: [128, 128],
               opacity: 0.8,
-              src: resolution < 1 ? './assets/xhair-128.png' : ''
+              src: resolution < 1 ? 'http://wurmonlinemaps.com/Content/dist/assets/xhair-128.png' : ''
             }),
             text: new ol.style.Text({
               font: '' + fontSize + 'px Calibri,sans-serif',
@@ -520,12 +529,11 @@ export class AppComponent implements OnInit, AfterViewInit {
         this.isoRaster,
         this.topoRaster,
         this.landmarkLayer,
-        this.staringTownsLayer,
         this.bridgeLayer,
         this.canalLayer,
         this.deedsLayer,
+        this.staringTownsLayer,
         khanLayer
-        //this.gridsLayer
       ],
       target: 'map',
       controls: controls,
@@ -686,6 +694,14 @@ export class AppComponent implements OnInit, AfterViewInit {
       this.isoRaster.setVisible(false);
       this.topoRaster.setVisible(true);
       this.currentRaster = this.constants.TopoLayerName;
+    }
+  }
+
+  setDeedColor(deedCode: string) {
+    if (deedCode.length > 0) {
+      this.cacheMonster.set("deedColor", deedCode);
+
+      console.log("Deed color saved", deedCode);
     }
   }
 } // end comp

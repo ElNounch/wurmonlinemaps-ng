@@ -1,16 +1,16 @@
 <md-toolbar color="primary">
-    <button md-mini-fab class="example-fab" (click)="sidenav.toggle()">
+    <button md-mini-fab class="example-fab" (click)="leftPanel.toggle()">
       <md-icon>menu</md-icon>
     </button>
     <span>&nbsp;Xanadu 2.0</span>
     <span class="example-spacer"></span>
     <span>{{currentRaster}}</span>
-    <md-icon class="header-icon">map</md-icon>
+    <md-icon class="header-icon" (click)="rightPanel.toggle()">map</md-icon>
 </md-toolbar>
 
-<md-sidenav-container class="example-sidenav-fab-container">
-    <md-sidenav #sidenav mode="slide" opened="false">
-        <div class="example-scrolling-content">
+<md-sidenav-container>
+    <md-sidenav #leftPanel mode="slide" opened="false">
+        <div class="leftpanel-scrolling-content">
             <p>
                 <md-slide-toggle class="setting-slider" [checked]="true" (click)="toggleLayer($event, 'Starter Deeds Layer')">
                     <md-icon class="slide-icon">account_balance</md-icon>Startin' Towns
@@ -52,14 +52,30 @@
                     <md-icon>rounded_corner</md-icon>
                 </md-button-toggle>
             </md-button-toggle-group>
+
             <p>{{group.value}}</p>
+
             <p>
-                <md-select placeholder="Find a Deed" *ngIf="deeds != null">
-                    <md-option *ngFor="let deed of deeds; let i = index;" [value]="deed.ID" (click)="gotoDeed($event, i)">{{ deed.Name }}</md-option>
+                <md-select *ngIf="deeds != null" placeholder="Find a Deed" >
+                    <md-option *ngFor="let deed of deeds; let i = index;" [value]="deed.ID" (click)="gotoDeed($event, i)">
+                        {{ deed.Name }}
+                    </md-option>
                 </md-select>
             </p>
         </div>
     </md-sidenav>
+
+    <md-sidenav #rightPanel mode="slide" align="end" opened="false">
+        <div class="rightpanel-scrolling-content">
+            <h2>Map Personizations</h2>
+            <p>
+                <md-select placeholder="Deed Color" [(ngModel)]="deedColor">
+                    <md-option *ngFor="let state of deedColors" [value]="state.code" (click)="setDeedColor(state.code)">{{ state.name }}</md-option>
+                </md-select>
+            </p>
+        </div>
+    </md-sidenav>
+
 
 
     <div #mapElement id="map" class="map"> </div>
