@@ -69,24 +69,24 @@
         <div class="rightpanel-scrolling-content">
             <h2>Map Personizations</h2>
 
-            <p class="color-picker">
+            <p class="color-picker" [ngStyle]="{ 'background-color': deedColor }">
                 <md-select placeholder="Deed Color" [(ngModel)]="deedColor">
                     <md-option *ngFor="let color of customColors" [value]="color.code" (click)="setDeedColor(color.code)">{{ color.name }}</md-option>
                 </md-select>
             </p>
-            <p class="color-picker">
+            <p class="color-picker" [ngStyle]="{ 'background-color': canalColor }">
                 <md-select placeholder="Tunnel/Canal Color" [(ngModel)]="canalColor">
                     <md-option *ngFor="let color of customColors" [value]="color.code" (click)="setCanalColor(color.code)">{{ color.name }}</md-option>
                 </md-select>
             </p>
-            <p class="color-picker">
+            <p class="color-picker" [ngStyle]="{ 'background-color': bridgeColor }">
                 <md-select placeholder="Bridge Color" [(ngModel)]="bridgeColor">
                     <md-option *ngFor="let color of customColors" [value]="color.code" (click)="setBridgeColor(color.code)">{{ color.name }}</md-option>
                 </md-select>
             </p>
             <div class="color-panel">
                 <h2>Color Samples</h2>
-                <div class="color-chit" *ngFor="let color of customColors" [ngStyle]="{ 'background-color': color.code}">&nbsp;<span>{{color.name}}</span></div>
+                <div class="color-chit" *ngFor="let color of customColors" [ngStyle]="{ 'background-color': color.code }">&nbsp;<span>{{color.name}}</span></div>
             </div>
         </div>
     </md-sidenav>
