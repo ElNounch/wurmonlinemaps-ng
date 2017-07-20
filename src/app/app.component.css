@@ -8,6 +8,24 @@
     padding: 2px 4px 2px 16px;
 }
 
+.color-picker {
+    padding: 4px 0;
+}
+
+.color-panel {
+    background: url('../assets/colorback-wom.png');
+    color: White;
+}
+
+.color-panel h2 {
+    padding: 4px;
+}
+
+.color-chit {
+    height: 24px;
+    padding: 4px;
+    margin: 12px;
+}
 
 .setting-slider.mat-slide-toggle-thumb {
     top: 4px;

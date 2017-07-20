@@ -72,18 +72,47 @@ export class Constants {
     TopoLayerName: string = "Topological (2016 Nov)";
 }
 
-export var DeedColors =  [
+export var CustomColors =  [
     {
-        code: "rgba(255,0,0,0.4)",
+        code: "rgba(255, 0, 0, 0.4)",
         name: "Red (Default)"
     },
     {
-        code: "rgba(0,255,0,0.4)",
+        code: "rgba(0, 255, 0, 0.4)",
         name: "Green"
     },
     {
-        code: "rgba(0,0,255,0.4)",
+        code: "rgba(0, 0, 255, 0.4)",
         name: "Blue"
-    }
+    },
+    {
+        code: "rgba(0, 191, 255, 0.4)",
+        name: "Cesium"
+    },
+    {
+        code: "rgba(179, 170, 0, 0.4)",
+        name: "Puke Green"
+    },
+    {
+        code: "rgba(139, 69, 19, 0.4)",
+        name: "Saddle Brown"
+    },
+    {
+        code: "rgba(218, 165, 96, 0.4)",
+        name: "Golden Rod"
+    },
+    {
+        code: "rgba(255, 0, 255, 0.4)",
+        name: "Fuchsia"
+    },
+    {
+        code: "rgba(75, 0, 130, 0.4)",
+        name: "Indigo"
+    },
+    {
+        code: "rgba(0, 0, 0, 0.4)",
+        name: "Negroni"
+    },
+
 ]
 

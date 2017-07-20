@@ -4,7 +4,7 @@ import { MdToolbarModule, MdSidenavModule, MdSlideToggleModule, MdIconModule, Md
 import { LocalStorageService } from 'angular-2-local-storage';
 
 import { DeedsService } from './deeds.service';
-import { IDeed, IStartingDeed, ICanal, Constants, IBridge, ILandmark, ServerData, DeedColors } from './app.models';
+import { IDeed, IStartingDeed, ICanal, Constants, IBridge, ILandmark, ServerData, CustomColors } from './app.models';
 
 import { LandmarkLayer } from './layers/landmark.module'
 import { StartingDeedLayer } from './layers/starting-towns.module'
@@ -43,15 +43,23 @@ export class AppComponent implements OnInit, AfterViewInit {
 
   currentRaster: string = this.constants.TerrainLayerName;
 
-  deedColors: any[] = DeedColors;
+  customColors: any[] = CustomColors;
   deedColor: string;
+  canalColor: string;
+  bridgeColor: string;
 
   constructor(private deedsService: DeedsService, public cacheMonster: LocalStorageService) {
   }
 
   ngOnInit(): void {
     let deedColorCache = this.cacheMonster.get<string>("deedColor");
-    this.deedColor = deedColorCache !== null ? deedColorCache : "rgba(255,0,0,0.4)";
+    this.deedColor = deedColorCache !== null ? deedColorCache : "rgba(255, 0, 0, 0.4)";
+
+    let canalColorCache = this.cacheMonster.get<string>("canalColor");
+    this.canalColor = canalColorCache !== null ? canalColorCache : "rgba(125, 125, 255, 0.4)";
+
+    let bridgeColorCache = this.cacheMonster.get<string>("bridgeColor");
+    this.bridgeColor = bridgeColorCache !== null ? bridgeColorCache : "rgba(179, 170, 0, 0.4)";
 
     this.deedsService.getData()
       .subscribe(data => {
@@ -88,7 +96,7 @@ export class AppComponent implements OnInit, AfterViewInit {
         new ol.style.Style({
           stroke: new ol.style.Stroke({
             width: 8 / resolution,
-            color: 'rgba(179, 170, 0, 0.8)',
+            color: this.bridgeColor,
           }),
           text: new ol.style.Text({
             font: '' + fontSize + 'px Calibri,sans-serif',
@@ -109,7 +117,7 @@ export class AppComponent implements OnInit, AfterViewInit {
         }),
 
       ]
-    }
+    }.bind(this);
 
     var bridgeSources = new ol.source.Vector();
 
@@ -151,7 +159,7 @@ export class AppComponent implements OnInit, AfterViewInit {
         new ol.style.Style({
           stroke: new ol.style.Stroke({
             width: 11 / resolution,
-            color: 'rgba(125, 125, 255, 0.8)',
+            color: this.canalColor,
           }),
           text: new ol.style.Text({
             font: '' + fontSize + 'px Calibri,sans-serif',
@@ -172,11 +180,10 @@ export class AppComponent implements OnInit, AfterViewInit {
         }),
 
       ]
-    }
+    }.bind(this);
 
     for (let canal of this.canals) {
       var canalFeature = new ol.Feature({
-        // [[78.65, -32,65], [-98.65, 12.65]];
         geometry: new ol.geom.LineString([[canal.X1, canal.Y1], [canal.X2, canal.Y2]]),
         name: canal.Name,
         isCanal: canal.IsCanal,
@@ -697,11 +704,27 @@ export class AppComponent implements OnInit, AfterViewInit {
     }
   }
 
-  setDeedColor(deedCode: string) {
-    if (deedCode.length > 0) {
-      this.cacheMonster.set("deedColor", deedCode);
+  setDeedColor(colorCode: string) {
+    if (colorCode.length > 0) {
+      this.cacheMonster.set("deedColor", colorCode);
 
-      console.log("Deed color saved", deedCode);
+      console.log("Deed color saved", colorCode);
+    }
+  }
+
+  setCanalColor(colorCode: string) {
+    if (colorCode.length > 0) {
+      this.cacheMonster.set("canalColor", colorCode);
+
+      console.log("Canal color saved", colorCode);
+    }
+  }
+
+  setBridgeColor(colorCode: string) {
+    if (colorCode.length > 0) {
+      this.cacheMonster.set("bridgeColor", colorCode);
+
+      console.log("Brigde color saved", colorCode);
     }
   }
 } // end comp
