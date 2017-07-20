@@ -4,7 +4,9 @@ import { MdToolbarModule, MdSidenavModule, MdSlideToggleModule, MdIconModule, Md
 import { LocalStorageService } from 'angular-2-local-storage';
 
 import { DeedsService } from './deeds.service';
+
 import { IDeed, IStartingDeed, ICanal, Constants, IBridge, ILandmark, ServerData, CustomColors } from './app.models';
+import { Styles } from './styles'
 
 import { LandmarkLayer } from './layers/landmark.module'
 import { StartingDeedLayer } from './layers/starting-towns.module'
@@ -23,6 +25,7 @@ export class AppComponent implements OnInit, AfterViewInit {
   @ViewChild("mapElement") mapElement: ElementRef;
 
   constants: Constants = new Constants();
+  customStyles: Styles = new Styles();
 
   map: any;
   deeds: IDeed[];
@@ -104,15 +107,8 @@ export class AppComponent implements OnInit, AfterViewInit {
             textBaseline: 'middle',
             textAlign: 'center',
             // offsetY: 12,
-            fill: new ol.style.Fill({
-              color: '#FFF'
-            }),
-            stroke: new ol.style.Stroke({
-              color: '#000',
-              width: 2,
-              offsetY: 2,
-              offsetX: 2
-            })
+            fill: this.customStyles.defaultTextFill,
+            stroke: this.customStyles.defaultTextStroke,
           })
         }),
 
@@ -122,7 +118,7 @@ export class AppComponent implements OnInit, AfterViewInit {
     var bridgeSources = new ol.source.Vector();
 
     for (let bridge of this.bridges) {
-      console.log("Rendering bridge:", bridge)
+      // console.log("Rendering bridge:", bridge);
 
       var bridgeFeature = new ol.Feature({
         // [[78.65, -32,65], [-98.65, 12.65]];
@@ -150,10 +146,18 @@ export class AppComponent implements OnInit, AfterViewInit {
 
       let fontSize: number = resolution <= 0.125 ? 16 : 12;
 
-      var canalName = feature.get('name') != null ? feature.get('name') : '';
+      let canalName = feature.get('name') != null ? feature.get('name') : '';
+      let canalText: string = `${canalName} `;
 
-      let canalText: string = `${canalName} (${isCanal = true ? 'Canal /' : ''} ${isTunnel = true ? 'Tunnel /' : ''} ${allBoats = true ? 'All Boats' : 'Knarrs only'})`;
-
+      if (isCanal === true && isTunnel === true) {
+        canalText += `(${isCanal === true ? 'Canal /' : ''} ${isTunnel === true ? 'Tunnel /' : ''} ${allBoats === true ? 'All Boats' : 'Knarrs only'})`;
+      }
+      else if (isCanal === true && isTunnel === false) {
+        canalText += `(${isCanal === true ? 'Canal /' : ''} ${allBoats === true ? 'All Boats' : 'Knarrs only'})`;
+      }
+      else if (isCanal === false && isTunnel === true) {
+        canalText += `(Tunnel)`;
+      }
 
       return [
         new ol.style.Style({
@@ -167,15 +171,8 @@ export class AppComponent implements OnInit, AfterViewInit {
             textBaseline: 'middle',
             textAlign: 'center',
             // offsetY: 12,
-            fill: new ol.style.Fill({
-              color: '#FFF'
-            }),
-            stroke: new ol.style.Stroke({
-              color: '#000',
-              width: 2,
-              offsetY: 2,
-              offsetX: 2
-            })
+            fill: this.customStyles.defaultTextFill,
+            stroke: this.customStyles.defaultTextStroke,
           })
         }),
 
@@ -328,6 +325,9 @@ export class AppComponent implements OnInit, AfterViewInit {
       // console.log("Resolution", resolution);      
 
       let fontSize: number = resolution <= 0.125 ? 16 : 12;
+      let name: string = feature.get('name');
+      let notes: string = feature.get('notes');
+      let isMarket: boolean = notes != null ? notes.toLowerCase().indexOf("market") >= 0 : false;
 
       return [
         new ol.style.Style({
@@ -338,22 +338,19 @@ export class AppComponent implements OnInit, AfterViewInit {
             fill: new ol.style.Fill({
               color: this.deedColor
             }),
+            stroke: new ol.style.Stroke({
+              color: isMarket ? "White" : "transparent",
+              width: isMarket ? 3 : 0,
+              // lineDash: isMarket ?  [0, 6] : [0, 0]
+            })
           }),
           text: new ol.style.Text({
             font: '' + fontSize + 'px Calibri,sans-serif',
             text: resolution < 4 ? feature.get('name') : '',
             textBaseline: 'middle',
             textAlign: 'center',
-            // offsetY: 12,
-            fill: new ol.style.Fill({
-              color: '#FFF'
-            }),
-            stroke: new ol.style.Stroke({
-              color: '#000',
-              width: 1,
-              offsetY: -1,
-              offsetX: 1
-            })
+            fill: this.customStyles.defaultTextFill,
+            stroke: this.customStyles.defaultTextStroke,
           })
         })
       ]
@@ -374,7 +371,8 @@ export class AppComponent implements OnInit, AfterViewInit {
 
       var deedFeature = new ol.Feature({
         geometry: new ol.geom.Point([deed.X, deed.Y]),
-        name: deed.Name
+        name: deed.Name,
+        notes: deed.Notes
       });
 
       deedsSrc.addFeature(deedFeature);
@@ -436,15 +434,8 @@ export class AppComponent implements OnInit, AfterViewInit {
               text: khaanText,
               textBaseline: 'middle',
               offsetY: 20,
-              fill: new ol.style.Fill({
-                color: '#FFF'
-              }),
-              stroke: new ol.style.Stroke({
-                color: '#000',
-                width: 2,
-                offsetY: 2,
-                offsetX: 2
-              })
+              fill: this.customStyles.defaultTextFill,
+              stroke: this.customStyles.defaultTextStroke,
             })
           })
         ]
@@ -476,8 +467,7 @@ export class AppComponent implements OnInit, AfterViewInit {
           })
         ]
       }
-
-    }
+    }.bind(this);
 
     var khanLayer = new ol.layer.Vector({
       source: easterEggSource,
@@ -565,6 +555,7 @@ export class AppComponent implements OnInit, AfterViewInit {
       evt.map.forEachFeatureAtPixel(evt.pixel, function (feature, layer) {
         //do something
         console.log("Feature at pixel", feature);
+        console.log("Feature Goom", feature.getGeometry());
       });
     });
   }

@@ -98,8 +98,8 @@ export var CustomColors =  [
         name: "Saddle Brown"
     },
     {
-        code: "rgba(218, 165, 96, 0.4)",
-        name: "Golden Rod"
+        code: "rgba(255, 255, 0, 0.4)",
+        name: "Old Yeller"
     },
     {
         code: "rgba(255, 0, 255, 0.4)",
@@ -107,7 +107,7 @@ export var CustomColors =  [
     },
     {
         code: "rgba(75, 0, 130, 0.4)",
-        name: "Indigo"
+        name: "Mood Indigo"
     },
     {
         code: "rgba(0, 0, 0, 0.4)",

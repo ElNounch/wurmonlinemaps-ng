@@ -9,11 +9,11 @@
 }
 
 .color-picker {
-    padding: 20px 5px;
+    padding: 16px 5px 0px 2px;
 }
 
 .color-panel {
-    background: url('../assets/colorback-wom.png');
+    background: url('http://wurmonlinemaps.com/Content/dist/assets/colorback-wom.png');
     color: White;
 }
 
@@ -22,9 +22,10 @@
 }
 
 .color-chit {
-    height: 24px;
+    height: 15px;
     padding: 4px;
-    margin: 12px;
+    margin: 10px;
+    border-radius: 15px;
 }
 
 .setting-slider.mat-slide-toggle-thumb {
