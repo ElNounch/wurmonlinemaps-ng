@@ -67,8 +67,6 @@
 
     <md-sidenav #rightPanel mode="slide" align="end" opened="false">
         <div class="rightpanel-scrolling-content">
-            <h2>Map Personizations</h2>
-
             <p class="color-picker" [ngStyle]="{ 'background-color': deedColor }">
                 <md-select placeholder="Deed Color" [(ngModel)]="deedColor">
                     <md-option *ngFor="let color of customColors" [value]="color.code" (click)="setDeedColor(color.code)">{{ color.name }}</md-option>
@@ -90,8 +88,6 @@
             </div>
         </div>
     </md-sidenav>
-
-
 
     <div #mapElement id="map" class="map"> </div>
 

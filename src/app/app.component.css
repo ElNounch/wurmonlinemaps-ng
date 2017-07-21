@@ -15,6 +15,7 @@
 .color-panel {
     background: url('http://wurmonlinemaps.com/Content/dist/assets/colorback-wom.png');
     color: White;
+    padding-bottom: 4px;
 }
 
 .color-panel h2 {
@@ -39,4 +40,9 @@
 
 .header-icon {
     cursor: pointer;
+}
+
+.bottom-bar {
+    position: fixed;
+    bottom: 0
 }

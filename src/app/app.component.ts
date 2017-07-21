@@ -121,14 +121,13 @@ export class AppComponent implements OnInit, AfterViewInit {
       // console.log("Rendering bridge:", bridge);
 
       var bridgeFeature = new ol.Feature({
-        // [[78.65, -32,65], [-98.65, 12.65]];
         geometry: new ol.geom.LineString([[bridge.X1, bridge.Y1], [bridge.X2, bridge.Y2]]),
         name: bridge.Name,
         width: bridge.Width
       });
-    }
 
-    bridgeSources.addFeature(bridgeFeature);
+      bridgeSources.addFeature(bridgeFeature);
+    }
 
     this.bridgeLayer = new ol.layer.Vector({
       source: bridgeSources,
@@ -208,7 +207,7 @@ export class AppComponent implements OnInit, AfterViewInit {
     var gtm = new LandmarkLayer();
 
     this.landmarkLayer = new ol.layer.Vector({
-      source: gtm.generateSource(gts),
+      source: gtm.generateSource(this.landmarks),
       name: this.constants.GuardTowerLayerName,
       style: gtm.styleFunction
     })
