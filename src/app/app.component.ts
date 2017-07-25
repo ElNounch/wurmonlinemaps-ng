@@ -24,6 +24,10 @@ export class AppComponent implements OnInit, AfterViewInit {
   // This is necessary to access the html element to set the map target (after view init)!
   @ViewChild("mapElement") mapElement: ElementRef;
 
+  canvas: any;
+  context: any;
+  pixelRatio: any;
+
   constants: Constants = new Constants();
   customStyles: Styles = new Styles();
 
@@ -55,6 +59,12 @@ export class AppComponent implements OnInit, AfterViewInit {
   }
 
   ngOnInit(): void {
+    this.canvas = document.createElement('canvas');
+    this.context = this.canvas.getContext('2d');
+    this.pixelRatio = ol.has.DEVICE_PIXEL_RATIO;
+
+    console.log("PixelRatio", this.pixelRatio);
+
     let deedColorCache = this.cacheMonster.get<string>("deedColor");
     this.deedColor = deedColorCache !== null ? deedColorCache : "rgba(255, 0, 0, 0.4)";
 
@@ -204,12 +214,33 @@ export class AppComponent implements OnInit, AfterViewInit {
       [6584, -1992]
     ];
 
-    var gtm = new LandmarkLayer();
+    let lms = [
+      {
+        ID: 0,
+        LandmarkType: 0,
+        Server: 0,
+        X1: 6323,
+        Y1: -2046,
+        Name: "Who cares?",
+        Notes: ""
+      },
+      {
+        ID: 1,
+        LandmarkType: 1,
+        Server: 0,
+        X1: 6535,
+        Y1: -1935,
+        Name: "Lake Awesome",
+        Notes: ""
+      },
+    ]
+
+    var lml = new LandmarkLayer();
 
     this.landmarkLayer = new ol.layer.Vector({
-      source: gtm.generateSource(this.landmarks),
+      source: lml.generateSource(lms),
       name: this.constants.GuardTowerLayerName,
-      style: gtm.styleFunction
+      style: lml.styleFunction
     })
 
     // grid layer stuff

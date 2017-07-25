@@ -1,4 +1,5 @@
 declare var ol: any;
+
 var startingTowns = [
     {
         "Name": "Summerholt",
@@ -58,6 +59,8 @@ export class StartingDeedLayer implements StartingTownModuleLayer {
         }
         return startingTownsSource
     }
+
+
 
     styleFunction(feature, resolution) {
         var name = feature.get('name');

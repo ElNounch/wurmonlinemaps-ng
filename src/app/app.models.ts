@@ -16,6 +16,7 @@ export interface ServerData {
 
 export enum LandmarkType {
     GuardTower,
+    BodyOfWater
 }
 
 export interface IStartingDeed {
