@@ -9,6 +9,7 @@ import { IDeed, IStartingDeed, ICanal, Constants, IBridge, ILandmark, ServerData
 import { Styles } from './styles'
 
 import { LandmarkLayer } from './layers/landmark.module'
+import { RoadLayer } from './layers/road.module'
 import { StartingDeedLayer } from './layers/starting-towns.module'
 
 // This is necessary to access ol3!
@@ -233,6 +234,15 @@ export class AppComponent implements OnInit, AfterViewInit {
         Name: "Lake Awesome",
         Notes: ""
       },
+      {
+        ID: 2,
+        LandmarkType: 1,
+        Server: 0,
+        X1: 6643,
+        Y1: -2428,
+        Name: "Summerholt Lake",
+        Notes: ""
+      },
     ]
 
     var lml = new LandmarkLayer();
@@ -241,6 +251,14 @@ export class AppComponent implements OnInit, AfterViewInit {
       source: lml.generateSource(lms),
       name: this.constants.GuardTowerLayerName,
       style: lml.styleFunction
+    })
+
+    var rml = new RoadLayer();
+
+    var roadLayer = new ol.layer.Vector({
+      source: rml.generateSource(),
+      name: "Roads",
+      style: rml.styleFunction
     })
 
     // grid layer stuff
@@ -555,6 +573,7 @@ export class AppComponent implements OnInit, AfterViewInit {
         this.terrainRaster,
         this.isoRaster,
         this.topoRaster,
+        roadLayer,
         this.landmarkLayer,
         this.bridgeLayer,
         this.canalLayer,
