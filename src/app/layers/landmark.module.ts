@@ -26,8 +26,9 @@ export class LandmarkLayer implements LandmarkModuleLayer {
     }
 
     styleFunction(feature, resolution) {
+        console.log("Reso", resolution);
         var type = feature.get('type');
-        let fontSize: number = resolution <= 0.125 ? 14 : 10;
+        let fontSize: number = 12 / resolution + 12;
 
         if (type === "guardtower") {
             return [ // gt
@@ -51,12 +52,12 @@ export class LandmarkLayer implements LandmarkModuleLayer {
             return [
                 new ol.style.Style({
                     text: new ol.style.Text({
-                        font: "" + fontSize + "px serif",
-                        text: resolution < 4 ? feature.get('name') : '',
+                        font: "" + fontSize + "px 'IM Fell English SC', serif",
+                        text: resolution < 8 ? feature.get('name') : '',
                         textBaseline: 'middle',
                         textAlign: 'center',
                         fill: new ol.style.Fill({
-                            color: "Blue"
+                            color: "rgba(0, 0, 255, 0.9)"
                         }),
                     })
                 })
