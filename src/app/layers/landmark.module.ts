@@ -57,7 +57,7 @@ export class LandmarkLayer implements LandmarkModuleLayer {
                         textBaseline: 'middle',
                         textAlign: 'center',
                         fill: new ol.style.Fill({
-                            color: "rgba(0, 0, 255, 0.9)"
+                            color: "rgba(255, 0, 0, 0.9)"
                         }),
                     })
                 })

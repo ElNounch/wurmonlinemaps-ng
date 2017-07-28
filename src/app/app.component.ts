@@ -449,6 +449,13 @@ export class AppComponent implements OnInit, AfterViewInit {
 
     easterEggSource.addFeature(midpointFeature);
 
+    var loafFeature = new ol.Feature({
+      geometry: new ol.geom.Point([6907, -2215]),
+      type: "Loaf"
+    });
+
+    easterEggSource.addFeature(loafFeature);
+
     var khaanStyleFunction = function (feature, resolution) {
       let fontSize: number = 12;
       let khaanText = 'Khaaaan!';
@@ -500,6 +507,34 @@ export class AppComponent implements OnInit, AfterViewInit {
             text: new ol.style.Text({
               font: '' + fontSize + 'px Calibri,sans-serif',
               text: "Midpoint! (Justa Map Maker's Mark)",
+              textAlign: 'center',
+              offsetY: 24,
+              fill: new ol.style.Fill({
+                color: '#FFF'
+              }),
+              stroke: new ol.style.Stroke({
+                color: '#000',
+                width: 2,
+                offsetY: -2,
+                offsetX: 2
+              })
+            })
+          })
+        ]
+      }
+
+      if (feature.get('type') === "Loaf") {
+        return [
+          new ol.style.Style({
+            image: new ol.style.Icon({
+              //size: [128, 128],
+              opacity: 0.4,
+              scale: 0.1,
+              src: resolution < 1 ? '/assets/loaf.png' : ''
+            }),
+            text: new ol.style.Text({
+              font: '' + fontSize + 'px Calibri,sans-serif',
+              text: "",
               textAlign: 'center',
               offsetY: 24,
               fill: new ol.style.Fill({
