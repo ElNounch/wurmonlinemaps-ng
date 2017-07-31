@@ -1,4 +1,5 @@
 import { AfterContentInit, AfterViewInit, Component, ElementRef, ViewChild, OnInit } from "@angular/core";
+import { ActivatedRoute } from '@angular/router';
 import { MdToolbarModule, MdSidenavModule, MdSlideToggleModule, MdIconModule, MdSelect, MdOption, MdAutocompleteModule } from '@angular/material';
 
 import { LocalStorageService } from 'angular-2-local-storage';
@@ -38,6 +39,11 @@ export class AppComponent implements OnInit, AfterViewInit {
   bridges: IBridge[];
   landmarks: ILandmark[];
 
+  clickedUrlValue: string;
+  startingX: string;
+  startingY: string;
+  startingZ: string;
+
   deedsLayer: any;
   staringTownsLayer: any;
   gridLayer: any;
@@ -56,7 +62,7 @@ export class AppComponent implements OnInit, AfterViewInit {
   canalColor: string;
   bridgeColor: string;
 
-  constructor(private deedsService: DeedsService, public cacheMonster: LocalStorageService) {
+  constructor(private deedsService: DeedsService, public cacheMonster: LocalStorageService, private route: ActivatedRoute) {
   }
 
   ngOnInit(): void {
@@ -74,6 +80,14 @@ export class AppComponent implements OnInit, AfterViewInit {
 
     let bridgeColorCache = this.cacheMonster.get<string>("bridgeColor");
     this.bridgeColor = bridgeColorCache !== null ? bridgeColorCache : "rgba(179, 170, 0, 0.4)";
+
+    this.route
+      .queryParams
+      .subscribe(params => {
+        this.startingX = params["x"];
+        this.startingY = params["y"];
+        this.startingZ = params["z"];
+      });
 
     this.deedsService.getData()
       .subscribe(data => {
@@ -619,20 +633,27 @@ export class AppComponent implements OnInit, AfterViewInit {
       target: 'map',
       controls: controls,
       view: new ol.View({
-        zoom: 2,
-        center: [4096, -4096],
+        zoom: this.startingZ != null ? this.startingZ : 2,
+        center: [this.startingX != null ? this.startingX : 4096, this.startingY != null ? this.startingY : -4096],
         maxResolution: mapTileGrid.getResolution(mapMinZoom)
       })
     });
 
     this.map.on('singleclick', function (evt) {
       console.log("Event", evt);
-      console.log("Coords", evt["coordinate"])
+
+      var coord = evt["coordinate"];
+      console.log("Coords", coord)
 
       console.log("Map", evt.map);
 
       let zoom = evt.map.getView().getZoom();
       console.log("Zoom", zoom);
+
+      var x = parseInt(coord[0]);
+      var y = parseInt(coord[1]);
+
+      this.clickedUrlValue = `http://wurmonlinemaps.com/maps/xanadubeta?x=${x}&y=${y}&z=${zoom}`;
 
       console.log("Event target", evt.target);
 
@@ -641,6 +662,8 @@ export class AppComponent implements OnInit, AfterViewInit {
         console.log("Feature at pixel", feature);
         console.log("Feature Goom", feature.getGeometry());
       });
+
+      console.log("Clicked Url", this.clickedUrlValue);
     });
   }
 

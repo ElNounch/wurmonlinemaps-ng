@@ -3,7 +3,7 @@
       <md-icon>menu</md-icon>
     </button>
     <span>&nbsp;Xanadu 2.0</span>
-    <span class="example-spacer"></span>
+    <span class="example-spacer">{{clickedUrlValue}}</span>
     <span>{{currentRaster}}</span>
     <md-icon class="header-icon" (click)="rightPanel.toggle()">map</md-icon>
 </md-toolbar>
@@ -62,6 +62,7 @@
                     </md-option>
                 </md-select>
             </p>
+            
         </div>
     </md-sidenav>
 
@@ -90,5 +91,7 @@
     </md-sidenav>
 
     <div #mapElement id="map" class="map"> </div>
+
+
 
 </md-sidenav-container>
