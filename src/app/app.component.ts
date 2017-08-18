@@ -1,4 +1,4 @@
-import { AfterContentInit, AfterViewInit, Component, ElementRef, ViewChild, OnInit } from "@angular/core";
+import { HostListener, AfterContentInit, AfterViewInit, Component, ElementRef, ViewChild, OnInit } from "@angular/core";
 import { ActivatedRoute } from '@angular/router';
 import { MdToolbarModule, MdSidenavModule, MdSlideToggleModule, MdIconModule, MdSelect, MdOption, MdAutocompleteModule } from '@angular/material';
 
@@ -49,11 +49,15 @@ export class AppComponent implements OnInit, AfterViewInit {
   gridLayer: any;
   canalLayer: any;
   bridgeLayer: any;
-  landmarkLayer: any;
+  // landmarkLayer: any;
 
-  terrainRaster: any;
-  topoRaster: any;
-  isoRaster: any;
+  oldTerrainRaster: any;
+  oldTopoRaster: any;
+  oldIsoRaster: any;
+
+  newTerrainRaster: any;
+  newTopoRaster: any;
+  newIsoRaster: any;
 
   currentRaster: string = this.constants.TerrainLayerName;
 
@@ -61,6 +65,94 @@ export class AppComponent implements OnInit, AfterViewInit {
   deedColor: string;
   canalColor: string;
   bridgeColor: string;
+
+  showGrid: boolean = false;
+  showDeeds: boolean = true;
+  showStartingDeeds: boolean = true;
+  showCanals: boolean = true;
+  showBridges: boolean = true;
+
+  @HostListener('document:keydown', ['$event']) onKeydownHandler(event: KeyboardEvent) {
+
+    // c or C
+    if (event.keyCode === 99 || event.keyCode === 67) {
+      // ...
+      if (this.currentRaster === this.constants.TopoLayerName) {
+        this.oldTerrainRaster.setVisible(true);
+        this.oldIsoRaster.setVisible(false);
+        this.oldTopoRaster.setVisible(false);
+        this.newTerrainRaster.setVisible(false);
+        this.newIsoRaster.setVisible(false);
+        this.newTopoRaster.setVisible(false);
+        this.currentRaster = this.constants.Nov16TerrainLayerName;
+      } else if (this.currentRaster === this.constants.Nov16TerrainLayerName) {
+        this.oldTerrainRaster.setVisible(false);
+        this.oldIsoRaster.setVisible(true);
+        this.oldTopoRaster.setVisible(false);
+        this.newTerrainRaster.setVisible(false);
+        this.newIsoRaster.setVisible(false);
+        this.newTopoRaster.setVisible(false);
+        this.currentRaster = this.constants.Nov16IsoLayerName;
+      } else if (this.currentRaster === this.constants.Nov16IsoLayerName) {
+        this.oldTerrainRaster.setVisible(false);
+        this.oldIsoRaster.setVisible(false);
+        this.oldTopoRaster.setVisible(true);
+        this.newTerrainRaster.setVisible(false);
+        this.newIsoRaster.setVisible(false);
+        this.newTopoRaster.setVisible(false);
+        this.currentRaster = this.constants.Nov16TopoLayerName;
+      } else if (this.currentRaster === this.constants.Nov16TopoLayerName) {
+        this.oldTerrainRaster.setVisible(false);
+        this.oldIsoRaster.setVisible(false);
+        this.oldTopoRaster.setVisible(false);
+        this.newTerrainRaster.setVisible(true);
+        this.newIsoRaster.setVisible(false);
+        this.newTopoRaster.setVisible(false);
+        this.currentRaster = this.constants.TerrainLayerName;
+      } else if (this.currentRaster === this.constants.TerrainLayerName) {
+        this.oldTerrainRaster.setVisible(false);
+        this.oldIsoRaster.setVisible(false);
+        this.oldTopoRaster.setVisible(false);
+        this.newTerrainRaster.setVisible(false);
+        this.newIsoRaster.setVisible(true);
+        this.newTopoRaster.setVisible(false);
+        this.currentRaster = this.constants.IsoLayerName;
+      } else {
+        this.oldTerrainRaster.setVisible(false);
+        this.oldIsoRaster.setVisible(false);
+        this.oldTopoRaster.setVisible(false);
+        this.newTerrainRaster.setVisible(false);
+        this.newIsoRaster.setVisible(false);
+        this.newTopoRaster.setVisible(true);
+        this.currentRaster = this.constants.TopoLayerName;
+      }
+    }
+
+    // g or G
+    if (event.keyCode === 103 || event.keyCode === 71) {
+      this.toggleLayer(null, this.constants.GridLayerName);
+    }
+
+    // s or S
+    if (event.keyCode === 115 || event.keyCode === 83) {
+      this.toggleLayer(null, this.constants.StarterDeedsLayerName);
+    }
+
+    // d or D
+    if (event.keyCode === 100 || event.keyCode === 68) {
+      this.toggleLayer(null, this.constants.DeedLayerName);
+    }
+
+    // b or B
+    if (event.keyCode === 98 || event.keyCode === 66) {
+      this.toggleLayer(null, this.constants.BridgeLayerName);
+    }
+
+    // t or T
+    if (event.keyCode === 116 || event.keyCode === 84) {
+      this.toggleLayer(null, this.constants.CanalLayerName);
+    }
+  }
 
   constructor(private deedsService: DeedsService, public cacheMonster: LocalStorageService, private route: ActivatedRoute) {
   }
@@ -259,13 +351,13 @@ export class AppComponent implements OnInit, AfterViewInit {
       },
     ]
 
-    var lml = new LandmarkLayer();
+    // var lml = new LandmarkLayer();
 
-    this.landmarkLayer = new ol.layer.Vector({
-      source: lml.generateSource(lms),
-      name: this.constants.GuardTowerLayerName,
-      style: lml.styleFunction
-    })
+    // this.landmarkLayer = new ol.layer.Vector({
+    //   source: lml.generateSource(lms),
+    //   name: this.constants.GuardTowerLayerName,
+    //   style: lml.styleFunction
+    // })
 
     var rml = new RoadLayer();
 
@@ -590,39 +682,69 @@ export class AppComponent implements OnInit, AfterViewInit {
       resolutions: mapResolutions
     });
 
-    this.terrainRaster = new ol.layer.Tile({
+    this.oldTerrainRaster = new ol.layer.Tile({
       source: new ol.source.XYZ({
         url: "http://wurmonlinemaps.com/Content/Tiles/Xanadu-terrain_161101/{z}/{x}/{y}.png",
         tileGrid: mapTileGrid,
       }),
-      name: "Xanadu Terrain Raster",
+      name: this.constants.Nov16TerrainLayerName,
     });
 
-    this.isoRaster = new ol.layer.Tile({
+    this.oldIsoRaster = new ol.layer.Tile({
       source: new ol.source.XYZ({
         url: "http://wurmonlinemaps.com/Content/Tiles/Xanadu-iso_161101/{z}/{x}/{y}.png",
         tileGrid: mapTileGrid,
       }),
-      name: "Xanadu Isometric Raster",
+      name: this.constants.Nov16IsoLayerName,
     });
 
-    this.topoRaster = new ol.layer.Tile({
+    this.oldTopoRaster = new ol.layer.Tile({
       source: new ol.source.XYZ({
         url: "http://wurmonlinemaps.com/Content/Tiles/Xanadu-topo_161101/{z}/{x}/{y}.png",
         tileGrid: mapTileGrid,
       }),
-      name: "Xanadu Toplogical Raster",
+      name: this.constants.Nov16TopoLayerName,
     });
 
-    this.isoRaster.setVisible(false);
-    this.topoRaster.setVisible(false);
+    this.newTerrainRaster = new ol.layer.Tile({
+      source: new ol.source.XYZ({
+        url: "http://wurmonlinemaps.com/Content/Tiles/Xanadu-terrain_161101/{z}/{x}/{y}.png",
+        tileGrid: mapTileGrid,
+      }),
+      name: this.constants.TerrainLayerName,
+    });
+
+    this.newIsoRaster = new ol.layer.Tile({
+      source: new ol.source.XYZ({
+        url: "http://wurmonlinemaps.com/Content/Tiles/Xanadu-iso_161101/{z}/{x}/{y}.png",
+        tileGrid: mapTileGrid,
+      }),
+      name: this.constants.IsoLayerName,
+    });
+
+    this.newTopoRaster = new ol.layer.Tile({
+      source: new ol.source.XYZ({
+        url: "http://wurmonlinemaps.com/Content/Tiles/Xanadu-topo_161101/{z}/{x}/{y}.png",
+        tileGrid: mapTileGrid,
+      }),
+      name: this.constants.TopoLayerName,
+    });
+
+    this.newIsoRaster.setVisible(false);
+    this.newTopoRaster.setVisible(false);
+    this.oldTerrainRaster.setVisible(false);
+    this.oldIsoRaster.setVisible(false);
+    this.oldTopoRaster.setVisible(false);
 
     this.map = new ol.Map({
       layers: [
-        this.terrainRaster,
-        this.isoRaster,
-        this.topoRaster,
-        this.landmarkLayer,
+        this.newTerrainRaster,
+        this.newIsoRaster,
+        this.newTopoRaster,
+        this.oldTerrainRaster,
+        this.oldIsoRaster,
+        this.oldTopoRaster,
+        // this.landmarkLayer,
         roadLayer,
         this.bridgeLayer,
         this.canalLayer,
@@ -664,6 +786,8 @@ export class AppComponent implements OnInit, AfterViewInit {
       });
 
       console.log("Clicked Url", this.clickedUrlValue);
+
+      prompt("Return URL:", this.clickedUrlValue);
     });
   }
 
@@ -696,31 +820,36 @@ export class AppComponent implements OnInit, AfterViewInit {
         case this.constants.DeedLayerName:
           {
             this.map.removeLayer(this.deedsLayer);
+            this.showDeeds = false;
             break;
           }
         case this.constants.StarterDeedsLayerName:
           {
             this.map.removeLayer(this.staringTownsLayer);
+            this.showStartingDeeds = false;
             break;
           }
         case this.constants.GridLayerName:
           {
             this.map.removeLayer(this.gridLayer);
+            this.showGrid = false;
             break;
           }
         case this.constants.CanalLayerName:
           {
             this.map.removeLayer(this.canalLayer);
+            this.showCanals = false;
             break;
           }
-        case this.constants.GuardTowerLayerName:
-          {
-            this.map.removeLayer(this.landmarkLayer);
-            break;
-          }
+        // case this.constants.GuardTowerLayerName:
+        //   {
+        //     this.map.removeLayer(this.landmarkLayer);
+        //     break;
+        //   }
         case this.constants.BridgeLayerName:
           {
             this.map.removeLayer(this.bridgeLayer);
+            this.showBridges = false;
             break;
           }
         default: {
@@ -733,31 +862,36 @@ export class AppComponent implements OnInit, AfterViewInit {
         case this.constants.DeedLayerName:
           {
             this.map.addLayer(this.deedsLayer);
+            this.showDeeds = true;
             break;
           }
         case this.constants.StarterDeedsLayerName:
           {
             this.map.addLayer(this.staringTownsLayer);
+            this.showStartingDeeds = true;
             break;
           }
         case this.constants.GridLayerName:
           {
             this.map.addLayer(this.gridLayer);
+            this.showGrid = true;
             break;
           }
         case this.constants.CanalLayerName:
           {
             this.map.addLayer(this.canalLayer);
+            this.showCanals = true;
             break;
           }
-        case this.constants.GuardTowerLayerName:
-          {
-            this.map.addLayer(this.landmarkLayer);
-            break;
-          }
+        // case this.constants.GuardTowerLayerName:
+        //   {
+        //     this.map.addLayer(this.landmarkLayer);
+        //     break;
+        //   }
         case this.constants.BridgeLayerName:
           {
             this.map.addLayer(this.bridgeLayer);
+            this.showBridges = true;
             break;
           }
         default: {
@@ -785,19 +919,52 @@ export class AppComponent implements OnInit, AfterViewInit {
 
   mainLayer(id: number) {
     if (id === 0) {
-      this.terrainRaster.setVisible(true);
-      this.isoRaster.setVisible(false);
-      this.topoRaster.setVisible(false);
-      this.currentRaster = this.constants.TerrainLayerName;
+      this.oldTerrainRaster.setVisible(true);
+      this.oldIsoRaster.setVisible(false);
+      this.oldTopoRaster.setVisible(false);
+      this.newTerrainRaster.setVisible(false);
+      this.newIsoRaster.setVisible(false);
+      this.newTopoRaster.setVisible(false);
+      this.currentRaster = this.constants.Nov16TerrainLayerName;
     } else if (id === 1) {
-      this.terrainRaster.setVisible(false);
-      this.isoRaster.setVisible(true);
-      this.topoRaster.setVisible(false);
+      this.oldTerrainRaster.setVisible(false);
+      this.oldIsoRaster.setVisible(true);
+      this.oldTopoRaster.setVisible(false);
+      this.newTerrainRaster.setVisible(false);
+      this.newIsoRaster.setVisible(false);
+      this.newTopoRaster.setVisible(false);
+      this.currentRaster = this.constants.Nov16IsoLayerName;
+    } else if (id === 2) {
+      this.oldTerrainRaster.setVisible(false);
+      this.oldIsoRaster.setVisible(false);
+      this.oldTopoRaster.setVisible(true);
+      this.newTerrainRaster.setVisible(false);
+      this.newIsoRaster.setVisible(false);
+      this.newTopoRaster.setVisible(false);
+      this.currentRaster = this.constants.Nov16TopoLayerName;
+    } else if (id === 3) {
+      this.oldTerrainRaster.setVisible(false);
+      this.oldIsoRaster.setVisible(false);
+      this.oldTopoRaster.setVisible(false);
+      this.newTerrainRaster.setVisible(true);
+      this.newIsoRaster.setVisible(false);
+      this.newTopoRaster.setVisible(false);
+      this.currentRaster = this.constants.TerrainLayerName;
+    } else if (id === 4) {
+      this.oldTerrainRaster.setVisible(false);
+      this.oldIsoRaster.setVisible(false);
+      this.oldTopoRaster.setVisible(false);
+      this.newTerrainRaster.setVisible(false);
+      this.newIsoRaster.setVisible(true);
+      this.newTopoRaster.setVisible(false);
       this.currentRaster = this.constants.IsoLayerName;
     } else {
-      this.terrainRaster.setVisible(false);
-      this.isoRaster.setVisible(false);
-      this.topoRaster.setVisible(true);
+      this.oldTerrainRaster.setVisible(false);
+      this.oldIsoRaster.setVisible(false);
+      this.oldTopoRaster.setVisible(false);
+      this.newTerrainRaster.setVisible(false);
+      this.newIsoRaster.setVisible(false);
+      this.newTopoRaster.setVisible(true);
       this.currentRaster = this.constants.TopoLayerName;
     }
   }

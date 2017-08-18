@@ -68,9 +68,12 @@ export class Constants {
     GuardTowerLayerName: string = "Guard Tower Layer";
     CanalLayerName: string = "Canal Layer";
     BridgeLayerName: string = "Bridge Layer";
-    TerrainLayerName: string = "Terrain (2016 Nov)";
-    IsoLayerName: string = "Isometric (2016 Nov)";
-    TopoLayerName: string = "Topological (2016 Nov)";
+    Nov16TerrainLayerName: string = "Terrain (2016 Nov)";
+    Nov16IsoLayerName: string = "Isometric (2016 Nov)";
+    Nov16TopoLayerName: string = "Topological (2016 Nov)";
+    TerrainLayerName: string = "Terrain (2017 Aug)";
+    IsoLayerName: string = "Isometric (2017 Aug)";
+    TopoLayerName: string = "Topological (2017 Aug)";
 }
 
 export var CustomColors =  [
