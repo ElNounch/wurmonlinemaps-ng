@@ -541,13 +541,6 @@ export class AppComponent implements OnInit, AfterViewInit {
     // khaaaaaan
     var easterEggSource = new ol.source.Vector();
 
-    var khaanFeature = new ol.Feature({
-      geometry: new ol.geom.Point([6332, -1825]),
-      type: "Khaaaan"
-    })
-
-    easterEggSource.addFeature(khaanFeature); 9
-
     var midpointFeature = new ol.Feature({
       geometry: new ol.geom.Point([4096, -4096]),
       type: "Midpoint"
@@ -989,7 +982,7 @@ export class AppComponent implements OnInit, AfterViewInit {
     if (colorCode.length > 0) {
       this.cacheMonster.set("bridgeColor", colorCode);
 
-      console.log("Brigde color saved", colorCode);
+      console.log("Bridge color saved", colorCode);
     }
   }
 } // end comp
