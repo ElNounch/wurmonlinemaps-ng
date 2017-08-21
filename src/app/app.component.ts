@@ -636,7 +636,7 @@ export class AppComponent implements OnInit, AfterViewInit {
               //size: [128, 128],
               opacity: 0.4,
               scale: 0.1,
-              src: resolution < 1 ? '/assets/loaf.png' : ''
+              src: resolution < 1 ? 'http://wurmonlinemaps.com/Content/dist/assets/loaf.png' : ''
             }),
             text: new ol.style.Text({
               font: '' + fontSize + 'px Calibri,sans-serif',
@@ -708,7 +708,7 @@ export class AppComponent implements OnInit, AfterViewInit {
 
     this.newTerrainRaster = new ol.layer.Tile({
       source: new ol.source.XYZ({
-        url: "http://wurmonlinemaps.com/Content/Tiles/Xanadu-terrain_161101/{z}/{x}/{y}.png",
+        url: "http://wurmonlinemaps.com/Content/Tiles/xan-1708/terrain/{z}/{x}/{y}.png",
         tileGrid: mapTileGrid,
       }),
       name: this.constants.TerrainLayerName,
@@ -716,7 +716,7 @@ export class AppComponent implements OnInit, AfterViewInit {
 
     this.newIsoRaster = new ol.layer.Tile({
       source: new ol.source.XYZ({
-        url: "http://wurmonlinemaps.com/Content/Tiles/Xanadu-iso_161101/{z}/{x}/{y}.png",
+        url: "http://wurmonlinemaps.com/Content/Tiles//xan-1708/iso/{z}/{x}/{y}.png",
         tileGrid: mapTileGrid,
       }),
       name: this.constants.IsoLayerName,
@@ -724,7 +724,7 @@ export class AppComponent implements OnInit, AfterViewInit {
 
     this.newTopoRaster = new ol.layer.Tile({
       source: new ol.source.XYZ({
-        url: "http://wurmonlinemaps.com/Content/Tiles/Xanadu-topo_161101/{z}/{x}/{y}.png",
+        url: "http://wurmonlinemaps.com/Content/Tiles/xan-1708/topo/{z}/{x}/{y}.png",
         tileGrid: mapTileGrid,
       }),
       name: this.constants.TopoLayerName,
@@ -775,7 +775,7 @@ export class AppComponent implements OnInit, AfterViewInit {
       var x = parseInt(coord[0]);
       var y = parseInt(coord[1]);
 
-      this.clickedUrlValue = `http://wurmonlinemaps.com/maps/xanadubeta?x=${x}&y=${y}&z=${zoom}`;
+      this.clickedUrlValue = `http://wurmonlinemaps.com/maps/xanadu?x=${x}&y=${y}&z=${zoom}`;
 
       console.log("Event target", evt.target);
 
